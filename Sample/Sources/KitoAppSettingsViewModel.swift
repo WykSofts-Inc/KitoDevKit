@@ -1,0 +1,113 @@
+//
+//  KitoAppSettingsViewModel.swift
+//  KitoDevKit
+//
+//  Created by Wycliff on 9/21/26.
+//  Copyright © 2026 wyksoftsinc.com. All rights reserved.
+//
+
+import SwiftUI
+import KitoCore
+
+/// Drives a live theme editor over the whole app — every kit reads its
+/// colors/fonts from `@Environment(\.kitoTheme)`, so changing these values
+/// here re-themes every screen in the catalog at once. This is the concrete
+/// proof that Kito's "one theme, everywhere" architecture actually works.
+@Observable
+final class KitoAppSettingsViewModel {
+    enum ThemeMode: String, CaseIterable, Identifiable {
+        case system, light, dark
+        var id: Self { self }
+        var label: String {
+            switch self {
+            case .system: return "System"
+            case .light: return "Light"
+            case .dark: return "Dark"
+            }
+        }
+    }
+
+    var themeMode: ThemeMode = .system
+    var primaryColor: Color = KitoColors.light.primary
+    /// Multiplies every base font size. KitoTypography stores opaque `Font`
+    /// values (not raw point sizes), so scaling means rebuilding it from the
+    /// same base sizes KitoTypography.default uses, not adjusting in place.
+    var fontScale: Double = 1.0
+    var cornerRadiusScale: Double = 1.0
+
+    var preferredColorScheme: ColorScheme? {
+        switch themeMode {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+
+    func theme(resolvedScheme: ColorScheme) -> KitoTheme {
+        var colors = resolvedScheme == .dark ? KitoColors.dark : KitoColors.light
+        colors.primary = primaryColor
+        return KitoTheme(
+            colors: colors,
+            spacing: .default,
+            typography: scaledTypography,
+            radii: scaledRadii
+        )
+    }
+
+    private var scaledTypography: KitoTypography {
+        KitoTypography(
+            displayLarge: .system(size: 34 * fontScale, weight: .bold),
+            displayMedium: .system(size: 28 * fontScale, weight: .semibold),
+            titleLarge: .system(size: 22 * fontScale, weight: .semibold),
+            titleMedium: .system(size: 18 * fontScale, weight: .semibold),
+            body: .system(size: 16 * fontScale, weight: .regular),
+            bodyEmphasized: .system(size: 16 * fontScale, weight: .medium),
+            label: .system(size: 14 * fontScale, weight: .medium),
+            caption: .system(size: 12 * fontScale, weight: .regular),
+            button: .system(size: 16 * fontScale, weight: .semibold)
+        )
+    }
+
+    private var scaledRadii: KitoRadii {
+        let base = KitoRadii.default
+        return KitoRadii(
+            none: 0,
+            sm: base.sm * cornerRadiusScale,
+            md: base.md * cornerRadiusScale,
+            lg: base.lg * cornerRadiusScale,
+            xl: base.xl * cornerRadiusScale,
+            pill: base.pill
+        )
+    }
+
+    func reset() {
+        themeMode = .system
+        primaryColor = KitoColors.light.primary
+        fontScale = 1.0
+        cornerRadiusScale = 1.0
+    }
+}
+
+/// Resolves `themeMode` against the actual system appearance and applies
+/// the resulting theme — a plain `App` struct has no `@Environment` access
+/// before the view hierarchy exists, so this wrapper is where that
+/// resolution has to happen.
+struct KitoThemedRoot<Content: View>: View {
+    @Environment(\.colorScheme) private var systemColorScheme
+    let settings: KitoAppSettingsViewModel
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        let resolved: ColorScheme = {
+            switch settings.themeMode {
+            case .system: return systemColorScheme
+            case .light: return .light
+            case .dark: return .dark
+            }
+        }()
+
+        content()
+            .kitoTheme(settings.theme(resolvedScheme: resolved))
+            .preferredColorScheme(settings.preferredColorScheme)
+    }
+}
