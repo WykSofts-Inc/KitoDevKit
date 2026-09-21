@@ -16,19 +16,23 @@ import KitoCore
 @Observable
 final class KitoAppSettingsViewModel {
     enum ThemeMode: String, CaseIterable, Identifiable {
-        case system, light, dark
+        case system, light, dark, neon
         var id: Self { self }
         var label: String {
             switch self {
             case .system: return "System"
             case .light: return "Light"
             case .dark: return "Dark"
+            case .neon: return "Neon"
             }
         }
     }
 
-    var themeMode: ThemeMode = .system
-    var primaryColor: Color = KitoColors.light.primary
+    /// Defaults to the "dark glass + neon" look — KitoDevKit's flagship
+    /// skin — but every value here stays a live, user-editable setting
+    /// (the customization principle applies to the default theme too).
+    var themeMode: ThemeMode = .neon
+    var primaryColor: Color = KitoColors.neon.primary
     /// Multiplies every base font size. KitoTypography stores opaque `Font`
     /// values (not raw point sizes), so scaling means rebuilding it from the
     /// same base sizes KitoTypography.default uses, not adjusting in place.
@@ -39,12 +43,12 @@ final class KitoAppSettingsViewModel {
         switch themeMode {
         case .system: return nil
         case .light: return .light
-        case .dark: return .dark
+        case .dark, .neon: return .dark
         }
     }
 
     func theme(resolvedScheme: ColorScheme) -> KitoTheme {
-        var colors = resolvedScheme == .dark ? KitoColors.dark : KitoColors.light
+        var colors = themeMode == .neon ? KitoColors.neon : (resolvedScheme == .dark ? KitoColors.dark : KitoColors.light)
         colors.primary = primaryColor
         return KitoTheme(
             colors: colors,
@@ -81,8 +85,8 @@ final class KitoAppSettingsViewModel {
     }
 
     func reset() {
-        themeMode = .system
-        primaryColor = KitoColors.light.primary
+        themeMode = .neon
+        primaryColor = KitoColors.neon.primary
         fontScale = 1.0
         cornerRadiusScale = 1.0
     }
@@ -102,7 +106,7 @@ struct KitoThemedRoot<Content: View>: View {
             switch settings.themeMode {
             case .system: return systemColorScheme
             case .light: return .light
-            case .dark: return .dark
+            case .dark, .neon: return .dark
             }
         }()
 

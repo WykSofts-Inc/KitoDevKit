@@ -37,6 +37,7 @@ private let products: [DemoProduct] = [
 /// animations and `KitoFlightController`'s arc-to-badge motion — the same
 /// components `KitoButtons` ships, not a bespoke look-alike.
 struct CartDemo: View {
+    @Environment(\.kitoTheme) private var theme
     @State private var cart = KitoCartViewModel()
     @StateObject private var flight = KitoFlightController(motion: .lively)
     @State private var showCart = false
@@ -59,7 +60,7 @@ struct CartDemo: View {
                 .padding(.bottom, 12)
         }
         .background(
-            LinearGradient(colors: [Color(.systemBackground), Color.accentColor.opacity(0.05)], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [theme.colors.background, theme.colors.primary.opacity(0.08)], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
         )
         .navigationTitle("Cart")
@@ -102,11 +103,11 @@ struct CartDemo: View {
                     .background(product.gradient.asView())
                     .clipShape(Circle())
                     .frame(width: 56, height: 56)
-                    .shadow(color: product.colors[1].opacity(0.5), radius: 10, y: 6)
                 Image(systemName: product.icon)
                     .font(.system(size: 24, weight: .semibold))
                     .foregroundStyle(.white)
             }
+            .kitoGlow(product.colors[1], radius: 14, intensity: 0.45)
 
             VStack(spacing: 2) {
                 Text(product.name).font(.headline)
@@ -130,18 +131,8 @@ struct CartDemo: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(.regularMaterial)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .strokeBorder(
-                    LinearGradient(colors: [.white.opacity(0.5), .clear], startPoint: .topLeading, endPoint: .bottomTrailing),
-                    lineWidth: 1
-                )
-        )
-        .shadow(color: .black.opacity(0.08), radius: 12, y: 6)
+        .kitoGlassCard(cornerRadius: 22)
+        .shadow(color: .black.opacity(0.15), radius: 12, y: 6)
     }
 }
 
