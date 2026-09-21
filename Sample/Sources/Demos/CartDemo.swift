@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import KitoCore
+import KitoButtons
 import KitoCart
 import KitoHaptics
 import KitoEmptyStates
@@ -16,69 +18,130 @@ private struct DemoProduct: Identifiable {
     let name: String
     let price: Decimal
     let icon: String
+    let colors: [Color]
+    let animation: KitoCartAnimation
+
+    var gradient: KitoGradient { KitoGradient(colors: colors, shape: .linear(startPoint: .topLeading, endPoint: .bottomTrailing)) }
 }
 
 private let products: [DemoProduct] = [
-    DemoProduct(id: "burger", name: "Burger", price: 8.50, icon: "takeoutbag.and.cup.and.straw.fill"),
-    DemoProduct(id: "fries", name: "Fries", price: 3.00, icon: "carrot.fill"),
-    DemoProduct(id: "soda", name: "Soda", price: 2.25, icon: "cup.and.saucer.fill"),
-    DemoProduct(id: "salad", name: "Salad", price: 6.75, icon: "leaf.fill"),
-    DemoProduct(id: "pizza", name: "Pizza", price: 12.00, icon: "circle.grid.2x2.fill"),
-    DemoProduct(id: "coffee", name: "Coffee", price: 4.50, icon: "cup.and.saucer"),
+    DemoProduct(id: "burger", name: "Burger", price: 8.50, icon: "takeoutbag.and.cup.and.straw.fill", colors: [Color(red: 1.0, green: 0.55, blue: 0.22), Color(red: 0.95, green: 0.25, blue: 0.18)], animation: .rollingCart),
+    DemoProduct(id: "fries", name: "Fries", price: 3.00, icon: "carrot.fill", colors: [Color(red: 1.0, green: 0.78, blue: 0.18), Color(red: 1.0, green: 0.5, blue: 0.12)], animation: .bounceCart),
+    DemoProduct(id: "soda", name: "Soda", price: 2.25, icon: "cup.and.saucer.fill", colors: [Color(red: 0.35, green: 0.55, blue: 1.0), Color(red: 0.55, green: 0.25, blue: 0.95)], animation: .dropIn),
+    DemoProduct(id: "salad", name: "Salad", price: 6.75, icon: "leaf.fill", colors: [Color(red: 0.25, green: 0.8, blue: 0.5), Color(red: 0.1, green: 0.55, blue: 0.45)], animation: .fillSweep),
+    DemoProduct(id: "pizza", name: "Pizza", price: 12.00, icon: "circle.grid.2x2.fill", colors: [Color(red: 1.0, green: 0.35, blue: 0.45), Color(red: 0.85, green: 0.15, blue: 0.55)], animation: .morphCircle),
+    DemoProduct(id: "coffee", name: "Coffee", price: 4.50, icon: "cup.and.saucer", colors: [Color(red: 0.55, green: 0.38, blue: 0.28), Color(red: 0.3, green: 0.18, blue: 0.12)], animation: .burst),
 ]
 
+/// The cart catalog, restyled around `KitoCartButton`'s choreographed add-to-cart
+/// animations and `KitoFlightController`'s arc-to-badge motion — the same
+/// components `KitoButtons` ships, not a bespoke look-alike.
 struct CartDemo: View {
     @State private var cart = KitoCartViewModel()
-    @State private var flight = KitoCartFlightCoordinator()
+    @StateObject private var flight = KitoFlightController(motion: .lively)
+    @State private var showCart = false
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 140))], spacing: 16) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 16)], spacing: 16) {
                 ForEach(products) { product in
-                    VStack(spacing: 8) {
-                        Image(systemName: product.icon).font(.system(size: 32))
-                        Text(product.name).font(.headline)
-                        Text(product.price, format: .currency(code: "USD"))
-                            .font(.caption).foregroundStyle(.secondary)
-                        Button("Add") {
-                            flight.fly(from: product.id, symbol: "cart.fill") {
-                                cart.add(KitoCartItem(id: product.id, name: product.name, unitPrice: product.price))
-                                KitoHaptics.success()
-                            }
-                        }
-                        .kitoCartFlightSource(id: product.id, in: flight)
-                        .buttonStyle(.borderedProminent)
-                    }
-                    .padding()
-                    .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
+                    productCard(product)
+                        .kitoFlightAnchor(product.id)
                 }
             }
             .padding()
 
-            NavigationLink("View cart (\(cart.totalQuantity) items) →") { CartDetailScreen(cart: cart) }
-                .padding()
+            Text("Each card uses a different KitoCartButton choreography — rolling cart, bounce, drop-in, fill sweep, morph-to-circle, burst.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 32)
+                .padding(.bottom, 12)
         }
+        .background(
+            LinearGradient(colors: [Color(.systemBackground), Color.accentColor.opacity(0.05)], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+        )
         .navigationTitle("Cart")
-        .kitoCartFlightHost(flight)
+        .kitoFlightLayer(flight)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink(destination: CartDetailScreen(cart: cart)) {
-                    KitoCartBadge(count: cart.totalQuantity)
-                }
-                .kitoCartAnchor(flight)
+                KitoBadgeButton(systemImage: "cart", count: cart.totalQuantity) { showCart = true }
+                    .badgeColor(.red)
+                    .bounces(on: flight.landings(on: "cart"))
+                    .kitoFlightAnchor("cart")
             }
         }
+        .navigationDestination(isPresented: $showCart) { CartDetailScreen(cart: cart) }
         .safeAreaInset(edge: .bottom) {
             if !cart.isEmpty {
                 HStack {
-                    Text("\(cart.totalQuantity) items").font(.subheadline)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("\(cart.totalQuantity) items").font(.caption).foregroundStyle(.secondary)
+                        Text(cart.subtotal, format: .currency(code: "USD")).font(.title3.bold())
+                    }
                     Spacer()
-                    Text(cart.subtotal, format: .currency(code: "USD")).font(.headline)
+                    Button("Checkout") { showCart = true }
+                        .buttonStyle(.kito(.primary, size: .medium))
                 }
-                .padding()
-                .background(.bar)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 14)
+                .background(.ultraThinMaterial)
+                .overlay(alignment: .top) { Divider() }
+                .transition(.move(edge: .bottom).combined(with: .opacity))
             }
         }
+        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: cart.isEmpty)
+    }
+
+    private func productCard(_ product: DemoProduct) -> some View {
+        VStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(Color.clear)
+                    .background(product.gradient.asView())
+                    .clipShape(Circle())
+                    .frame(width: 56, height: 56)
+                    .shadow(color: product.colors[1].opacity(0.5), radius: 10, y: 6)
+                Image(systemName: product.icon)
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white)
+            }
+
+            VStack(spacing: 2) {
+                Text(product.name).font(.headline)
+                Text(product.price, format: .currency(code: "USD"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            KitoCartButton(animation: product.animation) {
+                cart.add(KitoCartItem(id: product.id, name: product.name, unitPrice: product.price))
+                KitoHaptics.success()
+            }
+            .size(.small)
+            .fullWidth()
+            .flies(to: "cart", with: flight, size: CGSize(width: 30, height: 30)) {
+                Circle().fill(Color.clear)
+                    .background(product.gradient.asView())
+                    .clipShape(Circle())
+                    .overlay(Image(systemName: product.icon).font(.system(size: 13, weight: .bold)).foregroundStyle(.white))
+            }
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .fill(.regularMaterial)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .strokeBorder(
+                    LinearGradient(colors: [.white.opacity(0.5), .clear], startPoint: .topLeading, endPoint: .bottomTrailing),
+                    lineWidth: 1
+                )
+        )
+        .shadow(color: .black.opacity(0.08), radius: 12, y: 6)
     }
 }
 
@@ -92,9 +155,9 @@ private struct CartDetailScreen: View {
             } else {
                 List {
                     ForEach(cart.items) { item in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
+                        HStack(spacing: 12) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(item.name).font(.subheadline.weight(.semibold))
                                 Text(item.unitPrice, format: .currency(code: "USD"))
                                     .font(.caption2).foregroundStyle(.secondary)
                             }
@@ -108,10 +171,12 @@ private struct CartDetailScreen: View {
                                 in: 0...20
                             )
                             .fixedSize()
+                            .kitoButtonBounce(trigger: item.quantity)
                             Text(item.lineTotal, format: .currency(code: "USD"))
                                 .font(.subheadline.bold())
                                 .frame(width: 70, alignment: .trailing)
                         }
+                        .padding(.vertical, 4)
                     }
                     .onDelete { indexSet in
                         for index in indexSet { cart.remove(id: cart.items[index].id) }
@@ -126,8 +191,15 @@ private struct CartDetailScreen: View {
                         Button("Clear cart", role: .destructive) { cart.clear() }
                     }
                 }
+                .safeAreaInset(edge: .bottom) {
+                    Button("Proceed to checkout") {}
+                        .buttonStyle(.kito(.primary, fullWidth: true))
+                        .padding()
+                        .background(.ultraThinMaterial)
+                }
             }
         }
         .navigationTitle("Cart")
+        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: cart.items.map(\.id))
     }
 }
