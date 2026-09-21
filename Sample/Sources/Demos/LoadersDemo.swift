@@ -11,7 +11,7 @@ import KitoCore
 import KitoLoaders
 
 private enum LoaderKindOption: String, CaseIterable, Identifiable {
-    case spinner, dots, pulse, progressRing, skeleton
+    case spinner, dots, pulse, progressRing, skeleton, bars, wave, ripple, orbit, gradientRing
     var id: Self { self }
     var label: String {
         switch self {
@@ -20,6 +20,11 @@ private enum LoaderKindOption: String, CaseIterable, Identifiable {
         case .pulse: return "Pulse"
         case .progressRing: return "Progress ring"
         case .skeleton: return "Skeleton"
+        case .bars: return "Bars"
+        case .wave: return "Wave"
+        case .ripple: return "Ripple"
+        case .orbit: return "Orbit"
+        case .gradientRing: return "Gradient ring"
         }
     }
     var kind: KitoLoaderKind {
@@ -29,6 +34,11 @@ private enum LoaderKindOption: String, CaseIterable, Identifiable {
         case .pulse: return .pulse
         case .progressRing: return .progressRing(fraction: 0.6)
         case .skeleton: return .skeleton
+        case .bars: return .bars
+        case .wave: return .wave
+        case .ripple: return .ripple
+        case .orbit: return .orbit
+        case .gradientRing: return .gradientRing
         }
     }
 }
@@ -108,6 +118,36 @@ struct LoadersDemo: View {
                     }
                 }
                 .kitoSkeleton(isLoading: isSkeletonLoading)
+            }
+            Section("Bars") {
+                row { KitoBarsLoader() }
+            }
+            Section("Bars — tall, custom color") {
+                row { KitoBarsLoader(barCount: 7, barWidth: 4, maxHeight: 40, color: .mint) }
+            }
+            Section("Wave") {
+                row { KitoWaveLoader() }
+            }
+            Section("Wave — bigger dots, custom color") {
+                row { KitoWaveLoader(dotCount: 6, dotSize: 11, color: .cyan) }
+            }
+            Section("Ripple") {
+                row { KitoRippleLoader() }
+            }
+            Section("Ripple — more rings, custom color") {
+                row { KitoRippleLoader(size: 56, ringCount: 4, color: .orange) }
+            }
+            Section("Orbit") {
+                row { KitoOrbitLoader() }
+            }
+            Section("Orbit — more dots, larger") {
+                row { KitoOrbitLoader(size: 48, dotCount: 5, color: .purple) }
+            }
+            Section("Gradient ring") {
+                row { KitoGradientRingLoader() }
+            }
+            Section("Gradient ring — thick, custom gradient") {
+                row { KitoGradientRingLoader(size: 44, lineWidth: 6, colors: [.pink.opacity(0), .pink, .purple]) }
             }
             Section("Style-driven — pick a kind") {
                 Picker("Kind", selection: $pickerStyle) {
