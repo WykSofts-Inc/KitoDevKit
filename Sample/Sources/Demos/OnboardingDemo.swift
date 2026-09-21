@@ -7,12 +7,18 @@
 //
 
 import SwiftUI
+import KitoCore
 import KitoOnboarding
 
 struct OnboardingDemo: View {
     @State private var isShowingThreePage = false
     @State private var isShowingTwoPage = false
     @State private var isShowingFivePage = false
+    @State private var isShowingGradientBackgrounds = false
+    @State private var isShowingCompactButton = false
+    @State private var isShowingTopArrow = false
+    @State private var isShowingFade = false
+    @State private var isShowingScaleFade = false
     @State private var lastResult = "Not launched yet"
 
     var body: some View {
@@ -25,6 +31,17 @@ struct OnboardingDemo: View {
             }
             Section("Long — 5 pages") {
                 Button("Launch") { isShowingFivePage = true }
+            }
+            Section("Gradient background per page") {
+                Button("Launch") { isShowingGradientBackgrounds = true }
+            }
+            Section("Button placement") {
+                Button("Bottom-trailing compact button") { isShowingCompactButton = true }
+                Button("Top-trailing arrow button") { isShowingTopArrow = true }
+            }
+            Section("Page transitions") {
+                Button("Fade") { isShowingFade = true }
+                Button("Scale + fade (carousel depth)") { isShowingScaleFade = true }
             }
             Section("Last result") {
                 Text(lastResult).font(.caption).foregroundStyle(.secondary)
@@ -61,6 +78,64 @@ struct OnboardingDemo: View {
                 ],
                 onFinish: { isShowingFivePage = false; lastResult = "Finished the 5-page flow" }
             ))
+        }
+        .fullScreenCover(isPresented: $isShowingGradientBackgrounds) {
+            KitoOnboardingView(viewModel: KitoOnboardingViewModel(
+                pages: [
+                    KitoOnboardingPage(systemImage: "sparkles", title: "Discover", message: "Find something new every day.", background: .gradient(.linear(.purple, .indigo))),
+                    KitoOnboardingPage(systemImage: "heart.fill", title: "Connect", message: "Stay close to what matters.", background: .gradient(.linear(.pink, .orange))),
+                    KitoOnboardingPage(systemImage: "star.fill", title: "Grow", message: "Build something great.", background: .gradient(.linear(.teal, .blue))),
+                ],
+                onFinish: { isShowingGradientBackgrounds = false; lastResult = "Finished the gradient-background flow" }
+            ))
+        }
+        .fullScreenCover(isPresented: $isShowingCompactButton) {
+            KitoOnboardingView(
+                viewModel: KitoOnboardingViewModel(
+                    pages: [
+                        KitoOnboardingPage(systemImage: "square.grid.2x2.fill", title: "Organize", message: "Everything in its place."),
+                        KitoOnboardingPage(systemImage: "bell.fill", title: "Stay notified", message: "Never miss an update."),
+                    ],
+                    onFinish: { isShowingCompactButton = false; lastResult = "Finished the bottom-trailing-compact flow" }
+                ),
+                style: KitoOnboardingStyle(buttonPlacement: .bottomTrailingCompact)
+            )
+        }
+        .fullScreenCover(isPresented: $isShowingTopArrow) {
+            KitoOnboardingView(
+                viewModel: KitoOnboardingViewModel(
+                    pages: [
+                        KitoOnboardingPage(systemImage: "wand.and.stars", title: "Automate", message: "Let the app do the busywork."),
+                        KitoOnboardingPage(systemImage: "chart.line.uptrend.xyaxis", title: "Track progress", message: "See how far you've come."),
+                    ],
+                    onFinish: { isShowingTopArrow = false; lastResult = "Finished the top-trailing-arrow flow" }
+                ),
+                style: KitoOnboardingStyle(buttonPlacement: .topTrailingCompact)
+            )
+        }
+        .fullScreenCover(isPresented: $isShowingFade) {
+            KitoOnboardingView(
+                viewModel: KitoOnboardingViewModel(
+                    pages: [
+                        KitoOnboardingPage(systemImage: "moon.stars.fill", title: "Focus mode", message: "Cut the noise when it matters."),
+                        KitoOnboardingPage(systemImage: "sun.max.fill", title: "Bright ideas", message: "Capture them the instant they hit."),
+                    ],
+                    onFinish: { isShowingFade = false; lastResult = "Finished the fade-transition flow" }
+                ),
+                style: KitoOnboardingStyle(pageTransition: .fade)
+            )
+        }
+        .fullScreenCover(isPresented: $isShowingScaleFade) {
+            KitoOnboardingView(
+                viewModel: KitoOnboardingViewModel(
+                    pages: [
+                        KitoOnboardingPage(systemImage: "cube.fill", title: "Depth", message: "Pages recede as you move past them."),
+                        KitoOnboardingPage(systemImage: "arrow.triangle.2.circlepath", title: "Motion", message: "A little physicality goes a long way."),
+                    ],
+                    onFinish: { isShowingScaleFade = false; lastResult = "Finished the scale-fade-transition flow" }
+                ),
+                style: KitoOnboardingStyle(pageTransition: .scaleFade)
+            )
         }
     }
 }
