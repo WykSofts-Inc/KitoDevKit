@@ -32,6 +32,7 @@
 		781EC531061368F6148D56F2 /* KitoButtons in Frameworks */ = {isa = PBXBuildFile; productRef = 4FADAC890F9BB84F283800F5 /* KitoButtons */; };
 		82CC45AAE09669BB63402327 /* KitoLoaders in Frameworks */ = {isa = PBXBuildFile; productRef = CA244E2CBB7678240B35EB05 /* KitoLoaders */; };
 		852026E20741D51C40EA0B9D /* KitoSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */; };
+		85F5876E0D842990B67891B5 /* ControlCenterDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */; };
 		864BFA79631B204E60A18881 /* SettingsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5770CBE3635475023C1A28 /* SettingsDemo.swift */; };
 		8BD31DFF1FE9A769FF07D9C6 /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
 		8E26063F36A7CBAB2A4165ED /* KitoFormatting in Frameworks */ = {isa = PBXBuildFile; productRef = 6C747074769820899D6152A5 /* KitoFormatting */; };
@@ -102,6 +103,7 @@
 		8165B2C284A818D240F97FC9 /* KitoCart */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCart; path = ../../KitoCart; sourceTree = SOURCE_ROOT; };
 		817E98EC4CF8D1308E25617B /* KitoHaptics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoHaptics; path = ../../KitoHaptics; sourceTree = SOURCE_ROOT; };
 		88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationDemo.swift; sourceTree = "<group>"; };
+		921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCenterDemo.swift; sourceTree = "<group>"; };
 		96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoSampleApp.swift; sourceTree = "<group>"; };
 		9929D9B074DCB44DBA2649C7 /* KitoSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KitoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoAppSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				E14E3753958497564C54EED0 /* CartDemo.swift */,
 				D356E5C1452EE7EC8C0E124A /* ChartsDemo.swift */,
 				FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */,
+				921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */,
 				9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */,
 				088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */,
 				D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */,
@@ -389,6 +392,7 @@
 				5122D44B84F53306A5FF7DD3 /* ChartsDemo.swift in Sources */,
 				035009C20966E37EC153D1DB /* ConnectivityDemo.swift in Sources */,
 				95599468A98CAE537B5CA05F /* ContentView.swift in Sources */,
+				85F5876E0D842990B67891B5 /* ControlCenterDemo.swift in Sources */,
 				193DE2DFE56AF3CDBECF77AF /* EmptyStatesDemo.swift in Sources */,
 				5922BAD594985C3E1C0FDB76 /* FormattingDemo.swift in Sources */,
 				1817931C96BD86A5D23E1206 /* HapticsDemo.swift in Sources */,
