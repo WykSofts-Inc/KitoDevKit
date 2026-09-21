@@ -32,6 +32,7 @@ struct KitoCatalogSection: Identifiable {
 
 struct ContentView: View {
     @Environment(\.kitoTheme) private var theme
+    @State private var appeared = false
 
     private let sections: [KitoCatalogSection] = [
         KitoCatalogSection(title: "Feedback", entries: [
@@ -60,55 +61,139 @@ struct ContentView: View {
             KitoCatalogEntry("Connectivity", "Live online/offline monitoring", systemImage: "wifi") { ConnectivityDemo() },
         ]),
         KitoCatalogSection(title: "Commerce", entries: [
-            KitoCatalogEntry("Cart", "Fly-to-cart animation, cart state", systemImage: "cart.fill") { CartDemo() },
-            KitoCatalogEntry("Order Tracking", "Self-refreshing status + simulator", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
+            KitoCatalogEntry("Cart", "Choreographed add-to-cart, fly-to-badge", systemImage: "cart.fill") { CartDemo() },
+            KitoCatalogEntry("Order Tracking", "Self-refreshing status + Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
         ]),
     ]
 
+    private var flatEntries: [(section: KitoCatalogSection, entry: KitoCatalogEntry, globalIndex: Int)] {
+        var index = 0
+        return sections.flatMap { section in
+            section.entries.map { entry in
+                defer { index += 1 }
+                return (section, entry, index)
+            }
+        }
+    }
+
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    VStack(alignment: .leading, spacing: theme.spacing.xs) {
-                        Text("KitoDevKit").font(theme.typography.displayMedium)
-                        Text("Every kit in this ecosystem, live and interactive.")
-                            .font(theme.typography.body)
-                            .foregroundStyle(theme.colors.onBackground.opacity(0.6))
-                    }
-                    .padding(.vertical, theme.spacing.xs)
-                }
-                ForEach(sections) { section in
-                    Section(section.title) {
-                        ForEach(section.entries) { entry in
-                            NavigationLink(destination: entry.destination) {
-                                Label {
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(entry.title).font(theme.typography.bodyEmphasized)
-                                        Text(entry.subtitle)
-                                            .font(theme.typography.caption)
-                                            .foregroundStyle(theme.colors.onBackground.opacity(0.6))
-                                    }
-                                } icon: {
-                                    Image(systemName: entry.systemImage)
-                                        .foregroundStyle(theme.colors.primary)
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 28) {
+                    header
+
+                    ForEach(sections) { section in
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(section.title.uppercased())
+                                .font(.caption.weight(.bold))
+                                .kerning(0.8)
+                                .foregroundStyle(theme.colors.primary)
+                                .padding(.horizontal, 4)
+
+                            VStack(spacing: 10) {
+                                ForEach(section.entries) { entry in
+                                    row(entry, globalIndex: flatEntries.first { $0.entry.id == entry.id }?.globalIndex ?? 0)
                                 }
                             }
                         }
                     }
                 }
+                .padding(16)
+                .padding(.bottom, 24)
             }
-            .navigationTitle("KitoDevKit")
+            .background(backdrop)
+            .navigationTitle("")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsDemo()) {
                         Image(systemName: "gearshape.fill")
+                            .foregroundStyle(theme.colors.primary)
                     }
                 }
             }
+            .onAppear {
+                withAnimation(.easeOut(duration: 0.5)) { appeared = true }
+            }
         }
+    }
+
+    // MARK: Backdrop
+
+    private var backdrop: some View {
+        ZStack {
+            theme.colors.background.ignoresSafeArea()
+            Circle()
+                .fill(theme.colors.primary.opacity(0.28))
+                .frame(width: 340, height: 340)
+                .blur(radius: 90)
+                .offset(x: -140, y: -260)
+            Circle()
+                .fill(theme.colors.secondary.opacity(0.22))
+                .frame(width: 300, height: 300)
+                .blur(radius: 100)
+                .offset(x: 160, y: 120)
+        }
+        .ignoresSafeArea()
+    }
+
+    // MARK: Header
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("KitoDevKit")
+                .font(.system(size: 34, weight: .bold, design: .rounded))
+                .foregroundStyle(theme.colors.onBackground)
+                .kitoGlow(theme.colors.primary, radius: 14, intensity: 0.35)
+            Text("Every kit in this ecosystem, live and interactive.")
+                .font(theme.typography.body)
+                .foregroundStyle(theme.colors.onBackground.opacity(0.6))
+        }
+        .padding(.top, 8)
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : -8)
+    }
+
+    // MARK: Rows
+
+    private func row(_ entry: KitoCatalogEntry, globalIndex: Int) -> some View {
+        NavigationLink(destination: entry.destination) {
+            HStack(spacing: 14) {
+                ZStack {
+                    Circle()
+                        .fill(theme.colors.primary.opacity(0.16))
+                        .frame(width: 44, height: 44)
+                    Image(systemName: entry.systemImage)
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(theme.colors.primary)
+                }
+                .kitoGlow(theme.colors.primary, radius: 12, intensity: 0.35)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(entry.title)
+                        .font(theme.typography.bodyEmphasized)
+                        .foregroundStyle(theme.colors.onBackground)
+                    Text(entry.subtitle)
+                        .font(theme.typography.caption)
+                        .foregroundStyle(theme.colors.onBackground.opacity(0.55))
+                        .lineLimit(1)
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(theme.colors.onBackground.opacity(0.3))
+            }
+            .padding(14)
+            .kitoGlassCard(cornerRadius: theme.radii.lg)
+        }
+        .buttonStyle(.plain)
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : 14)
+        .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(Double(globalIndex) * 0.02), value: appeared)
     }
 }
 
 #Preview {
-    ContentView().autoKitoTheme()
+    ContentView().kitoTheme(.neon)
 }
