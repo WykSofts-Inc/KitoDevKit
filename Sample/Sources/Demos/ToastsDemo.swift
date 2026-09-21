@@ -20,15 +20,46 @@ struct ToastsDemo: View {
                 Button("Warning") { toasts.show("Low battery on device", style: .warning) }
                 Button("Info") { toasts.show("New version available", style: .info) }
             }
-            Section("Actionable (does not auto-dismiss)") {
-                Button("Item removed, with Undo") {
+            Section("Title, size, and bold") {
+                Button("Large bold banner") {
                     toasts.show(KitoToast(
-                        message: "Item removed",
-                        style: .warning,
-                        action: KitoToastAction(title: "Undo") {
-                            toasts.show("Restored", style: .success)
-                        }
+                        title: "Payment successful",
+                        message: "Order #1234 has been confirmed and will arrive by 5:30 PM.",
+                        style: .success,
+                        titleStyle: .large,
+                        isBold: true
                     ))
+                }
+                Button("Small subtle title") {
+                    toasts.show(KitoToast(title: "Synced", message: "Just now", titleStyle: .small))
+                }
+            }
+            Section("Custom icon") {
+                Button("Trophy icon") {
+                    toasts.show(KitoToast(message: "Achievement unlocked!", style: .success, icon: .custom("trophy.fill")))
+                }
+                Button("No icon") {
+                    toasts.show(KitoToast(message: "Plain text toast", icon: .none))
+                }
+            }
+            Section("Multiple actions (does not auto-dismiss)") {
+                Button("Item removed — Undo / Dismiss") {
+                    toasts.show(KitoToast(
+                        title: "Item removed",
+                        message: "\"Blue Hoodie\" was removed from your cart.",
+                        style: .warning,
+                        actions: [
+                            KitoToastAction(title: "Undo", role: .primary) {
+                                toasts.show("Restored", style: .success)
+                            },
+                            KitoToastAction(title: "Dismiss", role: .cancel) {},
+                        ]
+                    ))
+                }
+            }
+            Section("Custom accent color") {
+                Button("Purple, independent of style") {
+                    toasts.show(KitoToast(message: "Achievement unlocked", icon: .custom("star.fill"), accentColor: .purple))
                 }
             }
             Section("Queueing") {
