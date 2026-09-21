@@ -34,6 +34,7 @@
 		852026E20741D51C40EA0B9D /* KitoSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */; };
 		85F5876E0D842990B67891B5 /* ControlCenterDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */; };
 		864BFA79631B204E60A18881 /* SettingsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5770CBE3635475023C1A28 /* SettingsDemo.swift */; };
+		8B789BD84A157600871C4FED /* KitoImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 7E8359FA38E5919F48CBA427 /* KitoImageLoader */; };
 		8BD31DFF1FE9A769FF07D9C6 /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
 		8E26063F36A7CBAB2A4165ED /* KitoFormatting in Frameworks */ = {isa = PBXBuildFile; productRef = 6C747074769820899D6152A5 /* KitoFormatting */; };
 		95599468A98CAE537B5CA05F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A96010E3E751D70603BB92 /* ContentView.swift */; };
@@ -49,9 +50,12 @@
 		C8A3BDE2A9AF9FB6CD2B49F0 /* ValidationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */; };
 		C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */; };
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EA3940AB2D62114C884F977C /* KitoIslandBar in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD5D13482A5A7BE4ED8D37D /* KitoIslandBar */; };
+		EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */; };
 		F36BE621753A3AE3235CFF13 /* LoadersDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */; };
 		F371E674D35DE87891034036 /* KitoMediaPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 91301461F3BEB9E2755E4A3C /* KitoMediaPicker */; };
 		F958B3D3BEC4FBE15E357D2A /* KitoOrderTracking in Frameworks */ = {isa = PBXBuildFile; productRef = 3473984A86FABBE5AF6C266F /* KitoOrderTracking */; };
+		FB636B3EC7F1D8389FD8F025 /* IslandBarDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0551E89A202E35643275AA23 /* IslandBarDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,12 +84,14 @@
 
 /* Begin PBXFileReference section */
 		0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingDemo.swift; sourceTree = "<group>"; };
+		0551E89A202E35643275AA23 /* IslandBarDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandBarDemo.swift; sourceTree = "<group>"; };
 		088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingDemo.swift; sourceTree = "<group>"; };
 		0ADC1EDD89FCF6D61EAEB810 /* KitoPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPermissions; path = ../../KitoPermissions; sourceTree = SOURCE_ROOT; };
 		159F2AB4DA3077DA7EF2010F /* KitoConnectivity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoConnectivity; path = ../../KitoConnectivity; sourceTree = SOURCE_ROOT; };
 		2404FA26020EBE13DB7027A9 /* ModalsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalsDemo.swift; sourceTree = "<group>"; };
 		24A96010E3E751D70603BB92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerDemo.swift; sourceTree = "<group>"; };
+		368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderDemo.swift; sourceTree = "<group>"; };
 		36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDemo.swift; sourceTree = "<group>"; };
 		4D3A9B0E5FC952E25CAF09A2 /* KitoKeychain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoKeychain; path = ../../KitoKeychain; sourceTree = SOURCE_ROOT; };
 		4F8BC81F52EA9CE5F0B26104 /* KitoLoaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoLoaders; path = ../../KitoLoaders; sourceTree = SOURCE_ROOT; };
@@ -121,6 +127,8 @@
 		D356E5C1452EE7EC8C0E124A /* ChartsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDemo.swift; sourceTree = "<group>"; };
 		D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsDemo.swift; sourceTree = "<group>"; };
 		D7D4FBBDF60CEA099474845F /* KitoCharts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCharts; path = ../../KitoCharts; sourceTree = SOURCE_ROOT; };
+		D853F507CC8B34320CE7950E /* KitoIslandBar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoIslandBar; path = ../../KitoIslandBar; sourceTree = SOURCE_ROOT; };
+		DCB7CC51FEEDBDB41592F88E /* KitoImageLoader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoImageLoader; path = ../../KitoImageLoader; sourceTree = SOURCE_ROOT; };
 		E14E3753958497564C54EED0 /* CartDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDemo.swift; sourceTree = "<group>"; };
 		FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +157,8 @@
 				8E26063F36A7CBAB2A4165ED /* KitoFormatting in Frameworks */,
 				6C0F9528FDFE5EBA9A86387F /* KitoConnectivity in Frameworks */,
 				C1993BA0BA67925BF26857FA /* KitoKeychain in Frameworks */,
+				8B789BD84A157600871C4FED /* KitoImageLoader in Frameworks */,
+				EA3940AB2D62114C884F977C /* KitoIslandBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +223,8 @@
 				9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */,
 				088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */,
 				D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */,
+				368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */,
+				0551E89A202E35643275AA23 /* IslandBarDemo.swift */,
 				36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */,
 				C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */,
 				348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */,
@@ -248,6 +260,8 @@
 				74831BC61F938344E282B5B4 /* KitoEmptyStates */,
 				590DB161794038C887195CB0 /* KitoFormatting */,
 				817E98EC4CF8D1308E25617B /* KitoHaptics */,
+				DCB7CC51FEEDBDB41592F88E /* KitoImageLoader */,
+				D853F507CC8B34320CE7950E /* KitoIslandBar */,
 				4D3A9B0E5FC952E25CAF09A2 /* KitoKeychain */,
 				4F8BC81F52EA9CE5F0B26104 /* KitoLoaders */,
 				D1B5BB88FC6024D5FFFD86E5 /* KitoMediaPicker */,
@@ -299,6 +313,8 @@
 				6C747074769820899D6152A5 /* KitoFormatting */,
 				0E7D7C9AB476ED9ECCEBF341 /* KitoConnectivity */,
 				02018EC2D776BB23C87043BE /* KitoKeychain */,
+				7E8359FA38E5919F48CBA427 /* KitoImageLoader */,
+				7FD5D13482A5A7BE4ED8D37D /* KitoIslandBar */,
 			);
 			productName = KitoSample;
 			productReference = 9929D9B074DCB44DBA2649C7 /* KitoSample.app */;
@@ -360,6 +376,8 @@
 				3F39FBBCA789D12BE9E2FB90 /* XCLocalSwiftPackageReference "../../KitoEmptyStates" */,
 				DE3EE8633B1DFF43DB1BCBBF /* XCLocalSwiftPackageReference "../../KitoFormatting" */,
 				84AE6B96A92DDEA97D3B4B72 /* XCLocalSwiftPackageReference "../../KitoHaptics" */,
+				25491FACDD236ADB275DADFD /* XCLocalSwiftPackageReference "../../KitoImageLoader" */,
+				2C402AAA6407F1945B5AA68B /* XCLocalSwiftPackageReference "../../KitoIslandBar" */,
 				F58ED48CA25619AFC73794A4 /* XCLocalSwiftPackageReference "../../KitoKeychain" */,
 				0633C3A2AAD427F0EB0DB1AD /* XCLocalSwiftPackageReference "../../KitoLoaders" */,
 				F72FF83FEB60BC5618C0BCE2 /* XCLocalSwiftPackageReference "../../KitoMediaPicker" */,
@@ -396,6 +414,8 @@
 				193DE2DFE56AF3CDBECF77AF /* EmptyStatesDemo.swift in Sources */,
 				5922BAD594985C3E1C0FDB76 /* FormattingDemo.swift in Sources */,
 				1817931C96BD86A5D23E1206 /* HapticsDemo.swift in Sources */,
+				EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */,
+				FB636B3EC7F1D8389FD8F025 /* IslandBarDemo.swift in Sources */,
 				1F027744F500BCAE18FB99B6 /* KeychainDemo.swift in Sources */,
 				C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */,
 				852026E20741D51C40EA0B9D /* KitoSampleApp.swift in Sources */,
@@ -671,9 +691,17 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../KitoConnectivity;
 		};
+		25491FACDD236ADB275DADFD /* XCLocalSwiftPackageReference "../../KitoImageLoader" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../KitoImageLoader;
+		};
 		26ADDBE79203F5A3BD83E4E7 /* XCLocalSwiftPackageReference "../../KitoValidation" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../KitoValidation;
+		};
+		2C402AAA6407F1945B5AA68B /* XCLocalSwiftPackageReference "../../KitoIslandBar" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../KitoIslandBar;
 		};
 		350A2A93AF886887F26A29B4 /* XCLocalSwiftPackageReference "../../KitoNavigation" */ = {
 			isa = XCLocalSwiftPackageReference;
@@ -785,6 +813,14 @@
 		6C747074769820899D6152A5 /* KitoFormatting */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoFormatting;
+		};
+		7E8359FA38E5919F48CBA427 /* KitoImageLoader */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoImageLoader;
+		};
+		7FD5D13482A5A7BE4ED8D37D /* KitoIslandBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoIslandBar;
 		};
 		8D1FD6E263072E981EB0C124 /* KitoEmptyStates */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -24,6 +24,8 @@ packages:
   KitoFormatting: { path: ../../KitoFormatting }
   KitoConnectivity: { path: ../../KitoConnectivity }
   KitoKeychain: { path: ../../KitoKeychain }
+  KitoImageLoader: { path: ../../KitoImageLoader }
+  KitoIslandBar: { path: ../../KitoIslandBar }
 targets:
   KitoSample:
     type: application
@@ -81,6 +83,8 @@ targets:
       - package: KitoFormatting
       - package: KitoConnectivity
       - package: KitoKeychain
+      - package: KitoImageLoader
+      - package: KitoIslandBar
       - target: OrderTrackingWidgetExtension
         embed: true
 
