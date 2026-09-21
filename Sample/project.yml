@@ -33,6 +33,7 @@ targets:
     info:
       path: Info.plist
       properties:
+        CFBundleDisplayName: KitoDevKit
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false

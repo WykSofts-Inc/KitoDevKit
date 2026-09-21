@@ -70,7 +70,7 @@ struct ContentView: View {
             List {
                 Section {
                     VStack(alignment: .leading, spacing: theme.spacing.xs) {
-                        Text("Kito").font(theme.typography.displayMedium)
+                        Text("KitoDevKit").font(theme.typography.displayMedium)
                         Text("Every kit in this ecosystem, live and interactive.")
                             .font(theme.typography.body)
                             .foregroundStyle(theme.colors.onBackground.opacity(0.6))
@@ -97,7 +97,14 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("KitoSample")
+            .navigationTitle("KitoDevKit")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: SettingsDemo()) {
+                        Image(systemName: "gearshape.fill")
+                    }
+                }
+            }
         }
     }
 }
