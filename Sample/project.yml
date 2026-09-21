@@ -40,6 +40,9 @@ targets:
         NSCameraUsageDescription: "KitoSample demos KitoMediaPicker's camera source."
         NSPhotoLibraryAddUsageDescription: "KitoSample demos saving images to Photos via KitoMediaPicker."
         NSFaceIDUsageDescription: "KitoSample demos KitoBiometrics."
+        # Required for the app to be able to start a Live Activity at all —
+        # without this key, Activity.request() throws, silently, every time.
+        NSSupportsLiveActivities: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample
@@ -65,3 +68,28 @@ targets:
       - package: KitoFormatting
       - package: KitoConnectivity
       - package: KitoKeychain
+      - target: OrderTrackingWidgetExtension
+        embed: true
+
+  OrderTrackingWidgetExtension:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: WidgetExtension/Sources
+    info:
+      path: WidgetExtension/Info.plist
+      properties:
+        CFBundleDisplayName: OrderTrackingWidget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample.OrderTrackingWidget
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        SKIP_INSTALL: "YES"
+    dependencies:
+      - package: KitoOrderTracking
+      - package: KitoCore

@@ -73,6 +73,13 @@ private struct ManualStageDemo: View {
         }
         .navigationTitle("Tap a stage above")
         .navigationBarTitleDisplayMode(.inline)
+        // Live Activity only, no polling loop — this screen drives every
+        // update itself via setUpdate. Requires NSSupportsLiveActivities in
+        // Info.plist and the OrderTrackingWidgetExtension target to actually
+        // show on the Lock Screen / Dynamic Island — see
+        // KitoOrderTracking/docs/INTEGRATION.md.
+        .onAppear { viewModel.startLiveActivityOnly() }
+        .onDisappear { viewModel.stopTracking() }
     }
 }
 
@@ -107,14 +114,38 @@ private struct OrderTrackingStyleVariantsDemo: View {
                     ]
                 ))
             }
-            NavigationLink("Compact timeline") {
-                StyledExample(style: KitoOrderTrackingStyle(accentColor: .green, compactTimeline: true))
-            }
             NavigationLink("No ETA, no courier row") {
                 StyledExample(style: KitoOrderTrackingStyle(showsCourierRow: false, showsETA: false))
             }
             NavigationLink("Large corner radius, teal") {
                 StyledExample(style: KitoOrderTrackingStyle(accentColor: .teal, cornerRadius: 32))
+            }
+
+            Section("Timeline layout — every option") {
+                NavigationLink("Vertical (default)") {
+                    StyledExample(style: KitoOrderTrackingStyle(timelineLayout: .vertical))
+                }
+                NavigationLink("Horizontal") {
+                    StyledExample(style: KitoOrderTrackingStyle(accentColor: .indigo, timelineLayout: .horizontal))
+                }
+                NavigationLink("Compact (no labels/icons)") {
+                    StyledExample(style: KitoOrderTrackingStyle(accentColor: .green, timelineLayout: .compact))
+                }
+                NavigationLink("Stepper (numbered circles)") {
+                    StyledExample(style: KitoOrderTrackingStyle(accentColor: .orange, timelineLayout: .stepper))
+                }
+            }
+
+            Section("Terminal states — always get their own row") {
+                NavigationLink("Delivered") {
+                    StyledExample(style: .default, stageIndex: 4)
+                }
+                NavigationLink("Cancelled") {
+                    StyledExample(style: .default, stageIndex: 5)
+                }
+                Text("Both bypass whatever timelineLayout is set — a finished order gets one clear moment, not just the last row in a list.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
             }
         }
         .navigationTitle("Style variants")
@@ -123,13 +154,21 @@ private struct OrderTrackingStyleVariantsDemo: View {
 
 private struct StyledExample: View {
     let style: KitoOrderTrackingStyle
-    @State private var viewModel = KitoOrderTrackingViewModel(
-        orderID: "style-demo",
-        merchantName: "Kito Kitchen",
-        initial: stageSamples[3].update, // .outForDelivery — shows ETA + courier row
-        refreshInterval: 999_999,
-        fetchUpdate: { stageSamples[3].update }
-    )
+    let stageIndex: Int
+    @State private var viewModel: KitoOrderTrackingViewModel
+
+    init(style: KitoOrderTrackingStyle, stageIndex: Int = 3) {
+        self.style = style
+        self.stageIndex = stageIndex
+        let sample = stageSamples[stageIndex].update
+        _viewModel = State(initialValue: KitoOrderTrackingViewModel(
+            orderID: "style-demo",
+            merchantName: "Kito Kitchen",
+            initial: sample,
+            refreshInterval: 999_999,
+            fetchUpdate: { sample }
+        ))
+    }
 
     var body: some View {
         KitoOrderTrackingScreen(viewModel: viewModel, style: style, startsTrackingOnAppear: false)

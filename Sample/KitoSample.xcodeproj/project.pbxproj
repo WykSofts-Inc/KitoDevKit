@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		035009C20966E37EC153D1DB /* ConnectivityDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */; };
 		03B076F1800BBF24A167460A /* NavigationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */; };
+		0ADB858B67F2428046D483DA /* OrderTrackingWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */; };
 		121CDA8745A6115BAC5D875E /* MediaPickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */; };
 		1817931C96BD86A5D23E1206 /* HapticsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */; };
 		192BF41F161536F73F228B3F /* KitoValidation in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7FFF789DC791F610B2703C /* KitoValidation */; };
 		193DE2DFE56AF3CDBECF77AF /* EmptyStatesDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */; };
+		1AC0D7C11054118A13C8D247 /* KitoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 02EBA554E48E02F7BEBCF876 /* KitoCore */; };
 		1D7DF38808C0887E419AE37A /* KitoPermissions in Frameworks */ = {isa = PBXBuildFile; productRef = A3AA60AA0ACCC591DFD6888E /* KitoPermissions */; };
 		1F027744F500BCAE18FB99B6 /* KeychainDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */; };
 		2FF30DB57066EC72F97893A2 /* KitoHaptics in Frameworks */ = {isa = PBXBuildFile; productRef = AA7149395B31B575CA058594 /* KitoHaptics */; };
@@ -39,14 +41,40 @@
 		A33471384EA02C747CD1CBB5 /* KitoLoaders in Frameworks */ = {isa = PBXBuildFile; productRef = CA244E2CBB7678240B35EB05 /* KitoLoaders */; };
 		A6BDF8FEBBBFB6A277197010 /* OrderTrackingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */; };
 		A6D0E6DFB47803ECF89D6116 /* CartDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E3753958497564C54EED0 /* CartDemo.swift */; };
+		A8F76D56122F2C6F6A12B5F0 /* KitoOrderTracking in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE1B3D9B05A9D1A40A5FF0 /* KitoOrderTracking */; };
 		BE90CAB96B2287F94FD1C220 /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
 		C635F7C01C88BA890A7E4625 /* ToastsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0EA422E395A2050E9B369 /* ToastsDemo.swift */; };
 		C8A3BDE2A9AF9FB6CD2B49F0 /* ValidationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */; };
 		C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */; };
+		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F36BE621753A3AE3235CFF13 /* LoadersDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */; };
 		F371E674D35DE87891034036 /* KitoOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = C226E69F5FAADDC2D7C95CAF /* KitoOnboarding */; };
 		F958B3D3BEC4FBE15E357D2A /* KitoFormatting in Frameworks */ = {isa = PBXBuildFile; productRef = 6C747074769820899D6152A5 /* KitoFormatting */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC257229C79418F843A23163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5316860362C26278B10BA49A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93A899B8AD693FAE62BA5F40;
+			remoteInfo = OrderTrackingWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		01A1235A41003A3574280651 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingDemo.swift; sourceTree = "<group>"; };
@@ -77,11 +105,13 @@
 		9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoAppSettingsViewModel.swift; sourceTree = "<group>"; };
 		9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesDemo.swift; sourceTree = "<group>"; };
 		A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDemo.swift; sourceTree = "<group>"; };
+		A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetBundle.swift; sourceTree = "<group>"; };
 		A53FB297159A3C5BDF6F5B92 /* KitoModals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoModals; path = ../../KitoModals; sourceTree = SOURCE_ROOT; };
 		AA40E3ADAA6EF3284FFD3401 /* KitoValidation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoValidation; path = ../../KitoValidation; sourceTree = SOURCE_ROOT; };
 		AF5770CBE3635475023C1A28 /* SettingsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDemo.swift; sourceTree = "<group>"; };
 		C39AC08B6A6776FF3EA2B6E0 /* KitoCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCore; path = ../../KitoCore; sourceTree = SOURCE_ROOT; };
 		C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadersDemo.swift; sourceTree = "<group>"; };
+		CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OrderTrackingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D075836D0B5E896A055E4260 /* KitoBiometrics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoBiometrics; path = ../../KitoBiometrics; sourceTree = SOURCE_ROOT; };
 		D1B5BB88FC6024D5FFFD86E5 /* KitoMediaPicker */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoMediaPicker; path = ../../KitoMediaPicker; sourceTree = SOURCE_ROOT; };
 		D356E5C1452EE7EC8C0E124A /* ChartsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDemo.swift; sourceTree = "<group>"; };
@@ -117,6 +147,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E09361B135042E2D0DDEC34A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8F76D56122F2C6F6A12B5F0 /* KitoOrderTracking in Frameworks */,
+				1AC0D7C11054118A13C8D247 /* KitoCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -124,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				9929D9B074DCB44DBA2649C7 /* KitoSample.app */,
+				CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +173,7 @@
 			children = (
 				C7B0084160F03BA557D1C7B7 /* Packages */,
 				8944869BB0C17554C79118EE /* Sources */,
+				C19929B1AB36DA7E00C4EE2B /* WidgetExtension */,
 				2FFD9ABFFA006B0DEFABAEE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,6 +185,14 @@
 				9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */,
 				96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */,
 				B02A67230D7C238E5DDF68DC /* Demos */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		967D2751C6F6FBCAC8D6293D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -171,6 +220,14 @@
 				88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */,
 			);
 			path = Demos;
+			sourceTree = "<group>";
+		};
+		C19929B1AB36DA7E00C4EE2B /* WidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				967D2751C6F6FBCAC8D6293D /* Sources */,
+			);
+			path = WidgetExtension;
 			sourceTree = "<group>";
 		};
 		C7B0084160F03BA557D1C7B7 /* Packages */ = {
@@ -207,10 +264,12 @@
 			buildPhases = (
 				C130AD84DE0AA60714208C00 /* Sources */,
 				2210265498E7F66BA57F846A /* Frameworks */,
+				01A1235A41003A3574280651 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				39CA4AD410AA752CE82753C4 /* PBXTargetDependency */,
 			);
 			name = KitoSample;
 			packageProductDependencies = (
@@ -237,6 +296,26 @@
 			productReference = 9929D9B074DCB44DBA2649C7 /* KitoSample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		93A899B8AD693FAE62BA5F40 /* OrderTrackingWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35E1AD5A1F750B5D47C0CD8E /* Build configuration list for PBXNativeTarget "OrderTrackingWidgetExtension" */;
+			buildPhases = (
+				F25201DB27A8DF9BBF0A9A16 /* Sources */,
+				E09361B135042E2D0DDEC34A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderTrackingWidgetExtension;
+			packageProductDependencies = (
+				5EDE1B3D9B05A9D1A40A5FF0 /* KitoOrderTracking */,
+				02EBA554E48E02F7BEBCF876 /* KitoCore */,
+			);
+			productName = OrderTrackingWidgetExtension;
+			productReference = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,6 +326,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					4972B561751D98293E608ABA = {
+						ProvisioningStyle = Automatic;
+					};
+					93A899B8AD693FAE62BA5F40 = {
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -286,6 +368,7 @@
 			projectRoot = "";
 			targets = (
 				4972B561751D98293E608ABA /* KitoSample */,
+				93A899B8AD693FAE62BA5F40 /* OrderTrackingWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -319,7 +402,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F25201DB27A8DF9BBF0A9A16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADB858B67F2428046D483DA /* OrderTrackingWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39CA4AD410AA752CE82753C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93A899B8AD693FAE62BA5F40 /* OrderTrackingWidgetExtension */;
+			targetProxy = AC257229C79418F843A23163 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		17BB26A010F049A057883F00 /* Release */ = {
@@ -441,6 +540,25 @@
 			};
 			name = Debug;
 		};
+		7BAF61F839D4932B9BC7E0D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyksoftsinc.kitosample.OrderTrackingWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		B53208E8A7372DC15244FA2C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,9 +597,37 @@
 			};
 			name = Debug;
 		};
+		DB317E44F7B5D0A3DFC0D19A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyksoftsinc.kitosample.OrderTrackingWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		35E1AD5A1F750B5D47C0CD8E /* Build configuration list for PBXNativeTarget "OrderTrackingWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BAF61F839D4932B9BC7E0D9 /* Debug */,
+				DB317E44F7B5D0A3DFC0D19A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		677DA1F09F4CB475099D3438 /* Build configuration list for PBXProject "KitoSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -582,6 +728,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoKeychain;
 		};
+		02EBA554E48E02F7BEBCF876 /* KitoCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoCore;
+		};
 		0E7D7C9AB476ED9ECCEBF341 /* KitoConnectivity */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoConnectivity;
@@ -605,6 +755,10 @@
 		378714DA44266EDE9BAA76A8 /* KitoCart */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoCart;
+		};
+		5EDE1B3D9B05A9D1A40A5FF0 /* KitoOrderTracking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoOrderTracking;
 		};
 		61A702673D0A7FA281333173 /* KitoBiometrics */ = {
 			isa = XCSwiftPackageProductDependency;
