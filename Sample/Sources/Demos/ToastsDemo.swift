@@ -8,6 +8,7 @@
 
 import SwiftUI
 import KitoToasts
+import KitoCore
 
 struct ToastsDemo: View {
     @Environment(KitoToastCenter.self) private var toasts
@@ -60,6 +61,19 @@ struct ToastsDemo: View {
             Section("Custom accent color") {
                 Button("Purple, independent of style") {
                     toasts.show(KitoToast(message: "Achievement unlocked", icon: .custom("star.fill"), accentColor: .purple))
+                }
+            }
+            Section("Background — color, gradient, image") {
+                Button("Gradient background") {
+                    toasts.show(KitoToast(
+                        title: "Level up!",
+                        message: "You've reached level 12.",
+                        icon: .custom("bolt.fill"),
+                        backgroundStyle: .gradient(.linear(.purple, .indigo))
+                    ))
+                }
+                Button("Solid color background") {
+                    toasts.show(KitoToast(message: "Saved to favorites", icon: .custom("heart.fill"), backgroundStyle: .color(.pink.opacity(0.85))))
                 }
             }
             Section("Queueing") {
