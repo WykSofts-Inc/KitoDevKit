@@ -43,7 +43,7 @@ struct ContentView: View {
             KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
         ]),
         KitoCatalogSection(title: "Data & Charts", entries: [
-            KitoCatalogEntry("Charts", "Line, bar, pie/donut, and 3D bars", systemImage: "chart.xyaxis.line") { ChartsDemo() },
+            KitoCatalogEntry("Charts", "Line, bar, pie/donut, and interactive 3D bars/pie", systemImage: "chart.xyaxis.line") { ChartsDemo() },
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
