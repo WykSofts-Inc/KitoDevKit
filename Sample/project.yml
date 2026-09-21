@@ -1,0 +1,66 @@
+name: KitoSample
+options:
+  bundleIdPrefix: com.wyksoftsinc
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+packages:
+  KitoCore: { path: ../../KitoCore }
+  KitoCharts: { path: ../../KitoCharts }
+  KitoLoaders: { path: ../../KitoLoaders }
+  KitoToasts: { path: ../../KitoToasts }
+  KitoModals: { path: ../../KitoModals }
+  KitoEmptyStates: { path: ../../KitoEmptyStates }
+  KitoHaptics: { path: ../../KitoHaptics }
+  KitoValidation: { path: ../../KitoValidation }
+  KitoNavigation: { path: ../../KitoNavigation }
+  KitoPermissions: { path: ../../KitoPermissions }
+  KitoBiometrics: { path: ../../KitoBiometrics }
+  KitoMediaPicker: { path: ../../KitoMediaPicker }
+  KitoOnboarding: { path: ../../KitoOnboarding }
+  KitoCart: { path: ../../KitoCart }
+  KitoOrderTracking: { path: ../../KitoOrderTracking }
+  KitoFormatting: { path: ../../KitoFormatting }
+  KitoConnectivity: { path: ../../KitoConnectivity }
+  KitoKeychain: { path: ../../KitoKeychain }
+targets:
+  KitoSample:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Sources
+    info:
+      path: Info.plist
+      properties:
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        NSCameraUsageDescription: "KitoSample demos KitoMediaPicker's camera source."
+        NSPhotoLibraryAddUsageDescription: "KitoSample demos saving images to Photos via KitoMediaPicker."
+        NSFaceIDUsageDescription: "KitoSample demos KitoBiometrics."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+    dependencies:
+      - package: KitoCore
+      - package: KitoCharts
+      - package: KitoLoaders
+      - package: KitoToasts
+      - package: KitoModals
+      - package: KitoEmptyStates
+      - package: KitoHaptics
+      - package: KitoValidation
+      - package: KitoNavigation
+      - package: KitoPermissions
+      - package: KitoBiometrics
+      - package: KitoMediaPicker
+      - package: KitoOnboarding
+      - package: KitoCart
+      - package: KitoOrderTracking
+      - package: KitoFormatting
+      - package: KitoConnectivity
+      - package: KitoKeychain
