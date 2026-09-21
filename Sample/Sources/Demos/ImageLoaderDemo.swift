@@ -36,10 +36,12 @@ struct ImageLoaderDemo: View {
                         Button(preset.name) { urlText = preset.url; reloadToken = UUID() }
                             .font(.caption)
                             .buttonStyle(.bordered)
+                            .tint(theme.colors.primary)
                     }
                 }
                 Button("Replay load — instant if cached, pair with Clear Cache below to see a real fetch") { reloadToken = UUID() }
                     .font(.caption)
+                    .foregroundStyle(theme.colors.primary)
             }
 
             Section("Loading placeholder style") {
@@ -49,6 +51,7 @@ struct ImageLoaderDemo: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                .tint(theme.colors.primary)
             }
 
             Section("Result — KitoImageView, memory+disk cached") {
@@ -70,6 +73,7 @@ struct ImageLoaderDemo: View {
 
             Section("Cache") {
                 Button("Clear memory cache") { KitoImageLoader.shared.clearMemoryCache() }
+                    .foregroundStyle(theme.colors.primary)
                 Button("Clear disk cache", role: .destructive) {
                     Task { await KitoImageLoader.shared.clearDiskCache() }
                 }
