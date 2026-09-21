@@ -41,6 +41,17 @@ targets:
         NSCameraUsageDescription: "KitoSample demos KitoMediaPicker's camera source."
         NSPhotoLibraryAddUsageDescription: "KitoSample demos saving images to Photos via KitoMediaPicker."
         NSFaceIDUsageDescription: "KitoSample demos KitoBiometrics."
+        NSPhotoLibraryUsageDescription: "KitoSample demos KitoPermissions' Photo Library request."
+        NSMicrophoneUsageDescription: "KitoSample demos KitoPermissions' Microphone request."
+        NSLocationWhenInUseUsageDescription: "KitoSample demos KitoPermissions' Location request."
+        NSLocationAlwaysAndWhenInUseUsageDescription: "KitoSample demos KitoPermissions' Location Always request."
+        NSContactsUsageDescription: "KitoSample demos KitoPermissions' Contacts request."
+        NSCalendarsFullAccessUsageDescription: "KitoSample demos KitoPermissions' Calendar request."
+        NSRemindersFullAccessUsageDescription: "KitoSample demos KitoPermissions' Reminders request."
+        NSSpeechRecognitionUsageDescription: "KitoSample demos KitoPermissions' Speech Recognition request."
+        NSAppleMusicUsageDescription: "KitoSample demos KitoPermissions' Media Library request."
+        NSBluetoothAlwaysUsageDescription: "KitoSample demos KitoPermissions' Bluetooth request."
+        NSUserTrackingUsageDescription: "KitoSample demos KitoPermissions' App Tracking request."
         # Required for the app to be able to start a Live Activity at all —
         # without this key, Activity.request() throws, silently, every time.
         NSSupportsLiveActivities: true
