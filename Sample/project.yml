@@ -6,6 +6,7 @@ options:
   createIntermediateGroups: true
 packages:
   KitoCore: { path: ../../KitoCore }
+  KitoButtons: { path: ../../KitoButtons }
   KitoCharts: { path: ../../KitoCharts }
   KitoLoaders: { path: ../../KitoLoaders }
   KitoToasts: { path: ../../KitoToasts }
@@ -51,6 +52,7 @@ targets:
         CODE_SIGN_STYLE: Automatic
     dependencies:
       - package: KitoCore
+      - package: KitoButtons
       - package: KitoCharts
       - package: KitoLoaders
       - package: KitoToasts
