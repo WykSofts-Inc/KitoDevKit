@@ -103,10 +103,10 @@ struct CallIslandSample: View {
         } expanded: {
             HStack(spacing: 12) {
                 Circle().fill(LinearGradient(colors: [.teal, .blue], startPoint: .top, endPoint: .bottom)).frame(width: 46, height: 46)
-                    .overlay(Text("AM").font(.headline).foregroundStyle(.white))
+                    .overlay(Text("WN").font(.headline).foregroundStyle(.white))
                 VStack(alignment: .leading, spacing: 2) {
                     Text(connected ? clock(seconds) : "mobile").font(.caption).foregroundStyle(.white.opacity(0.6)).monospacedDigit()
-                    Text("Amina Mwangi").font(.headline).foregroundStyle(.white)
+                    Text("Wycliff N").font(.headline).foregroundStyle(.white)
                 }
                 Spacer()
                 if connected {
