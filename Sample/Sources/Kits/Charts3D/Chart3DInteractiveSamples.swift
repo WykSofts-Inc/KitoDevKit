@@ -82,9 +82,7 @@ struct ShuffleBarsSample: View {
             } label: {
                 Label("Shuffle", systemImage: "shuffle").frame(maxWidth: .infinity)
             }
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.capsule)
-            .tint(.primary)
+            .buttonStyle(GalleryPrimaryButtonStyle())
         }
     }
 }

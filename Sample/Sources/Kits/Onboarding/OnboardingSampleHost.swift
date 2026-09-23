@@ -50,9 +50,7 @@ struct OnboardingSampleHost: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 44)
             }
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.capsule)
-            .tint(.primary)
+            .buttonStyle(GalleryPrimaryButtonStyle())
         }
         .onAppear {
             preview.onFinish = {

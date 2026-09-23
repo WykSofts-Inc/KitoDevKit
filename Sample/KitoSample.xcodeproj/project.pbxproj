@@ -19,6 +19,7 @@
 		1867B92150AC04D23C9CAE4E /* ButtonsGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33034D2A0B2E1E4765790D59 /* ButtonsGallery.swift */; };
 		192BF41F161536F73F228B3F /* KitoModals in Frameworks */ = {isa = PBXBuildFile; productRef = 35A3AF68ECD5438D5A7D1EE4 /* KitoModals */; };
 		193DE2DFE56AF3CDBECF77AF /* EmptyStatesDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */; };
+		1A3CC5A6AA8A766B8774AC67 /* IslandActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8267E4364CC2801FF1BF51 /* IslandActivities.swift */; };
 		1AC0D7C11054118A13C8D247 /* KitoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 02EBA554E48E02F7BEBCF876 /* KitoCore */; };
 		1D7DF38808C0887E419AE37A /* KitoHaptics in Frameworks */ = {isa = PBXBuildFile; productRef = AA7149395B31B575CA058594 /* KitoHaptics */; };
 		1F027744F500BCAE18FB99B6 /* KeychainDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */; };
@@ -64,6 +65,8 @@
 		C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */; };
 		C8EF037C7B0091CE3940975A /* SampleCatalog+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837BA288474F8019F2893AA /* SampleCatalog+Generated.swift */; };
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D8261C7CEA94C24E71BF059C /* IslandStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58341CE205EDAD33DF94848 /* IslandStage.swift */; };
+		DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD684B6BD38C5F0270925B /* IslandSamples.swift */; };
 		EA3940AB2D62114C884F977C /* KitoKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 02018EC2D776BB23C87043BE /* KitoKeychain */; };
 		EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */; };
 		EC56A575767FC6548E2F9650 /* FieldFormDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35925B2E0FF6311947BAB1C2 /* FieldFormDemos.swift */; };
@@ -75,7 +78,6 @@
 		F7F1AAFBD8B2AA87DD38FEAF /* OnboardingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9309F6204597E003F44517 /* OnboardingSamples.swift */; };
 		F8279F02C02071D873A359D8 /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1BB3BF85532F27D935D6F2 /* ChartsData.swift */; };
 		F958B3D3BEC4FBE15E357D2A /* KitoOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = C226E69F5FAADDC2D7C95CAF /* KitoOnboarding */; };
-		FB636B3EC7F1D8389FD8F025 /* IslandBarDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0551E89A202E35643275AA23 /* IslandBarDemo.swift */; };
 		FF0B8A8C96243D3572FA2B3C /* FieldSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E40B66B99800FE9214E002 /* FieldSample.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,11 +107,11 @@
 
 /* Begin PBXFileReference section */
 		0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingDemo.swift; sourceTree = "<group>"; };
-		0551E89A202E35643275AA23 /* IslandBarDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandBarDemo.swift; sourceTree = "<group>"; };
 		088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingDemo.swift; sourceTree = "<group>"; };
 		0ADC1EDD89FCF6D61EAEB810 /* KitoPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPermissions; path = ../../KitoPermissions; sourceTree = SOURCE_ROOT; };
 		0B1BB3BF85532F27D935D6F2 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
 		159F2AB4DA3077DA7EF2010F /* KitoConnectivity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoConnectivity; path = ../../KitoConnectivity; sourceTree = SOURCE_ROOT; };
+		1BFD684B6BD38C5F0270925B /* IslandSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandSamples.swift; sourceTree = "<group>"; };
 		2404FA26020EBE13DB7027A9 /* ModalsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalsDemo.swift; sourceTree = "<group>"; };
 		24A96010E3E751D70603BB92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2837BA288474F8019F2893AA /* SampleCatalog+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleCatalog+Generated.swift"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		736CF316E13C41E5246FA96F /* KitoToasts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoToasts; path = ../../KitoToasts; sourceTree = SOURCE_ROOT; };
 		74831BC61F938344E282B5B4 /* KitoEmptyStates */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoEmptyStates; path = ../../KitoEmptyStates; sourceTree = SOURCE_ROOT; };
 		75EE79A96C66B98E4956A501 /* KitoOrderTracking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoOrderTracking; path = ../../KitoOrderTracking; sourceTree = SOURCE_ROOT; };
+		7A8267E4364CC2801FF1BF51 /* IslandActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandActivities.swift; sourceTree = "<group>"; };
 		7DA0EA422E395A2050E9B369 /* ToastsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsDemo.swift; sourceTree = "<group>"; };
 		7E9309F6204597E003F44517 /* OnboardingSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSamples.swift; sourceTree = "<group>"; };
 		8165B2C284A818D240F97FC9 /* KitoCart */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCart; path = ../../KitoCart; sourceTree = SOURCE_ROOT; };
@@ -151,6 +154,7 @@
 		A53FB297159A3C5BDF6F5B92 /* KitoModals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoModals; path = ../../KitoModals; sourceTree = SOURCE_ROOT; };
 		AA40E3ADAA6EF3284FFD3401 /* KitoValidation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoValidation; path = ../../KitoValidation; sourceTree = SOURCE_ROOT; };
 		AF5770CBE3635475023C1A28 /* SettingsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDemo.swift; sourceTree = "<group>"; };
+		B58341CE205EDAD33DF94848 /* IslandStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandStage.swift; sourceTree = "<group>"; };
 		B7EE8D8B3ADE97C359089522 /* LineChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartSamples.swift; sourceTree = "<group>"; };
 		B89D45DFDD3718DCE88CD05C /* BarPieChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarPieChartSamples.swift; sourceTree = "<group>"; };
 		C09047156BF52F2541DD0E90 /* FieldSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSampleCatalog.swift; sourceTree = "<group>"; };
@@ -222,6 +226,16 @@
 				CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		34C286FB9E1D34EDDFFDFCBE /* Island */ = {
+			isa = PBXGroup;
+			children = (
+				7A8267E4364CC2801FF1BF51 /* IslandActivities.swift */,
+				1BFD684B6BD38C5F0270925B /* IslandSamples.swift */,
+				B58341CE205EDAD33DF94848 /* IslandStage.swift */,
+			);
+			path = Island;
 			sourceTree = "<group>";
 		};
 		3799AADC676A2AE61DD60C93 /* Onboarding */ = {
@@ -309,6 +323,7 @@
 				72782E68CAB1295AC1B5A778 /* Charts */,
 				83DB04DC7D23EADC7DDF6F27 /* Charts3D */,
 				637D740DBD8CF20F7B509D83 /* Fields */,
+				34C286FB9E1D34EDDFFDFCBE /* Island */,
 				3799AADC676A2AE61DD60C93 /* Onboarding */,
 			);
 			path = Kits;
@@ -333,7 +348,6 @@
 				088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */,
 				D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */,
 				368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */,
-				0551E89A202E35643275AA23 /* IslandBarDemo.swift */,
 				36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */,
 				C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */,
 				348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */,
@@ -537,7 +551,9 @@
 				74DB720436D05A5D5065EE7A /* GalleryComponents.swift in Sources */,
 				1817931C96BD86A5D23E1206 /* HapticsDemo.swift in Sources */,
 				EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */,
-				FB636B3EC7F1D8389FD8F025 /* IslandBarDemo.swift in Sources */,
+				1A3CC5A6AA8A766B8774AC67 /* IslandActivities.swift in Sources */,
+				DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */,
+				D8261C7CEA94C24E71BF059C /* IslandStage.swift in Sources */,
 				1F027744F500BCAE18FB99B6 /* KeychainDemo.swift in Sources */,
 				02D3BE382E20144AC942EA5C /* KitGallery.swift in Sources */,
 				C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */,
