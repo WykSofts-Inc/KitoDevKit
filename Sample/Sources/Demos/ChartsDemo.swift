@@ -58,7 +58,7 @@ struct ChartsDemo: View {
             NavigationLink("Line charts") { LineChartsDemo() }
             NavigationLink("Bar charts") { BarChartsDemo() }
             NavigationLink("Pie & donut charts") { PieChartsDemo() }
-            NavigationLink("3D charts") { ThreeDChartsDemo() }
+            NavigationLink("3D charts (\(Chart3DSampleCatalog.all.count) samples)") { Chart3DGallery() }
             NavigationLink("Theming (KitoChartTheme)") { ChartThemingDemo() }
         }
         .navigationTitle("Charts")
@@ -181,81 +181,6 @@ private struct PieChartsDemo: View {
             .padding()
         }
         .navigationTitle("Pie & donut")
-    }
-}
-
-// MARK: - 3D charts
-
-private struct ThreeDChartsDemo: View {
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                group("4 bars", subtitle: "Drag to rotate, pinch to zoom, two-finger pan") {
-                    Chart3DView(viewModel: Chart3DViewModel(points: coloredPoints)).frame(height: 240)
-                }
-                group("12 bars", subtitle: "Same interaction, denser dataset") {
-                    Chart3DView(viewModel: Chart3DViewModel(points: manyPoints)).frame(height: 240)
-                }
-                group("3D pie", subtitle: "Extruded wedges (SCNShape), not a flat texture") {
-                    Chart3DPieView(viewModel: Chart3DPieViewModel(points: coloredPoints)).frame(height: 260)
-                }
-                group("3D donut", subtitle: "innerRadiusFraction: 0.55") {
-                    Chart3DPieView(viewModel: Chart3DPieViewModel(points: coloredPoints, innerRadiusFraction: 0.55)).frame(height: 260)
-                }
-                group("3D pie — dense dataset", subtitle: "12 wedges") {
-                    Chart3DPieView(viewModel: Chart3DPieViewModel(points: manyPoints)).frame(height: 260)
-                }
-                group("3D pie — custom palette", subtitle: "Passed into the view model directly — SceneKit content doesn't read .kitoChartTheme(_:)") {
-                    Chart3DPieView(viewModel: Chart3DPieViewModel(
-                        points: manyPoints,
-                        theme: KitoChartTheme(categoricalPalette: [.indigo, .cyan, .mint, .yellow, .pink, .orange])
-                    ))
-                    .frame(height: 260)
-                }
-                group("3D pie — interactive extrusion depth", subtitle: "Drag to change the wedge thickness live") {
-                    Interactive3DPieDepthDemo()
-                }
-                group("3D pie — interactive inner radius", subtitle: "Drag to morph pie into a donut live") {
-                    Interactive3DPieRadiusDemo()
-                }
-            }
-            .padding()
-        }
-        .navigationTitle("3D charts")
-    }
-}
-
-private struct Interactive3DPieDepthDemo: View {
-    @State private var viewModel = Chart3DPieViewModel(points: coloredPoints, extrusionDepth: 0.6)
-    @State private var depth: Double = 0.6
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Chart3DPieView(viewModel: viewModel).frame(height: 240)
-            Slider(value: $depth, in: 0.1...1.6, step: 0.05) { Text("Depth") }
-                .onChange(of: depth) { _, newValue in
-                    viewModel.extrusionDepth = newValue
-                    viewModel.rebuild()
-                }
-            Text("Extrusion depth: \(depth, specifier: "%.2f")").font(.caption2).foregroundStyle(.secondary)
-        }
-    }
-}
-
-private struct Interactive3DPieRadiusDemo: View {
-    @State private var viewModel = Chart3DPieViewModel(points: coloredPoints)
-    @State private var innerRadius: Double = 0
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Chart3DPieView(viewModel: viewModel).frame(height: 240)
-            Slider(value: $innerRadius, in: 0...0.9, step: 0.05) { Text("Inner radius") }
-                .onChange(of: innerRadius) { _, newValue in
-                    viewModel.innerRadiusFraction = newValue
-                    viewModel.rebuild()
-                }
-            Text("Inner radius fraction: \(innerRadius, specifier: "%.2f")").font(.caption2).foregroundStyle(.secondary)
-        }
     }
 }
 
