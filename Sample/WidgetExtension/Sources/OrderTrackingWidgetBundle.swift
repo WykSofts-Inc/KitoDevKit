@@ -44,5 +44,10 @@ struct OrderTrackingWidget: Widget {
 struct OrderTrackingWidgetBundle: WidgetBundle {
     var body: some Widget {
         OrderTrackingWidget()
+        KitoStatsWidget()
+        KitoRingsWidget()
+        KitoCountdownWidget()
+        KitoTasksWidget()
+        KitoWaterWidget()
     }
 }
