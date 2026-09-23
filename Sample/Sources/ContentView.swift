@@ -48,6 +48,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Data & Charts", entries: [
             KitoCatalogEntry("Charts", "Line, bar, pie/donut, and interactive 3D bars/pie", systemImage: "chart.xyaxis.line") { ChartsDemo() },
+            KitoCatalogEntry("3D Charts", "\(Chart3DSampleCatalog.all.count) samples · bars, pies, donuts, live data", systemImage: "cube.fill") { Chart3DGallery() },
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
