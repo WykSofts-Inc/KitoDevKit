@@ -38,12 +38,13 @@ struct GallerySectionHeader: View {
 
 struct GalleryNoResults: View {
     let query: String
+    var hint = "Try a use case (“checkout”), a component (“phone”) or a behaviour (“shake”)."
 
     var body: some View {
         VStack(spacing: 10) {
             Image(systemName: "magnifyingglass").font(.largeTitle).foregroundStyle(.secondary)
             Text("No samples for “\(query)”").font(.headline)
-            Text("Try a use case (“checkout”), a component (“phone”) or a behaviour (“shake”).")
+            Text(hint)
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
         }
         .padding(32)
