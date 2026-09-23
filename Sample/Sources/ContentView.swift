@@ -47,7 +47,7 @@ struct ContentView: View {
             KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
         ]),
         KitoCatalogSection(title: "Data & Charts", entries: [
-            KitoCatalogEntry("Charts", "Line, bar, pie/donut, and interactive 3D bars/pie", systemImage: "chart.xyaxis.line") { ChartsDemo() },
+            KitoCatalogEntry("Charts", "\(ChartsGallery.count) samples · line, area, sparklines, bar, pie", systemImage: "chart.xyaxis.line") { ChartsGallery() },
             KitoCatalogEntry("3D Charts", "\(Chart3DSampleCatalog.all.count) samples · bars, pies, donuts, live data", systemImage: "cube.fill") { Chart3DGallery() },
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
