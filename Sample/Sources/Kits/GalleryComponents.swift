@@ -112,3 +112,20 @@ struct GallerySampleDetail<Preview: View>: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) { withAnimation { copied = false } }
     }
 }
+
+/// A full-strength capsule in the text colour: black in light mode, white in dark, with the
+/// label in the background colour so it always reads. (`.borderedProminent` tinted `.primary`
+/// draws a white label on a white capsule in dark mode.)
+struct GalleryPrimaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(Color(.systemBackground))
+            .padding(.horizontal, 18)
+            .frame(minHeight: 44)
+            .background(Capsule().fill(Color.primary))
+            .opacity(configuration.isPressed ? 0.8 : 1)
+            .scaleEffect(configuration.isPressed ? 0.97 : 1)
+            .animation(.spring(response: 0.25, dampingFraction: 0.7), value: configuration.isPressed)
+    }
+}

@@ -67,7 +67,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "System", entries: [
             KitoCatalogEntry("Control Center", "Glass modules, toggles, drag sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
-            KitoCatalogEntry("Island Bar", "In-app Dynamic-Island-style status pill", systemImage: "capsule.portrait") { IslandBarDemo() },
+            KitoCatalogEntry("Dynamic Island", "\(IslandGallery.count) samples · music, timers, calls, rides, moments", systemImage: "capsule.portrait") { IslandGallery() },
         ]),
         KitoCatalogSection(title: "Networking", entries: [
             KitoCatalogEntry("Image Loader", "Cache-backed image loading, live from a URL", systemImage: "photo.badge.arrow.down") { ImageLoaderDemo() },
