@@ -79,8 +79,8 @@ private struct ProfileHeaderSample: View {
             KitoAvatarPicker(viewModel: avatar, size: 96, badge: .camera, ring: [.orange, .pink, .purple])
                 .offset(y: -48)
                 .padding(.bottom, -40)
-            Text("Amina Mwangi").font(.title3.bold())
-            Text("@amina · Nairobi").font(.subheadline).foregroundStyle(.secondary)
+            Text("Wycliff N").font(.title3.bold())
+            Text("@wycliff · Nairobi").font(.subheadline).foregroundStyle(.secondary)
         }
     }
 }

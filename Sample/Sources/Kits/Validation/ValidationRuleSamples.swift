@@ -256,7 +256,7 @@ enum ValidationRuleSamples {
             RuleTester([.required()], placeholder: "Anything at all")
         },
         KitSample("Email", "Something @ something . something.", code: ruleCode("[.required(), .email()]")) {
-            RuleTester([.required(), .email()], placeholder: "you@example.com", initial: "amina@kito", keyboard: .emailAddress)
+            RuleTester([.required(), .email()], placeholder: "you@example.com", initial: "wycliff@kito", keyboard: .emailAddress)
         },
         KitSample("Phone", "9 to 15 digits, formatting ignored.", code: ruleCode("[.phone()]")) {
             RuleTester([.phone()], placeholder: "+254 712 345 678", keyboard: .phonePad)
@@ -289,7 +289,7 @@ enum ValidationRuleSamples {
             RuleTester([.regex(#"^K[A-Z]{2} ?\d{3}[A-Z]$"#, message: "Format: KDA 482K")], placeholder: "KDA 482K", capitalization: .characters)
         },
         KitSample("Custom rule", "Any predicate: here, a company email.", code: ruleCode("[.email(), .custom(message: \"Use your @kito.co email\") { $0.hasSuffix(\"@kito.co\") }]")) {
-            RuleTester([.email(), .custom(message: "Use your @kito.co email") { $0.lowercased().hasSuffix("@kito.co") }], placeholder: "name@kito.co", initial: "amina@gmail.com", keyboard: .emailAddress)
+            RuleTester([.email(), .custom(message: "Use your @kito.co email") { $0.lowercased().hasSuffix("@kito.co") }], placeholder: "name@kito.co", initial: "wycliff@gmail.com", keyboard: .emailAddress)
         },
     ])
 

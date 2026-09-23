@@ -13,9 +13,9 @@ import KitoWalletCards
 
 enum WalletData {
     static let videoCards = [
-        KitoWalletCard(id: "strip", name: "Travel", mark: .wordmark("orbit"), last4: "0016", holder: "Amina Mwangi", expiry: "11/28", balance: 2_850, style: .sunset),
-        KitoWalletCard(id: "aqua", name: "Savings", mark: .symbol("drop.fill"), last4: "4916", holder: "Amina Mwangi", expiry: "04/29", balance: 4_700, style: .aqua),
-        KitoWalletCard(id: "ocean", name: "Everyday", mark: .wordmark("NOVA", italic: true), last4: "4120", holder: "Amina Mwangi", expiry: "09/29", balance: 7_650, style: .ocean),
+        KitoWalletCard(id: "strip", name: "Travel", mark: .wordmark("orbit"), last4: "0016", holder: "Wycliff N", expiry: "11/28", balance: 2_850, style: .sunset),
+        KitoWalletCard(id: "aqua", name: "Savings", mark: .symbol("drop.fill"), last4: "4916", holder: "Wycliff N", expiry: "04/29", balance: 4_700, style: .aqua),
+        KitoWalletCard(id: "ocean", name: "Everyday", mark: .wordmark("NOVA", italic: true), last4: "4120", holder: "Wycliff N", expiry: "09/29", balance: 7_650, style: .ocean),
     ]
 
     static let pastelCards = [
@@ -34,7 +34,7 @@ enum WalletData {
         ("Pearl", .pearl, .circles(.indigo, .blue)),
         ("Gold", .gold, .wordmark("AURUM")),
     ].enumerated().map { index, item in
-        KitoWalletCard(id: item.0, name: item.0, mark: item.2, last4: String(format: "%04d", 1_000 + index * 1_234), holder: "Amina Mwangi", expiry: "0\(index + 1)/29", balance: Double(1_200 + index * 2_750), style: item.1)
+        KitoWalletCard(id: item.0, name: item.0, mark: item.2, last4: String(format: "%04d", 1_000 + index * 1_234), holder: "Wycliff N", expiry: "0\(index + 1)/29", balance: Double(1_200 + index * 2_750), style: item.1)
     }
 
     static let fiveCards = allStyles.prefix(5).map { $0 }
