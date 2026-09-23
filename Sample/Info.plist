@@ -20,14 +20,36 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Media Library request.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Bluetooth request.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Calendar request.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>KitoSample demos KitoMediaPicker's camera source.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Contacts request.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>KitoSample demos KitoBiometrics.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Location Always request.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Location request.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Microphone request.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>KitoSample demos saving images to Photos via KitoMediaPicker.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Photo Library request.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Reminders request.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' Speech Recognition request.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>KitoSample demos KitoPermissions' App Tracking request.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
