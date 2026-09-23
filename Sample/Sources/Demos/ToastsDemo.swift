@@ -58,6 +58,30 @@ struct ToastsDemo: View {
                     ))
                 }
             }
+            Section("Action button content — icon, text, or both") {
+                Button("Icon + text actions") {
+                    toasts.show(KitoToast(
+                        message: "New message from Alex",
+                        icon: .custom("bubble.left.fill"),
+                        actions: [
+                            KitoToastAction(title: "Reply", icon: "arrowshape.turn.up.left.fill", content: .iconAndTitle) {},
+                            KitoToastAction(title: "Dismiss", icon: "xmark", content: .iconAndTitle, role: .cancel) {},
+                        ]
+                    ))
+                }
+                Button("Icon-only actions") {
+                    toasts.show(KitoToast(
+                        message: "Track added to queue",
+                        actions: [
+                            KitoToastAction(title: "Play now", icon: "play.fill", content: .iconOnly) {},
+                            KitoToastAction(title: "Remove", icon: "trash", content: .iconOnly, role: .destructive) {},
+                        ]
+                    ))
+                }
+            }
+            Section("Progress toast — uploading, then success") {
+                Button("Simulate an upload") { simulateUpload() }
+            }
             Section("Custom accent color") {
                 Button("Purple, independent of style") {
                     toasts.show(KitoToast(message: "Achievement unlocked", icon: .custom("star.fill"), accentColor: .purple))
@@ -85,5 +109,23 @@ struct ToastsDemo: View {
             }
         }
         .navigationTitle("Toasts")
+    }
+
+    private func simulateUpload() {
+        let id = UUID()
+        toasts.show(KitoToast(
+            id: id,
+            title: "Uploading",
+            message: "sunset.jpg",
+            icon: .custom("arrow.up.circle.fill"),
+            progress: KitoToastProgress(fraction: 0)
+        ))
+        Task {
+            for step in 1...10 {
+                try? await Task.sleep(nanoseconds: 150_000_000)
+                toasts.updateProgress(id: id, fraction: Double(step) / 10)
+            }
+            toasts.complete(id: id, style: .success, title: "Uploaded", message: "sunset.jpg")
+        }
     }
 }

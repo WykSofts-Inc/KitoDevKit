@@ -33,8 +33,13 @@ struct KitoCatalogSection: Identifiable {
 struct ContentView: View {
     @Environment(\.kitoTheme) private var theme
     @State private var appeared = false
+    @State private var query = ""
 
     private let sections: [KitoCatalogSection] = [
+        KitoCatalogSection(title: "Components", entries: [
+            KitoCatalogEntry("Buttons", "\(SampleCatalog.all.count) samples · variants, phases, add-to-cart", systemImage: "hand.tap.fill") { ButtonsGallery() },
+            KitoCatalogEntry("Fields", "\(FieldSampleCatalog.all.count) samples · text, phone, OTP, currency", systemImage: "character.cursor.ibeam") { FieldsGallery() },
+        ]),
         KitoCatalogSection(title: "Feedback", entries: [
             KitoCatalogEntry("Loaders", "Spinner, dots, pulse, progress ring, skeleton", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
             KitoCatalogEntry("Toasts", "Queued, swipeable, spring physics", systemImage: "bubble.left.fill") { ToastsDemo() },
@@ -43,16 +48,17 @@ struct ContentView: View {
             KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
         ]),
         KitoCatalogSection(title: "Data & Charts", entries: [
-            KitoCatalogEntry("Charts", "Line, bar, pie/donut, and 3D bars", systemImage: "chart.xyaxis.line") { ChartsDemo() },
+            KitoCatalogEntry("Charts", "\(ChartsGallery.count) samples · line, area, sparklines, bar, pie", systemImage: "chart.xyaxis.line") { ChartsGallery() },
+            KitoCatalogEntry("3D Charts", "\(Chart3DSampleCatalog.all.count) samples · bars, pies, donuts, live data", systemImage: "cube.fill") { Chart3DGallery() },
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
             KitoCatalogEntry("Tab Bar & Side Menu", "Custom tab bar and a swipeable drawer", systemImage: "sidebar.left") { NavigationDemo() },
-            KitoCatalogEntry("Onboarding", "Paged, swipeable, skippable", systemImage: "sparkles") { OnboardingDemo() },
+            KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
         ]),
         KitoCatalogSection(title: "Forms", entries: [
-            KitoCatalogEntry("Validation", "Live email & password validation", systemImage: "checkmark.shield") { ValidationDemo() },
-            KitoCatalogEntry("Media Picker", "Photos, camera, files, clipboard, URL", systemImage: "photo.on.rectangle.angled") { MediaPickerDemo() },
+            KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
+            KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
         ]),
         KitoCatalogSection(title: "Device", entries: [
             KitoCatalogEntry("Permissions", "One async API, themed rationale screen", systemImage: "hand.raised") { PermissionsDemo() },
@@ -62,9 +68,14 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "System", entries: [
             KitoCatalogEntry("Control Center", "Glass modules, toggles, drag sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
+            KitoCatalogEntry("Dynamic Island", "\(IslandGallery.count) samples · music, timers, calls, rides, moments", systemImage: "capsule.portrait") { IslandGallery() },
+        ]),
+        KitoCatalogSection(title: "Networking", entries: [
+            KitoCatalogEntry("Image Loader", "Cache-backed image loading, live from a URL", systemImage: "photo.badge.arrow.down") { ImageLoaderDemo() },
         ]),
         KitoCatalogSection(title: "Commerce", entries: [
             KitoCatalogEntry("Cart", "Choreographed add-to-cart, fly-to-badge", systemImage: "cart.fill") { CartDemo() },
+            KitoCatalogEntry("Wallet & Cards", "\(WalletGallery.count) samples · pocket, stack, carousel, add a card", systemImage: "wallet.pass.fill") { WalletGallery() },
             KitoCatalogEntry("Order Tracking", "Self-refreshing status + Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
         ]),
     ]
@@ -83,6 +94,9 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 28) {
+                    if !query.trimmingCharacters(in: .whitespaces).isEmpty {
+                        searchResults
+                    } else {
                     header
 
                     ForEach(sections) { section in
@@ -100,12 +114,14 @@ struct ContentView: View {
                             }
                         }
                     }
+                    }
                 }
                 .padding(16)
                 .padding(.bottom, 24)
             }
             .background(backdrop)
             .navigationTitle("")
+            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search \(GlobalSampleIndex.all.count) samples and every kit")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsDemo()) {
@@ -118,6 +134,59 @@ struct ContentView: View {
                 withAnimation(.easeOut(duration: 0.5)) { appeared = true }
             }
         }
+    }
+
+    // MARK: Search
+
+    private var matchingKits: [KitoCatalogEntry] {
+        let q = query.trimmingCharacters(in: .whitespaces)
+        return sections.flatMap(\.entries).filter {
+            $0.title.localizedCaseInsensitiveContains(q) || $0.subtitle.localizedCaseInsensitiveContains(q)
+        }
+    }
+
+    @ViewBuilder
+    private var searchResults: some View {
+        let kits = matchingKits
+        let samples = GlobalSampleIndex.search(query)
+        if kits.isEmpty && samples.isEmpty {
+            VStack(spacing: 10) {
+                Image(systemName: "magnifyingglass").font(.largeTitle).foregroundStyle(theme.colors.onBackground.opacity(0.4))
+                Text("Nothing for “\(query)”").font(.headline).foregroundStyle(theme.colors.onBackground)
+                Text("Try a kit (“charts”), a sample (“stepped”, “timer”) or a screen (“stock”).")
+                    .font(.footnote).foregroundStyle(theme.colors.onBackground.opacity(0.6)).multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 60)
+        }
+        if !kits.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                sectionTitle("Kits")
+                VStack(spacing: 10) {
+                    ForEach(kits) { entry in row(entry, globalIndex: 0) }
+                }
+            }
+        }
+        if !samples.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                sectionTitle(samples.count == 60 ? "Top 60 samples" : "\(samples.count) sample\(samples.count == 1 ? "" : "s")")
+                VStack(spacing: 0) {
+                    ForEach(samples) { hit in
+                        SampleSearchRow(hit: hit)
+                        if hit.id != samples.last?.id { Divider().padding(.leading, 58) }
+                    }
+                }
+                .kitoGlassCard(cornerRadius: theme.radii.lg)
+            }
+        }
+    }
+
+    private func sectionTitle(_ title: String) -> some View {
+        Text(title.uppercased())
+            .font(.caption.weight(.bold))
+            .kerning(0.8)
+            .foregroundStyle(theme.colors.primary)
+            .padding(.horizontal, 4)
     }
 
     // MARK: Backdrop

@@ -6,7 +6,12 @@ options:
   createIntermediateGroups: true
 packages:
   KitoCore: { path: ../../KitoCore }
-  KitoButtons: { path: ../../KitoButtons }
+  # Published releases, not the local copies in this folder: the local KitoButtons is 1.6.0,
+  # two releases behind, and KitoScreens itself pulls these from GitHub — mixing a local copy
+  # with the published one is a package-identity clash.
+  KitoButtons: { url: https://github.com/wykeenjenga/KitoButtons, from: 1.8.0 }
+  KitoFields: { url: https://github.com/wykeenjenga/KitoFields, from: 1.9.0 }
+  KitoScreens: { url: https://github.com/wykeenjenga/KitoScreens, from: 0.3.0 }
   KitoCharts: { path: ../../KitoCharts }
   KitoLoaders: { path: ../../KitoLoaders }
   KitoToasts: { path: ../../KitoToasts }
@@ -18,12 +23,15 @@ packages:
   KitoPermissions: { path: ../../KitoPermissions }
   KitoBiometrics: { path: ../../KitoBiometrics }
   KitoMediaPicker: { path: ../../KitoMediaPicker }
+  KitoWalletCards: { path: ../../KitoWalletCards }
   KitoOnboarding: { path: ../../KitoOnboarding }
   KitoCart: { path: ../../KitoCart }
   KitoOrderTracking: { path: ../../KitoOrderTracking }
   KitoFormatting: { path: ../../KitoFormatting }
   KitoConnectivity: { path: ../../KitoConnectivity }
   KitoKeychain: { path: ../../KitoKeychain }
+  KitoImageLoader: { path: ../../KitoImageLoader }
+  KitoIslandBar: { path: ../../KitoIslandBar }
 targets:
   KitoSample:
     type: application
@@ -64,6 +72,8 @@ targets:
     dependencies:
       - package: KitoCore
       - package: KitoButtons
+      - package: KitoFields
+      - package: KitoScreens
       - package: KitoCharts
       - package: KitoLoaders
       - package: KitoToasts
@@ -75,12 +85,15 @@ targets:
       - package: KitoPermissions
       - package: KitoBiometrics
       - package: KitoMediaPicker
+      - package: KitoWalletCards
       - package: KitoOnboarding
       - package: KitoCart
       - package: KitoOrderTracking
       - package: KitoFormatting
       - package: KitoConnectivity
       - package: KitoKeychain
+      - package: KitoImageLoader
+      - package: KitoIslandBar
       - target: OrderTrackingWidgetExtension
         embed: true
 
