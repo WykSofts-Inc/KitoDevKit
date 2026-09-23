@@ -35,6 +35,7 @@
 		74DB720436D05A5D5065EE7A /* GalleryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */; };
 		77692DD8FE5CB397F6F287F9 /* KitoLoaders in Frameworks */ = {isa = PBXBuildFile; productRef = CA244E2CBB7678240B35EB05 /* KitoLoaders */; };
 		781EC531061368F6148D56F2 /* KitoButtons in Frameworks */ = {isa = PBXBuildFile; productRef = 4FADAC890F9BB84F283800F5 /* KitoButtons */; };
+		7BB49494F53AB3A489DB3512 /* Chart3DSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0025A37075383374A0BC70B /* Chart3DSample.swift */; };
 		82CC45AAE09669BB63402327 /* KitoScreens in Frameworks */ = {isa = PBXBuildFile; productRef = AC578F13C4D6031B95394166 /* KitoScreens */; };
 		852026E20741D51C40EA0B9D /* KitoSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */; };
 		85F5876E0D842990B67891B5 /* ControlCenterDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */; };
@@ -47,10 +48,13 @@
 		9D8698832ADEEB396B594169 /* BiometricsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1219DD1751051A3E0F178 /* BiometricsDemo.swift */; };
 		A0F9FFA018D83CD072D17B7E /* KitoNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F9B384A8AD275C63F9CB2235 /* KitoNavigation */; };
 		A33471384EA02C747CD1CBB5 /* KitoFields in Frameworks */ = {isa = PBXBuildFile; productRef = DF6BC35D7F7099FAE2EFD636 /* KitoFields */; };
+		A546EE342B2532834153D1BA /* Chart3DGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */; };
 		A6BDF8FEBBBFB6A277197010 /* OrderTrackingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */; };
 		A6D0E6DFB47803ECF89D6116 /* CartDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E3753958497564C54EED0 /* CartDemo.swift */; };
 		A8F76D56122F2C6F6A12B5F0 /* KitoOrderTracking in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE1B3D9B05A9D1A40A5FF0 /* KitoOrderTracking */; };
+		AF6A3F69F6B1530175B06845 /* Chart3DSampleCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */; };
 		BE90CAB96B2287F94FD1C220 /* KitoBiometrics in Frameworks */ = {isa = PBXBuildFile; productRef = 61A702673D0A7FA281333173 /* KitoBiometrics */; };
+		BF8C5D6A4E8EC30CDF9F912D /* Chart3DInteractiveSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */; };
 		C1993BA0BA67925BF26857FA /* KitoFormatting in Frameworks */ = {isa = PBXBuildFile; productRef = 6C747074769820899D6152A5 /* KitoFormatting */; };
 		C635F7C01C88BA890A7E4625 /* ToastsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0EA422E395A2050E9B369 /* ToastsDemo.swift */; };
 		C8A3BDE2A9AF9FB6CD2B49F0 /* ValidationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */; };
@@ -123,6 +127,7 @@
 		7DA0EA422E395A2050E9B369 /* ToastsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsDemo.swift; sourceTree = "<group>"; };
 		8165B2C284A818D240F97FC9 /* KitoCart */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCart; path = ../../KitoCart; sourceTree = SOURCE_ROOT; };
 		817E98EC4CF8D1308E25617B /* KitoHaptics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoHaptics; path = ../../KitoHaptics; sourceTree = SOURCE_ROOT; };
+		87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DGallery.swift; sourceTree = "<group>"; };
 		88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationDemo.swift; sourceTree = "<group>"; };
 		921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCenterDemo.swift; sourceTree = "<group>"; };
 		96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoSampleApp.swift; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 		9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoAppSettingsViewModel.swift; sourceTree = "<group>"; };
 		9B3F6AB4834FC716F1059E7B /* SampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCatalog.swift; sourceTree = "<group>"; };
 		9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesDemo.swift; sourceTree = "<group>"; };
+		9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DInteractiveSamples.swift; sourceTree = "<group>"; };
 		A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDemo.swift; sourceTree = "<group>"; };
 		A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetBundle.swift; sourceTree = "<group>"; };
 		A53FB297159A3C5BDF6F5B92 /* KitoModals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoModals; path = ../../KitoModals; sourceTree = SOURCE_ROOT; };
@@ -139,6 +145,7 @@
 		C39AC08B6A6776FF3EA2B6E0 /* KitoCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCore; path = ../../KitoCore; sourceTree = SOURCE_ROOT; };
 		C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadersDemo.swift; sourceTree = "<group>"; };
 		CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OrderTrackingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0025A37075383374A0BC70B /* Chart3DSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DSample.swift; sourceTree = "<group>"; };
 		D075836D0B5E896A055E4260 /* KitoBiometrics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoBiometrics; path = ../../KitoBiometrics; sourceTree = SOURCE_ROOT; };
 		D0940FB3F3997D1391855E33 /* FieldsGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsGallery.swift; sourceTree = "<group>"; };
 		D1B5BB88FC6024D5FFFD86E5 /* KitoMediaPicker */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoMediaPicker; path = ../../KitoMediaPicker; sourceTree = SOURCE_ROOT; };
@@ -149,6 +156,7 @@
 		D853F507CC8B34320CE7950E /* KitoIslandBar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoIslandBar; path = ../../KitoIslandBar; sourceTree = SOURCE_ROOT; };
 		DCB7CC51FEEDBDB41592F88E /* KitoImageLoader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoImageLoader; path = ../../KitoImageLoader; sourceTree = SOURCE_ROOT; };
 		E14E3753958497564C54EED0 /* CartDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDemo.swift; sourceTree = "<group>"; };
+		E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DSampleCatalog.swift; sourceTree = "<group>"; };
 		FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +244,17 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		83DB04DC7D23EADC7DDF6F27 /* Charts3D */ = {
+			isa = PBXGroup;
+			children = (
+				87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */,
+				9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */,
+				D0025A37075383374A0BC70B /* Chart3DSample.swift */,
+				E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */,
+			);
+			path = Charts3D;
+			sourceTree = "<group>";
+		};
 		8944869BB0C17554C79118EE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +272,7 @@
 			children = (
 				592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */,
 				6CBB1B55AC5846DCEB433679 /* Buttons */,
+				83DB04DC7D23EADC7DDF6F27 /* Charts3D */,
 				637D740DBD8CF20F7B509D83 /* Fields */,
 			);
 			path = Kits;
@@ -465,6 +485,10 @@
 				9D8698832ADEEB396B594169 /* BiometricsDemo.swift in Sources */,
 				1867B92150AC04D23C9CAE4E /* ButtonsGallery.swift in Sources */,
 				A6D0E6DFB47803ECF89D6116 /* CartDemo.swift in Sources */,
+				A546EE342B2532834153D1BA /* Chart3DGallery.swift in Sources */,
+				BF8C5D6A4E8EC30CDF9F912D /* Chart3DInteractiveSamples.swift in Sources */,
+				7BB49494F53AB3A489DB3512 /* Chart3DSample.swift in Sources */,
+				AF6A3F69F6B1530175B06845 /* Chart3DSampleCatalog.swift in Sources */,
 				5122D44B84F53306A5FF7DD3 /* ChartsDemo.swift in Sources */,
 				035009C20966E37EC153D1DB /* ConnectivityDemo.swift in Sources */,
 				95599468A98CAE537B5CA05F /* ContentView.swift in Sources */,
