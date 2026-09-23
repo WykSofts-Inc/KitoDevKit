@@ -30,6 +30,7 @@
 		419AB91C4AEF552D6800A53E /* PermissionsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5EB1CB42E5BC1743A396D /* PermissionsDemo.swift */; };
 		420019260A67E5D9F2F125D7 /* LineChartSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE8D8B3ADE97C359089522 /* LineChartSamples.swift */; };
 		44AD4D650C2E676E9243078E /* KitoEmptyStates in Frameworks */ = {isa = PBXBuildFile; productRef = 8D1FD6E263072E981EB0C124 /* KitoEmptyStates */; };
+		452E5C43895DE8D06D542FE9 /* KitoPhotoEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C4384A4E74445C0F577D6B9 /* KitoPhotoEditor */; };
 		4AF1A41D4839D7A64812B70E /* WalletScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7192D6EA4D2A71AC78F5E /* WalletScreens.swift */; };
 		525311763267DC50BBE2126C /* ValidationFieldSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */; };
 		52D1C28FC56DF91273D32873 /* KitoValidation in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7FFF789DC791F610B2703C /* KitoValidation */; };
@@ -70,6 +71,7 @@
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D8261C7CEA94C24E71BF059C /* IslandStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58341CE205EDAD33DF94848 /* IslandStage.swift */; };
 		DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD684B6BD38C5F0270925B /* IslandSamples.swift */; };
+		DDA67493EA19D2233E04D9D2 /* PhotoSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F16ACD9325E6A3D60A7DA /* PhotoSamples.swift */; };
 		DF5B3B3C8B5C03A7E049969B /* WalletSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */; };
 		EA3940AB2D62114C884F977C /* KitoConnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7D7C9AB476ED9ECCEBF341 /* KitoConnectivity */; };
 		EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */; };
@@ -151,6 +153,7 @@
 		817E98EC4CF8D1308E25617B /* KitoHaptics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoHaptics; path = ../../KitoHaptics; sourceTree = SOURCE_ROOT; };
 		87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DGallery.swift; sourceTree = "<group>"; };
 		921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCenterDemo.swift; sourceTree = "<group>"; };
+		933F16ACD9325E6A3D60A7DA /* PhotoSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSamples.swift; sourceTree = "<group>"; };
 		96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoSampleApp.swift; sourceTree = "<group>"; };
 		9929D9B074DCB44DBA2649C7 /* KitoSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KitoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoAppSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 				37152A039F71FAE8960FE161 /* KitoKeychain in Frameworks */,
 				0CAE03623D411715643199A1 /* KitoImageLoader in Frameworks */,
 				0A7E8840E0B3CAE76A57D60B /* KitoIslandBar in Frameworks */,
+				452E5C43895DE8D06D542FE9 /* KitoPhotoEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +362,7 @@
 				0A67506AE2B7AF154452B373 /* Media */,
 				5590D3A83BF8F0FDBE391BB8 /* Modals */,
 				3799AADC676A2AE61DD60C93 /* Onboarding */,
+				D1F96BEEAB0095FE05F56CC0 /* Photo */,
 				AD35D32057EF70690CC5E120 /* Validation */,
 				AE57000BEF926D9A0703FF63 /* Wallet */,
 			);
@@ -448,6 +453,14 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		D1F96BEEAB0095FE05F56CC0 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				933F16ACD9325E6A3D60A7DA /* PhotoSamples.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +503,7 @@
 				02018EC2D776BB23C87043BE /* KitoKeychain */,
 				7E8359FA38E5919F48CBA427 /* KitoImageLoader */,
 				7FD5D13482A5A7BE4ED8D37D /* KitoIslandBar */,
+				1C4384A4E74445C0F577D6B9 /* KitoPhotoEditor */,
 			);
 			productName = KitoSample;
 			productReference = 9929D9B074DCB44DBA2649C7 /* KitoSample.app */;
@@ -544,6 +558,7 @@
 			packageReferences = (
 				FF17732464DAABB7145F2627 /* XCRemoteSwiftPackageReference "KitoButtons" */,
 				2AA41115053FAA02F98B4240 /* XCRemoteSwiftPackageReference "KitoFields" */,
+				8C9D5DE37B1839491619E2F2 /* XCRemoteSwiftPackageReference "KitoPhotoEditor" */,
 				429284846CCEF61C3DA4DCAC /* XCRemoteSwiftPackageReference "KitoScreens" */,
 				85FF25AF02010709A1E3B9B9 /* XCLocalSwiftPackageReference "../../KitoBiometrics" */,
 				F7859FB560B3420F1A94C714 /* XCLocalSwiftPackageReference "../../KitoCart" */,
@@ -624,6 +639,7 @@
 				F7F1AAFBD8B2AA87DD38FEAF /* OnboardingSamples.swift in Sources */,
 				A6BDF8FEBBBFB6A277197010 /* OrderTrackingDemo.swift in Sources */,
 				419AB91C4AEF552D6800A53E /* PermissionsDemo.swift in Sources */,
+				DDA67493EA19D2233E04D9D2 /* PhotoSamples.swift in Sources */,
 				ED5014CC218F293E8B519AC8 /* Sample.swift in Sources */,
 				C8EF037C7B0091CE3940975A /* SampleCatalog+Generated.swift in Sources */,
 				897672D50B808C465032F312 /* SampleCatalog.swift in Sources */,
@@ -986,6 +1002,14 @@
 				minimumVersion = 0.3.0;
 			};
 		};
+		8C9D5DE37B1839491619E2F2 /* XCRemoteSwiftPackageReference "KitoPhotoEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WykSofts-Inc/KitoPhotoEditor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		FF17732464DAABB7145F2627 /* XCRemoteSwiftPackageReference "KitoButtons" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/wykeenjenga/KitoButtons";
@@ -1016,6 +1040,11 @@
 		1B7FFF789DC791F610B2703C /* KitoValidation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoValidation;
+		};
+		1C4384A4E74445C0F577D6B9 /* KitoPhotoEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C9D5DE37B1839491619E2F2 /* XCRemoteSwiftPackageReference "KitoPhotoEditor" */;
+			productName = KitoPhotoEditor;
 		};
 		1DF2D1062E48C2B142D85599 /* KitoCore */ = {
 			isa = XCSwiftPackageProductDependency;

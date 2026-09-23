@@ -27,7 +27,7 @@
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>KitoSample demos KitoPermissions' Calendar request.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>KitoSample demos KitoMediaPicker's camera source.</string>
+	<string>Take photos to try the camera, photo editor and media picker samples.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>KitoSample demos KitoPermissions' Contacts request.</string>
 	<key>NSFaceIDUsageDescription</key>
@@ -39,7 +39,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>KitoSample demos KitoPermissions' Microphone request.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>KitoSample demos saving images to Photos via KitoMediaPicker.</string>
+	<string>Save photos you edit in the samples to your library.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>KitoSample demos KitoPermissions' Photo Library request.</string>
 	<key>NSRemindersFullAccessUsageDescription</key>

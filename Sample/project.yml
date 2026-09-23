@@ -32,6 +32,7 @@ packages:
   KitoKeychain: { path: ../../KitoKeychain }
   KitoImageLoader: { path: ../../KitoImageLoader }
   KitoIslandBar: { path: ../../KitoIslandBar }
+  KitoPhotoEditor: { url: https://github.com/WykSofts-Inc/KitoPhotoEditor, from: 0.1.1 }
 targets:
   KitoSample:
     type: application
@@ -46,8 +47,8 @@ targets:
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
-        NSCameraUsageDescription: "KitoSample demos KitoMediaPicker's camera source."
-        NSPhotoLibraryAddUsageDescription: "KitoSample demos saving images to Photos via KitoMediaPicker."
+        NSCameraUsageDescription: "Take photos to try the camera, photo editor and media picker samples."
+        NSPhotoLibraryAddUsageDescription: "Save photos you edit in the samples to your library."
         NSFaceIDUsageDescription: "KitoSample demos KitoBiometrics."
         NSPhotoLibraryUsageDescription: "KitoSample demos KitoPermissions' Photo Library request."
         NSMicrophoneUsageDescription: "KitoSample demos KitoPermissions' Microphone request."
@@ -94,6 +95,7 @@ targets:
       - package: KitoKeychain
       - package: KitoImageLoader
       - package: KitoIslandBar
+      - package: KitoPhotoEditor
       - target: OrderTrackingWidgetExtension
         embed: true
 

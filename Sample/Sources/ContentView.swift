@@ -58,6 +58,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Forms", entries: [
             KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
+            KitoCatalogEntry("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
             KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
         ]),
         KitoCatalogSection(title: "Device", entries: [
