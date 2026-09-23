@@ -53,7 +53,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
             KitoCatalogEntry("Tab Bar & Side Menu", "Custom tab bar and a swipeable drawer", systemImage: "sidebar.left") { NavigationDemo() },
-            KitoCatalogEntry("Onboarding", "Paged, swipeable, skippable", systemImage: "sparkles") { OnboardingDemo() },
+            KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
         ]),
         KitoCatalogSection(title: "Forms", entries: [
             KitoCatalogEntry("Validation", "Live email & password validation", systemImage: "checkmark.shield") { ValidationDemo() },
