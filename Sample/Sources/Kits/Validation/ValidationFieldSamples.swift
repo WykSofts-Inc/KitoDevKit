@@ -18,7 +18,7 @@ import KitoValidation
 
 private struct TriggerSample: View {
     let trigger: KitoValidationTrigger
-    @State private var email = "amina@"
+    @State private var email = "wycliff@"
 
     var body: some View {
         KitoEmailField(text: $email)

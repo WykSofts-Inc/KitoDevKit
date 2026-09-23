@@ -32,7 +32,7 @@ enum Chart3DData {
     static let quarters: [ChartDataPoint] = zip(["Q1", "Q2", "Q3", "Q4"], [410.0, 520, 480, 690])
         .map { ChartDataPoint(label: $0, value: $1) }
 
-    static let leaderboard: [ChartDataPoint] = zip(["Amina", "Brian", "Chen", "Dalia", "Eli", "Fatma"], [980.0, 860, 790, 640, 520, 410])
+    static let leaderboard: [ChartDataPoint] = zip(["Wycliff", "Brian", "Chen", "Dalia", "Eli", "Fatma"], [980.0, 860, 790, 640, 520, 410])
         .map { ChartDataPoint(label: $0, value: $1) }
 
     static let budget: [ChartDataPoint] = [
