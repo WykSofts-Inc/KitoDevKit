@@ -53,7 +53,7 @@ struct ContentView: View {
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
-            KitoCatalogEntry("Tab Bar & Side Menu", "Custom tab bar and a swipeable drawer", systemImage: "sidebar.left") { NavigationDemo() },
+            KitoCatalogEntry("Side Menus & Tab Bars", "\(NavigationGallery.count) samples · drawers, transitions, tab bars, top tabs", systemImage: "sidebar.left") { NavigationGallery() },
             KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
         ]),
         KitoCatalogSection(title: "Forms", entries: [

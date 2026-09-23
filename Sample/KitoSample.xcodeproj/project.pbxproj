@@ -10,7 +10,6 @@
 		02D3BE382E20144AC942EA5C /* KitGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569EE5759D3941C0B37197DF /* KitGallery.swift */; };
 		03017F7D11F42BD0E9A98C24 /* FieldSampleCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09047156BF52F2541DD0E90 /* FieldSampleCatalog.swift */; };
 		035009C20966E37EC153D1DB /* ConnectivityDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */; };
-		03B076F1800BBF24A167460A /* NavigationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */; };
 		0A7E8840E0B3CAE76A57D60B /* KitoIslandBar in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD5D13482A5A7BE4ED8D37D /* KitoIslandBar */; };
 		0ADB858B67F2428046D483DA /* OrderTrackingWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */; };
 		0CAE03623D411715643199A1 /* KitoImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 7E8359FA38E5919F48CBA427 /* KitoImageLoader */; };
@@ -73,6 +72,7 @@
 		DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD684B6BD38C5F0270925B /* IslandSamples.swift */; };
 		DDA67493EA19D2233E04D9D2 /* PhotoSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F16ACD9325E6A3D60A7DA /* PhotoSamples.swift */; };
 		DF5B3B3C8B5C03A7E049969B /* WalletSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */; };
+		E6158B6694FC5DB697AE42B1 /* NavigationSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0465C9C25D3103F27365C /* NavigationSamples.swift */; };
 		EA3940AB2D62114C884F977C /* KitoConnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7D7C9AB476ED9ECCEBF341 /* KitoConnectivity */; };
 		EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */; };
 		EC56A575767FC6548E2F9650 /* FieldFormDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35925B2E0FF6311947BAB1C2 /* FieldFormDemos.swift */; };
@@ -160,7 +160,6 @@
 		9B3F6AB4834FC716F1059E7B /* SampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCatalog.swift; sourceTree = "<group>"; };
 		9B716EDF6C7A0BA454F2BDA9 /* EmptyStatesDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesDemo.swift; sourceTree = "<group>"; };
 		9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DInteractiveSamples.swift; sourceTree = "<group>"; };
-		A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDemo.swift; sourceTree = "<group>"; };
 		A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetBundle.swift; sourceTree = "<group>"; };
 		A53FB297159A3C5BDF6F5B92 /* KitoModals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoModals; path = ../../KitoModals; sourceTree = SOURCE_ROOT; };
 		AA40E3ADAA6EF3284FFD3401 /* KitoValidation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoValidation; path = ../../KitoValidation; sourceTree = SOURCE_ROOT; };
@@ -186,6 +185,7 @@
 		DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSamples.swift; sourceTree = "<group>"; };
 		DCB7CC51FEEDBDB41592F88E /* KitoImageLoader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoImageLoader; path = ../../KitoImageLoader; sourceTree = SOURCE_ROOT; };
 		E14E3753958497564C54EED0 /* CartDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDemo.swift; sourceTree = "<group>"; };
+		E4B0465C9C25D3103F27365C /* NavigationSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSamples.swift; sourceTree = "<group>"; };
 		E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DSampleCatalog.swift; sourceTree = "<group>"; };
 		F0A9FED3BDA53BFCFE6BEECA /* LineChartShowcases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartShowcases.swift; sourceTree = "<group>"; };
 		FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityDemo.swift; sourceTree = "<group>"; };
@@ -292,6 +292,14 @@
 			path = Modals;
 			sourceTree = "<group>";
 		};
+		5910164AE148B539C785D0CD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E4B0465C9C25D3103F27365C /* NavigationSamples.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		637D740DBD8CF20F7B509D83 /* Fields */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +369,7 @@
 				34C286FB9E1D34EDDFFDFCBE /* Island */,
 				0A67506AE2B7AF154452B373 /* Media */,
 				5590D3A83BF8F0FDBE391BB8 /* Modals */,
+				5910164AE148B539C785D0CD /* Navigation */,
 				3799AADC676A2AE61DD60C93 /* Onboarding */,
 				D1F96BEEAB0095FE05F56CC0 /* Photo */,
 				AD35D32057EF70690CC5E120 /* Validation */,
@@ -408,7 +417,6 @@
 				368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */,
 				36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */,
 				C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */,
-				A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */,
 				0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */,
 				67D5EB1CB42E5BC1743A396D /* PermissionsDemo.swift */,
 				AF5770CBE3635475023C1A28 /* SettingsDemo.swift */,
@@ -633,7 +641,7 @@
 				9F9D840DE1E049117E7A4B96 /* MediaSamples.swift in Sources */,
 				F61AD30898C94A5801DCD5F9 /* ModalSamples.swift in Sources */,
 				57A6269657AE4E38F8C43B25 /* ModalStage.swift in Sources */,
-				03B076F1800BBF24A167460A /* NavigationDemo.swift in Sources */,
+				E6158B6694FC5DB697AE42B1 /* NavigationSamples.swift in Sources */,
 				F4880EBCF31FE91C2ECDDB59 /* OnboardingIllustrations.swift in Sources */,
 				B1EC2600EE77CD3F7BDC747C /* OnboardingSampleHost.swift in Sources */,
 				F7F1AAFBD8B2AA87DD38FEAF /* OnboardingSamples.swift in Sources */,
