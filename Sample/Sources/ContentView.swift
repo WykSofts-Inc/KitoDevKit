@@ -33,6 +33,7 @@ struct KitoCatalogSection: Identifiable {
 struct ContentView: View {
     @Environment(\.kitoTheme) private var theme
     @State private var appeared = false
+    @State private var query = ""
 
     private let sections: [KitoCatalogSection] = [
         KitoCatalogSection(title: "Components", entries: [
@@ -56,8 +57,8 @@ struct ContentView: View {
             KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
         ]),
         KitoCatalogSection(title: "Forms", entries: [
-            KitoCatalogEntry("Validation", "Live email & password validation", systemImage: "checkmark.shield") { ValidationDemo() },
-            KitoCatalogEntry("Media Picker", "Photos, camera, files, clipboard, URL", systemImage: "photo.on.rectangle.angled") { MediaPickerDemo() },
+            KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
+            KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
         ]),
         KitoCatalogSection(title: "Device", entries: [
             KitoCatalogEntry("Permissions", "One async API, themed rationale screen", systemImage: "hand.raised") { PermissionsDemo() },
@@ -92,6 +93,9 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 28) {
+                    if !query.trimmingCharacters(in: .whitespaces).isEmpty {
+                        searchResults
+                    } else {
                     header
 
                     ForEach(sections) { section in
@@ -109,12 +113,14 @@ struct ContentView: View {
                             }
                         }
                     }
+                    }
                 }
                 .padding(16)
                 .padding(.bottom, 24)
             }
             .background(backdrop)
             .navigationTitle("")
+            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search \(GlobalSampleIndex.all.count) samples and every kit")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsDemo()) {
@@ -127,6 +133,59 @@ struct ContentView: View {
                 withAnimation(.easeOut(duration: 0.5)) { appeared = true }
             }
         }
+    }
+
+    // MARK: Search
+
+    private var matchingKits: [KitoCatalogEntry] {
+        let q = query.trimmingCharacters(in: .whitespaces)
+        return sections.flatMap(\.entries).filter {
+            $0.title.localizedCaseInsensitiveContains(q) || $0.subtitle.localizedCaseInsensitiveContains(q)
+        }
+    }
+
+    @ViewBuilder
+    private var searchResults: some View {
+        let kits = matchingKits
+        let samples = GlobalSampleIndex.search(query)
+        if kits.isEmpty && samples.isEmpty {
+            VStack(spacing: 10) {
+                Image(systemName: "magnifyingglass").font(.largeTitle).foregroundStyle(theme.colors.onBackground.opacity(0.4))
+                Text("Nothing for “\(query)”").font(.headline).foregroundStyle(theme.colors.onBackground)
+                Text("Try a kit (“charts”), a sample (“stepped”, “timer”) or a screen (“stock”).")
+                    .font(.footnote).foregroundStyle(theme.colors.onBackground.opacity(0.6)).multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 60)
+        }
+        if !kits.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                sectionTitle("Kits")
+                VStack(spacing: 10) {
+                    ForEach(kits) { entry in row(entry, globalIndex: 0) }
+                }
+            }
+        }
+        if !samples.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                sectionTitle(samples.count == 60 ? "Top 60 samples" : "\(samples.count) sample\(samples.count == 1 ? "" : "s")")
+                VStack(spacing: 0) {
+                    ForEach(samples) { hit in
+                        SampleSearchRow(hit: hit)
+                        if hit.id != samples.last?.id { Divider().padding(.leading, 58) }
+                    }
+                }
+                .kitoGlassCard(cornerRadius: theme.radii.lg)
+            }
+        }
+    }
+
+    private func sectionTitle(_ title: String) -> some View {
+        Text(title.uppercased())
+            .font(.caption.weight(.bold))
+            .kerning(0.8)
+            .foregroundStyle(theme.colors.primary)
+            .padding(.horizontal, 4)
     }
 
     // MARK: Backdrop
