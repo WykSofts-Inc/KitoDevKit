@@ -11,6 +11,8 @@ import KitoCore
 import KitoEmptyStates
 
 struct EmptyStatesDemo: View {
+    @Environment(\.kitoTheme) private var theme
+
     private enum Preset: String, CaseIterable, Identifiable {
         case noData, noResults, noConnection, error, custom, stateView
         var id: Self { self }
@@ -34,12 +36,20 @@ struct EmptyStatesDemo: View {
                 ForEach(Preset.allCases) { Text($0.label).tag($0) }
             }
             .pickerStyle(.menu)
+            .tint(theme.colors.primary)
             .padding()
 
             Spacer()
             content
+                .padding(theme.spacing.lg)
+                .kitoGlassCard(cornerRadius: theme.radii.lg)
+                .padding(.horizontal, theme.spacing.lg)
             Spacer()
         }
+        .background(
+            LinearGradient(colors: [theme.colors.background, theme.colors.primary.opacity(0.06)], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+        )
         .navigationTitle("Empty States")
         .onChange(of: preset) { _, newValue in
             if newValue == .stateView { stateViewState = .idle }

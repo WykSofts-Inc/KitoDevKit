@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import KitoCore
 import KitoConnectivity
 
 /// KitoConnectivityMonitor deliberately wraps the REAL system network
@@ -29,6 +30,7 @@ private enum SimulatedConnection: String, CaseIterable, Identifiable {
 }
 
 struct ConnectivityDemo: View {
+    @Environment(\.kitoTheme) private var theme
     @State private var monitor = KitoConnectivityMonitor()
     @State private var simulated: SimulatedConnection = .live
 
@@ -38,6 +40,7 @@ struct ConnectivityDemo: View {
                 ForEach(SimulatedConnection.allCases) { Text($0.label).tag($0) }
             }
             .pickerStyle(.menu)
+            .tint(theme.colors.primary)
 
             Image(systemName: displayIsOnline ? "wifi" : "wifi.slash")
                 .font(.system(size: 56))
