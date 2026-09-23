@@ -37,6 +37,7 @@ enum GlobalSampleIndex {
         hits += kit("Dynamic Island", symbol: "capsule.portrait", footnote: "Requires `import KitoIslandBar`.", IslandSamples.sections)
         hits += kit("Validation", symbol: "checkmark.shield", footnote: "Rules come from `import KitoValidation`; fields from `import KitoFields`.", ValidationGallery.sections)
         hits += kit("Wallet & Cards", symbol: "wallet.pass.fill", footnote: "Requires `import KitoWalletCards`.", WalletSamples.sections)
+        hits += kit("Modals", symbol: "rectangle.portrait.bottomthird.inset.filled", footnote: "Requires `import KitoModals`.", ModalSamples.sections)
         hits += kit("Media Picker", symbol: "photo.on.rectangle.angled", footnote: "Requires `import KitoMediaPicker`.", MediaSamples.sections)
         return hits
     }()

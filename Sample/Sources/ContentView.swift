@@ -43,7 +43,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "Feedback", entries: [
             KitoCatalogEntry("Loaders", "Spinner, dots, pulse, progress ring, skeleton", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
             KitoCatalogEntry("Toasts", "Queued, swipeable, spring physics", systemImage: "bubble.left.fill") { ToastsDemo() },
-            KitoCatalogEntry("Modals", "Bottom sheets, confirmations, status dialog", systemImage: "rectangle.portrait.bottomthird.inset.filled") { ModalsDemo() },
+            KitoCatalogEntry("Modals", "\(ModalsGallery.count) samples · sheets, alerts, paywall, hero cards", systemImage: "rectangle.portrait.bottomthird.inset.filled") { ModalsGallery() },
             KitoCatalogEntry("Empty States", "No data, no results, offline, error", systemImage: "tray") { EmptyStatesDemo() },
             KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
         ]),

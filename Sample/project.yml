@@ -10,7 +10,7 @@ packages:
   # two releases behind, and KitoScreens itself pulls these from GitHub — mixing a local copy
   # with the published one is a package-identity clash.
   KitoButtons: { url: https://github.com/wykeenjenga/KitoButtons, from: 1.8.0 }
-  KitoFields: { url: https://github.com/wykeenjenga/KitoFields, from: 1.9.0 }
+  KitoFields: { url: https://github.com/wykeenjenga/KitoFields, from: 1.9.2 }
   KitoScreens: { url: https://github.com/wykeenjenga/KitoScreens, from: 0.3.0 }
   KitoCharts: { path: ../../KitoCharts }
   KitoLoaders: { path: ../../KitoLoaders }
