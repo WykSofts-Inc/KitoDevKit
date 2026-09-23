@@ -23,6 +23,7 @@ packages:
   KitoPermissions: { path: ../../KitoPermissions }
   KitoBiometrics: { path: ../../KitoBiometrics }
   KitoMediaPicker: { path: ../../KitoMediaPicker }
+  KitoWalletCards: { path: ../../KitoWalletCards }
   KitoOnboarding: { path: ../../KitoOnboarding }
   KitoCart: { path: ../../KitoCart }
   KitoOrderTracking: { path: ../../KitoOrderTracking }
@@ -84,6 +85,7 @@ targets:
       - package: KitoPermissions
       - package: KitoBiometrics
       - package: KitoMediaPicker
+      - package: KitoWalletCards
       - package: KitoOnboarding
       - package: KitoCart
       - package: KitoOrderTracking
