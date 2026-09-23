@@ -33,6 +33,17 @@ packages:
   KitoImageLoader: { path: ../../KitoImageLoader }
   KitoIslandBar: { path: ../../KitoIslandBar }
   KitoPhotoEditor: { url: https://github.com/WykSofts-Inc/KitoPhotoEditor, from: 0.1.1 }
+  KitoChat: { path: ../../KitoChat }
+  KitoCalendar: { path: ../../KitoCalendar }
+  KitoMediaPlayer: { path: ../../KitoMediaPlayer }
+  KitoPaywall: { path: ../../KitoPaywall }
+  KitoAuth: { path: ../../KitoAuth }
+  KitoMaps: { path: ../../KitoMaps }
+  KitoMapsGoogle: { path: ../../KitoMapsGoogle }
+  KitoMapsLibre: { path: ../../KitoMapsLibre }
+  KitoCarousel: { path: ../../KitoCarousel }
+  KitoReviews: { path: ../../KitoReviews }
+  KitoWidgets: { path: ../../KitoWidgets }
 targets:
   KitoSample:
     type: application
@@ -64,6 +75,20 @@ targets:
         # Required for the app to be able to start a Live Activity at all —
         # without this key, Activity.request() throws, silently, every time.
         NSSupportsLiveActivities: true
+        # Keep audio and Picture in Picture going when the app is in the background (KitoMediaPlayer).
+        UIBackgroundModes: [audio]
+        # The App Group the app and its widgets share data through (KitoWidgets).
+        KitoWidgetsAppGroup: group.com.wyksoftsinc.kitosample
+        # Paste a Google Maps API key here to see live Google tiles (KitoMapsGoogle); empty shows setup help.
+        GMSApiKey: ""
+        CFBundleURLTypes:
+          - CFBundleURLName: com.wyksoftsinc.kitosample
+            CFBundleURLSchemes: [kitosample]
+    entitlements:
+      path: KitoSample.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.wyksoftsinc.kitosample
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample
@@ -96,6 +121,17 @@ targets:
       - package: KitoImageLoader
       - package: KitoIslandBar
       - package: KitoPhotoEditor
+      - package: KitoChat
+      - package: KitoCalendar
+      - package: KitoMediaPlayer
+      - package: KitoPaywall
+      - package: KitoAuth
+      - package: KitoMaps
+      - package: KitoMapsGoogle
+      - package: KitoMapsLibre
+      - package: KitoCarousel
+      - package: KitoReviews
+      - package: KitoWidgets
       - target: OrderTrackingWidgetExtension
         embed: true
 
@@ -111,6 +147,12 @@ targets:
         CFBundleDisplayName: OrderTrackingWidget
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        KitoWidgetsAppGroup: group.com.wyksoftsinc.kitosample
+    entitlements:
+      path: WidgetExtension/OrderTrackingWidgetExtension.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.wyksoftsinc.kitosample
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample.OrderTrackingWidget
@@ -121,3 +163,14 @@ targets:
     dependencies:
       - package: KitoOrderTracking
       - package: KitoCore
+      - package: KitoWidgets
+
+schemes:
+  KitoSample:
+    build:
+      targets:
+        KitoSample: all
+    run:
+      config: Debug
+      # Local StoreKit products so the Paywall samples can buy and restore in the simulator.
+      storeKitConfiguration: KitoSample.storekit

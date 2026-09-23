@@ -39,6 +39,8 @@ struct ContentView: View {
         KitoCatalogSection(title: "Components", entries: [
             KitoCatalogEntry("Buttons", "\(SampleCatalog.all.count) samples · variants, phases, add-to-cart", systemImage: "hand.tap.fill") { ButtonsGallery() },
             KitoCatalogEntry("Fields", "\(FieldSampleCatalog.all.count) samples · text, phone, OTP, currency", systemImage: "character.cursor.ibeam") { FieldsGallery() },
+            KitoCatalogEntry("Carousels & Stories", "\(CarouselGallery.count) samples · snap, cover flow, swipe deck, stories", systemImage: "rectangle.stack.fill") { CarouselGallery() },
+            KitoCatalogEntry("Reviews & Ratings", "\(ReviewsGallery.count) samples · stars, histograms, composer, NPS", systemImage: "star.bubble.fill") { ReviewsGallery() },
         ]),
         KitoCatalogSection(title: "Feedback", entries: [
             KitoCatalogEntry("Loaders", "Spinner, dots, pulse, progress ring, skeleton", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
@@ -50,6 +52,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "Data & Charts", entries: [
             KitoCatalogEntry("Charts", "\(ChartsGallery.count) samples · line, area, sparklines, bar, pie", systemImage: "chart.xyaxis.line") { ChartsGallery() },
             KitoCatalogEntry("3D Charts", "\(Chart3DSampleCatalog.all.count) samples · bars, pies, donuts, live data", systemImage: "cube.fill") { Chart3DGallery() },
+            KitoCatalogEntry("Calendar", "\(CalendarGallery.count) samples · month, ranges, slots, timeline", systemImage: "calendar") { CalendarGallery() },
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
@@ -59,7 +62,17 @@ struct ContentView: View {
         KitoCatalogSection(title: "Forms", entries: [
             KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
             KitoCatalogEntry("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
+            KitoCatalogEntry("Media Player", "\(MediaPlayerGallery.count) samples · video, Reels, music, podcasts", systemImage: "play.rectangle.fill") { MediaPlayerGallery() },
             KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
+        ]),
+        KitoCatalogSection(title: "Communication", entries: [
+            KitoCatalogEntry("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
+        ]),
+        KitoCatalogSection(title: "Account", entries: [
+            KitoCatalogEntry("Auth", "\(AuthGallery.count) samples · Apple, passkeys, codes, app lock", systemImage: "person.badge.key.fill") { AuthGallery() },
+        ]),
+        KitoCatalogSection(title: "Location", entries: [
+            KitoCatalogEntry("Maps", "\(MapsGallery.count) samples · Apple, Google, MapLibre, pins, routes", systemImage: "map.fill") { MapsGallery() },
         ]),
         KitoCatalogSection(title: "Device", entries: [
             KitoCatalogEntry("Permissions", "One async API, themed rationale screen", systemImage: "hand.raised") { PermissionsDemo() },
@@ -70,6 +83,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "System", entries: [
             KitoCatalogEntry("Control Center", "Glass modules, toggles, drag sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
             KitoCatalogEntry("Dynamic Island", "\(IslandGallery.count) samples · music, timers, calls, rides, moments", systemImage: "capsule.portrait") { IslandGallery() },
+            KitoCatalogEntry("Widgets & Intents", "\(WidgetsGallery.count) samples · Home Screen, Lock Screen, Siri", systemImage: "square.grid.2x2.fill") { WidgetsGallery() },
         ]),
         KitoCatalogSection(title: "Networking", entries: [
             KitoCatalogEntry("Image Loader", "Cache-backed image loading, live from a URL", systemImage: "photo.badge.arrow.down") { ImageLoaderDemo() },
@@ -77,6 +91,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "Commerce", entries: [
             KitoCatalogEntry("Cart", "Choreographed add-to-cart, fly-to-badge", systemImage: "cart.fill") { CartDemo() },
             KitoCatalogEntry("Wallet & Cards", "\(WalletGallery.count) samples · pocket, stack, carousel, add a card", systemImage: "wallet.pass.fill") { WalletGallery() },
+            KitoCatalogEntry("Paywall", "\(PaywallGallery.count) samples · StoreKit 2, plans, trials, Pro gate", systemImage: "crown.fill") { PaywallGallery() },
             KitoCatalogEntry("Order Tracking", "Self-refreshing status + Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
         ]),
     ]
