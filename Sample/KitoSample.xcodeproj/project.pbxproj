@@ -14,7 +14,7 @@
 		0ADB858B67F2428046D483DA /* OrderTrackingWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */; };
 		0CAE03623D411715643199A1 /* KitoIslandBar in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD5D13482A5A7BE4ED8D37D /* KitoIslandBar */; };
 		0CD69B9618D08AF67D6DA673 /* LineChartShowcases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9FED3BDA53BFCFE6BEECA /* LineChartShowcases.swift */; };
-		121CDA8745A6115BAC5D875E /* MediaPickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */; };
+		0FB76E55672C058A45C67A5C /* ValidationRuleSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B068BBF8F065DB3E871FA3 /* ValidationRuleSamples.swift */; };
 		1817931C96BD86A5D23E1206 /* HapticsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */; };
 		1867B92150AC04D23C9CAE4E /* ButtonsGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33034D2A0B2E1E4765790D59 /* ButtonsGallery.swift */; };
 		192BF41F161536F73F228B3F /* KitoModals in Frameworks */ = {isa = PBXBuildFile; productRef = 35A3AF68ECD5438D5A7D1EE4 /* KitoModals */; };
@@ -30,6 +30,7 @@
 		420019260A67E5D9F2F125D7 /* LineChartSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE8D8B3ADE97C359089522 /* LineChartSamples.swift */; };
 		428AC85388E77EFE568F9DD3 /* ModalsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404FA26020EBE13DB7027A9 /* ModalsDemo.swift */; };
 		44AD4D650C2E676E9243078E /* KitoEmptyStates in Frameworks */ = {isa = PBXBuildFile; productRef = 8D1FD6E263072E981EB0C124 /* KitoEmptyStates */; };
+		525311763267DC50BBE2126C /* ValidationFieldSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */; };
 		52D1C28FC56DF91273D32873 /* KitoValidation in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7FFF789DC791F610B2703C /* KitoValidation */; };
 		558845145EBD98DE9146DB39 /* KitoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF2D1062E48C2B142D85599 /* KitoCore */; };
 		5922BAD594985C3E1C0FDB76 /* FormattingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */; };
@@ -49,6 +50,7 @@
 		8E26063F36A7CBAB2A4165ED /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
 		95599468A98CAE537B5CA05F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A96010E3E751D70603BB92 /* ContentView.swift */; };
 		9D8698832ADEEB396B594169 /* BiometricsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1219DD1751051A3E0F178 /* BiometricsDemo.swift */; };
+		9F9D840DE1E049117E7A4B96 /* MediaSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980B6B778F8DF22A864D42D /* MediaSamples.swift */; };
 		A0F9FFA018D83CD072D17B7E /* KitoNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F9B384A8AD275C63F9CB2235 /* KitoNavigation */; };
 		A33471384EA02C747CD1CBB5 /* KitoFields in Frameworks */ = {isa = PBXBuildFile; productRef = DF6BC35D7F7099FAE2EFD636 /* KitoFields */; };
 		A546EE342B2532834153D1BA /* Chart3DGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */; };
@@ -61,7 +63,6 @@
 		BF8C5D6A4E8EC30CDF9F912D /* Chart3DInteractiveSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */; };
 		C1993BA0BA67925BF26857FA /* KitoFormatting in Frameworks */ = {isa = PBXBuildFile; productRef = 6C747074769820899D6152A5 /* KitoFormatting */; };
 		C635F7C01C88BA890A7E4625 /* ToastsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0EA422E395A2050E9B369 /* ToastsDemo.swift */; };
-		C8A3BDE2A9AF9FB6CD2B49F0 /* ValidationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */; };
 		C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */; };
 		C8EF037C7B0091CE3940975A /* SampleCatalog+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837BA288474F8019F2893AA /* SampleCatalog+Generated.swift */; };
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -78,6 +79,7 @@
 		F7F1AAFBD8B2AA87DD38FEAF /* OnboardingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9309F6204597E003F44517 /* OnboardingSamples.swift */; };
 		F8279F02C02071D873A359D8 /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1BB3BF85532F27D935D6F2 /* ChartsData.swift */; };
 		F958B3D3BEC4FBE15E357D2A /* KitoOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = C226E69F5FAADDC2D7C95CAF /* KitoOnboarding */; };
+		FBC7E079CDB8AC24FDBEE39C /* GlobalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388DF5376BAB0425237F49F /* GlobalSearch.swift */; };
 		FF0B8A8C96243D3572FA2B3C /* FieldSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E40B66B99800FE9214E002 /* FieldSample.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,7 @@
 /* Begin PBXFileReference section */
 		0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingDemo.swift; sourceTree = "<group>"; };
 		088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingDemo.swift; sourceTree = "<group>"; };
+		08B068BBF8F065DB3E871FA3 /* ValidationRuleSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRuleSamples.swift; sourceTree = "<group>"; };
 		0ADC1EDD89FCF6D61EAEB810 /* KitoPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPermissions; path = ../../KitoPermissions; sourceTree = SOURCE_ROOT; };
 		0B1BB3BF85532F27D935D6F2 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
 		159F2AB4DA3077DA7EF2010F /* KitoConnectivity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoConnectivity; path = ../../KitoConnectivity; sourceTree = SOURCE_ROOT; };
@@ -117,13 +120,13 @@
 		2837BA288474F8019F2893AA /* SampleCatalog+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleCatalog+Generated.swift"; sourceTree = "<group>"; };
 		2C532E29961B1F6060935305 /* OnboardingSampleHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSampleHost.swift; sourceTree = "<group>"; };
 		33034D2A0B2E1E4765790D59 /* ButtonsGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsGallery.swift; sourceTree = "<group>"; };
-		348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerDemo.swift; sourceTree = "<group>"; };
 		35925B2E0FF6311947BAB1C2 /* FieldFormDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldFormDemos.swift; sourceTree = "<group>"; };
 		368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderDemo.swift; sourceTree = "<group>"; };
 		36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDemo.swift; sourceTree = "<group>"; };
 		4136029860D675CADEF00CC7 /* OnboardingIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIllustrations.swift; sourceTree = "<group>"; };
 		4D3A9B0E5FC952E25CAF09A2 /* KitoKeychain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoKeychain; path = ../../KitoKeychain; sourceTree = SOURCE_ROOT; };
 		4F8BC81F52EA9CE5F0B26104 /* KitoLoaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoLoaders; path = ../../KitoLoaders; sourceTree = SOURCE_ROOT; };
+		5388DF5376BAB0425237F49F /* GlobalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearch.swift; sourceTree = "<group>"; };
 		569EE5759D3941C0B37197DF /* KitGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitGallery.swift; sourceTree = "<group>"; };
 		590DB161794038C887195CB0 /* KitoFormatting */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoFormatting; path = ../../KitoFormatting; sourceTree = SOURCE_ROOT; };
 		592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryComponents.swift; sourceTree = "<group>"; };
@@ -141,7 +144,6 @@
 		8165B2C284A818D240F97FC9 /* KitoCart */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCart; path = ../../KitoCart; sourceTree = SOURCE_ROOT; };
 		817E98EC4CF8D1308E25617B /* KitoHaptics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoHaptics; path = ../../KitoHaptics; sourceTree = SOURCE_ROOT; };
 		87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DGallery.swift; sourceTree = "<group>"; };
-		88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationDemo.swift; sourceTree = "<group>"; };
 		921BCA09903AD94480DF4312 /* ControlCenterDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCenterDemo.swift; sourceTree = "<group>"; };
 		96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoSampleApp.swift; sourceTree = "<group>"; };
 		9929D9B074DCB44DBA2649C7 /* KitoSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KitoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 		B58341CE205EDAD33DF94848 /* IslandStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandStage.swift; sourceTree = "<group>"; };
 		B7EE8D8B3ADE97C359089522 /* LineChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartSamples.swift; sourceTree = "<group>"; };
 		B89D45DFDD3718DCE88CD05C /* BarPieChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarPieChartSamples.swift; sourceTree = "<group>"; };
+		BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFieldSamples.swift; sourceTree = "<group>"; };
 		C09047156BF52F2541DD0E90 /* FieldSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSampleCatalog.swift; sourceTree = "<group>"; };
 		C39AC08B6A6776FF3EA2B6E0 /* KitoCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCore; path = ../../KitoCore; sourceTree = SOURCE_ROOT; };
 		C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadersDemo.swift; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		D53F8C5FBD90B51375F8A277 /* HapticsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsDemo.swift; sourceTree = "<group>"; };
 		D7D4FBBDF60CEA099474845F /* KitoCharts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCharts; path = ../../KitoCharts; sourceTree = SOURCE_ROOT; };
 		D853F507CC8B34320CE7950E /* KitoIslandBar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoIslandBar; path = ../../KitoIslandBar; sourceTree = SOURCE_ROOT; };
+		D980B6B778F8DF22A864D42D /* MediaSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSamples.swift; sourceTree = "<group>"; };
 		DCB7CC51FEEDBDB41592F88E /* KitoImageLoader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoImageLoader; path = ../../KitoImageLoader; sourceTree = SOURCE_ROOT; };
 		E14E3753958497564C54EED0 /* CartDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDemo.swift; sourceTree = "<group>"; };
 		E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DSampleCatalog.swift; sourceTree = "<group>"; };
@@ -219,6 +223,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A67506AE2B7AF154452B373 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				D980B6B778F8DF22A864D42D /* MediaSamples.swift */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 		2FFD9ABFFA006B0DEFABAEE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,13 +330,16 @@
 			isa = PBXGroup;
 			children = (
 				592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */,
+				5388DF5376BAB0425237F49F /* GlobalSearch.swift */,
 				569EE5759D3941C0B37197DF /* KitGallery.swift */,
 				6CBB1B55AC5846DCEB433679 /* Buttons */,
 				72782E68CAB1295AC1B5A778 /* Charts */,
 				83DB04DC7D23EADC7DDF6F27 /* Charts3D */,
 				637D740DBD8CF20F7B509D83 /* Fields */,
 				34C286FB9E1D34EDDFFDFCBE /* Island */,
+				0A67506AE2B7AF154452B373 /* Media */,
 				3799AADC676A2AE61DD60C93 /* Onboarding */,
+				AD35D32057EF70690CC5E120 /* Validation */,
 			);
 			path = Kits;
 			sourceTree = "<group>";
@@ -335,6 +350,15 @@
 				A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		AD35D32057EF70690CC5E120 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */,
+				08B068BBF8F065DB3E871FA3 /* ValidationRuleSamples.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 		B02A67230D7C238E5DDF68DC /* Demos */ = {
@@ -350,14 +374,12 @@
 				368362865F20ADF3669F09E0 /* ImageLoaderDemo.swift */,
 				36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */,
 				C6C8EE878AB2A0B53E1B574B /* LoadersDemo.swift */,
-				348D835E8A675E29B51CDD79 /* MediaPickerDemo.swift */,
 				2404FA26020EBE13DB7027A9 /* ModalsDemo.swift */,
 				A25A0BE4A1B14887E967ED85 /* NavigationDemo.swift */,
 				0037CBA45E4432235BF00EF6 /* OrderTrackingDemo.swift */,
 				67D5EB1CB42E5BC1743A396D /* PermissionsDemo.swift */,
 				AF5770CBE3635475023C1A28 /* SettingsDemo.swift */,
 				7DA0EA422E395A2050E9B369 /* ToastsDemo.swift */,
-				88BA3E3ED07165BA56EBD0DB /* ValidationDemo.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -549,6 +571,7 @@
 				F5E222D62773E57A45C19F85 /* FieldsGallery.swift in Sources */,
 				5922BAD594985C3E1C0FDB76 /* FormattingDemo.swift in Sources */,
 				74DB720436D05A5D5065EE7A /* GalleryComponents.swift in Sources */,
+				FBC7E079CDB8AC24FDBEE39C /* GlobalSearch.swift in Sources */,
 				1817931C96BD86A5D23E1206 /* HapticsDemo.swift in Sources */,
 				EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */,
 				1A3CC5A6AA8A766B8774AC67 /* IslandActivities.swift in Sources */,
@@ -561,7 +584,7 @@
 				420019260A67E5D9F2F125D7 /* LineChartSamples.swift in Sources */,
 				0CD69B9618D08AF67D6DA673 /* LineChartShowcases.swift in Sources */,
 				F36BE621753A3AE3235CFF13 /* LoadersDemo.swift in Sources */,
-				121CDA8745A6115BAC5D875E /* MediaPickerDemo.swift in Sources */,
+				9F9D840DE1E049117E7A4B96 /* MediaSamples.swift in Sources */,
 				428AC85388E77EFE568F9DD3 /* ModalsDemo.swift in Sources */,
 				03B076F1800BBF24A167460A /* NavigationDemo.swift in Sources */,
 				F4880EBCF31FE91C2ECDDB59 /* OnboardingIllustrations.swift in Sources */,
@@ -574,7 +597,8 @@
 				897672D50B808C465032F312 /* SampleCatalog.swift in Sources */,
 				864BFA79631B204E60A18881 /* SettingsDemo.swift in Sources */,
 				C635F7C01C88BA890A7E4625 /* ToastsDemo.swift in Sources */,
-				C8A3BDE2A9AF9FB6CD2B49F0 /* ValidationDemo.swift in Sources */,
+				525311763267DC50BBE2126C /* ValidationFieldSamples.swift in Sources */,
+				0FB76E55672C058A45C67A5C /* ValidationRuleSamples.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
