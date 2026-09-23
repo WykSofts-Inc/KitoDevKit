@@ -43,7 +43,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "Feedback", entries: [
             KitoCatalogEntry("Loaders", "Spinner, dots, pulse, progress ring, skeleton", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
             KitoCatalogEntry("Toasts", "Queued, swipeable, spring physics", systemImage: "bubble.left.fill") { ToastsDemo() },
-            KitoCatalogEntry("Modals", "Bottom sheets, confirmations, status dialog", systemImage: "rectangle.portrait.bottomthird.inset.filled") { ModalsDemo() },
+            KitoCatalogEntry("Modals", "\(ModalsGallery.count) samples · sheets, alerts, paywall, hero cards", systemImage: "rectangle.portrait.bottomthird.inset.filled") { ModalsGallery() },
             KitoCatalogEntry("Empty States", "No data, no results, offline, error", systemImage: "tray") { EmptyStatesDemo() },
             KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
         ]),
@@ -53,11 +53,12 @@ struct ContentView: View {
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", entries: [
-            KitoCatalogEntry("Tab Bar & Side Menu", "Custom tab bar and a swipeable drawer", systemImage: "sidebar.left") { NavigationDemo() },
+            KitoCatalogEntry("Side Menus & Tab Bars", "\(NavigationGallery.count) samples · drawers, transitions, tab bars, top tabs", systemImage: "sidebar.left") { NavigationGallery() },
             KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
         ]),
         KitoCatalogSection(title: "Forms", entries: [
             KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
+            KitoCatalogEntry("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
             KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
         ]),
         KitoCatalogSection(title: "Device", entries: [
