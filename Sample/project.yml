@@ -6,7 +6,12 @@ options:
   createIntermediateGroups: true
 packages:
   KitoCore: { path: ../../KitoCore }
-  KitoButtons: { path: ../../KitoButtons }
+  # Published releases, not the local copies in this folder: the local KitoButtons is 1.6.0,
+  # two releases behind, and KitoScreens itself pulls these from GitHub — mixing a local copy
+  # with the published one is a package-identity clash.
+  KitoButtons: { url: https://github.com/wykeenjenga/KitoButtons, from: 1.8.0 }
+  KitoFields: { url: https://github.com/wykeenjenga/KitoFields, from: 1.9.0 }
+  KitoScreens: { url: https://github.com/wykeenjenga/KitoScreens, from: 0.3.0 }
   KitoCharts: { path: ../../KitoCharts }
   KitoLoaders: { path: ../../KitoLoaders }
   KitoToasts: { path: ../../KitoToasts }
@@ -66,6 +71,8 @@ targets:
     dependencies:
       - package: KitoCore
       - package: KitoButtons
+      - package: KitoFields
+      - package: KitoScreens
       - package: KitoCharts
       - package: KitoLoaders
       - package: KitoToasts
