@@ -333,8 +333,9 @@ extension FoodShowcase {
                                                      message: "This is a demo, so no call is placed.", actions: [.cancel(), KitoAlertAction("OK")])
                                })
                 KitoChatView(messages: $order.messages, currentUser: FoodStore.me, style: .modern, typingUsers: typing,
-                             placeholder: "Message \(order.firstName)", tint: FoodPalette.pepper,
-                             onSend: { message in store.send(message, in: order) })
+                             placeholder: "Message \(order.firstName)", tint: FoodPalette.pepper) { message in
+                    store.send(message, in: order)
+                }
             }
             .background(theme.colors.background.ignoresSafeArea())
             .kitoAlert($alert)

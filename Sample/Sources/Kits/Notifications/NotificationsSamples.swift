@@ -375,7 +375,7 @@ private struct NotifQuietDialPlayground: View {
 
     var body: some View {
         VStack(spacing: 18) {
-            KitoQuietHoursDial(quietHours: quiet).frame(width: 170, height: 170)
+            KitoNotificationQuietHoursDial(quietHours: quiet).frame(width: 170, height: 170)
             Text(quiet.summary()).font(.headline).contentTransition(.opacity)
             VStack(spacing: 6) {
                 HStack { Label("From", systemImage: "moon.stars.fill"); Spacer(); Text(quiet.start.label).monospacedDigit() }.font(.subheadline)
@@ -516,7 +516,7 @@ enum NotificationsSamples {
         KitSample("Delivered quietly", "Provisional, with a way to turn alerts on.", code: settingsCode) {
             ModalStage { NotifSettingsStage(authorization: .provisional) }
         },
-        KitSample("Quiet hours dial", "Drag the window; it wraps past midnight.", code: "KitoQuietHoursDial(quietHours: KitoQuietHours(start: .init(hour: 22), end: .init(hour: 7)))") {
+        KitSample("Quiet hours dial", "Drag the window; it wraps past midnight.", code: "KitoNotificationQuietHoursDial(quietHours: KitoQuietHours(start: .init(hour: 22), end: .init(hour: 7)))") {
             NotifQuietDialPlayground()
         },
     ])

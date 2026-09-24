@@ -101,7 +101,7 @@ private enum Script {
                             kind: .image(KitoChatImage(Photos.naivasha, caption: "Lake Naivasha from the boat")), status: .read,
                             reactions: [KitoChatReaction("❤️", userIDs: [People.amani.id])]),
             KitoChatMessage(id: "a4", author: People.amani, date: daysAgo(1, hour: 19, minute: 40),
-                            kind: .voice(duration: 14, waveform: KitoWaveform.placeholder(count: 48, seed: 11))),
+                            kind: .voice(duration: 14, waveform: KitoChatWaveform.placeholder(count: 48, seed: 11))),
             KitoChatMessage(id: "a5", author: People.me, text: "Haha sawa, nitakuletea mandazi 😂", date: daysAgo(1, hour: 19, minute: 44), status: .read,
                             reactions: [KitoChatReaction("😂", userIDs: [People.amani.id])]),
             KitoChatMessage(id: "a5b", author: People.amani, text: "Kesho tuko on for lunch?", date: minutesAgo(43)),
@@ -166,7 +166,7 @@ private enum Script {
             KitoChatMessage(id: "z2", author: People.zawadi, date: minutesAgo(89), kind: .image(KitoChatImage(Photos.diani))),
             KitoChatMessage(id: "z3", author: People.me, text: "Wow! Hiyo maji ni turquoise kabisa", date: minutesAgo(70), status: .read,
                             reactions: [KitoChatReaction("🙏", userIDs: [People.zawadi.id])]),
-            KitoChatMessage(id: "z4", author: People.me, date: minutesAgo(69), kind: .voice(duration: 9, waveform: KitoWaveform.placeholder(count: 40, seed: 5)), status: .read),
+            KitoChatMessage(id: "z4", author: People.me, date: minutesAgo(69), kind: .voice(duration: 9, waveform: KitoChatWaveform.placeholder(count: 40, seed: 5)), status: .read),
             KitoChatMessage(id: "z5", author: People.zawadi, text: "Next time lazima uje 😎", date: minutesAgo(20)),
         ]
     }
@@ -473,12 +473,12 @@ private struct VoiceBubbles: View {
     var body: some View {
         VStack(spacing: 10) {
             HStack {
-                KitoChatBubble(KitoChatMessage(author: People.amani, kind: .voice(duration: 14, waveform: KitoWaveform.placeholder(count: 48, seed: 3))), isOutgoing: false)
+                KitoChatBubble(KitoChatMessage(author: People.amani, kind: .voice(duration: 14, waveform: KitoChatWaveform.placeholder(count: 48, seed: 3))), isOutgoing: false)
                 Spacer(minLength: 0)
             }
             HStack {
                 Spacer(minLength: 0)
-                KitoChatBubble(KitoChatMessage(author: People.me, kind: .voice(duration: 42, waveform: KitoWaveform.placeholder(count: 48, seed: 8)), status: .read),
+                KitoChatBubble(KitoChatMessage(author: People.me, kind: .voice(duration: 42, waveform: KitoChatWaveform.placeholder(count: 48, seed: 8)), status: .read),
                                isOutgoing: true, style: .imessage)
             }
             Text("Play, drag across the waveform to scrub, tap 1× for 1.5× and 2×.").font(.footnote).foregroundStyle(.secondary)
@@ -615,7 +615,7 @@ private struct TypingSample: View {
         VStack(alignment: .leading, spacing: 12) {
             ForEach(KitoChatBubbleStyle.allCases) { style in
                 HStack(spacing: 12) {
-                    KitoTypingIndicator(style: style)
+                    KitoChatTypingIndicator(style: style)
                     Text(style.title).font(.caption).foregroundStyle(.secondary)
                 }
             }
@@ -736,10 +736,10 @@ private struct WaveformSample: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            KitoWaveformView(samples: KitoWaveform.placeholder(count: Int(bars), seed: 21), progress: progress, barWidth: 4, spacing: 3) { progress = $0 }
+            KitoChatWaveformView(samples: KitoChatWaveform.placeholder(count: Int(bars), seed: 21), progress: progress, barWidth: 4, spacing: 3) { progress = $0 }
                 .frame(height: 56)
-            KitoWaveformView(
-                samples: KitoWaveform.downsample((0..<2_000).map { Float(sin(Double($0) / 40) * sin(Double($0) / 311)) }, to: Int(bars)),
+            KitoChatWaveformView(
+                samples: KitoChatWaveform.downsample((0..<2_000).map { Float(sin(Double($0) / 40) * sin(Double($0) / 311)) }, to: Int(bars)),
                 progress: progress,
                 activeColor: .orange
             )
@@ -905,7 +905,7 @@ enum ChatSamples {
         KitoChatMessageStatus.sending.canTransition(to: .failed)   // true
         """) { ReceiptsSample() },
         KitSample("Typing indicator", "Bouncing dots in every bubble style; still with Reduce Motion.", code: """
-        KitoTypingIndicator(style: .imessage)
+        KitoChatTypingIndicator(style: .imessage)
         """) { TypingSample() },
         KitSample("Chat header", "The subtitle switches to “Amani is typing…”.", code: """
         KitoChatHeader(user: amani, typingUsers: typing,
@@ -939,8 +939,8 @@ enum ChatSamples {
 
     private static let blocks = KitSection("Building blocks", symbol: "waveform", [
         KitSample("Waveform", "Downsample any audio to bars; scrub with a drag.", code: """
-        let bars = KitoWaveform.downsample(samples, to: 40)     // peaks, normalised to 0…1
-        KitoWaveformView(samples: bars, progress: progress) { progress = $0 }
+        let bars = KitoChatWaveform.downsample(samples, to: 40)     // peaks, normalised to 0…1
+        KitoChatWaveformView(samples: bars, progress: progress) { progress = $0 }
         """) { WaveformSample() },
         KitSample("Timeline", "Day sections, group positions and the unread divider, without any UI.", code: """
         let timeline = KitoChatTimeline(messages: messages, currentUserID: me.id, unreadCount: 3)
