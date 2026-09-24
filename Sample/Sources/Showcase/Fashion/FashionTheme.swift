@@ -54,7 +54,7 @@ extension KitoTheme {
                 danger: Color(red: 0.72, green: 0.18, blue: 0.20), success: Color(red: 0.18, green: 0.52, blue: 0.34),
                 warning: Color(red: 0.70, green: 0.52, blue: 0.20))
         }
-        let type = KitoTypography(
+        let type = KitoThemeTypography(
             displayLarge: .system(size: 34, weight: .regular, design: .serif),
             displayMedium: .system(size: 28, weight: .regular, design: .serif),
             titleLarge: .system(size: 24, weight: .regular, design: .serif),

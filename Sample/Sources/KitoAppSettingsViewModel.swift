@@ -33,11 +33,41 @@ final class KitoAppSettingsViewModel {
     /// (the customization principle applies to the default theme too).
     var themeMode: ThemeMode = .neon
     var primaryColor: Color = KitoColors.neon.primary
-    /// Multiplies every base font size. KitoTypography stores opaque `Font`
+    /// Multiplies every base font size. KitoThemeTypography stores opaque `Font`
     /// values (not raw point sizes), so scaling means rebuilding it from the
-    /// same base sizes KitoTypography.default uses, not adjusting in place.
+    /// same base sizes KitoThemeTypography.default uses, not adjusting in place.
     var fontScale: Double = 1.0
     var cornerRadiusScale: Double = 1.0
+
+    /// Forces the whole app into left-to-right or right-to-left layout, so
+    /// every kit can be checked for RTL (Arabic, Hebrew, Urdu) without
+    /// changing the device language.
+    enum LayoutDirectionMode: String, CaseIterable, Identifiable {
+        case system, leftToRight, rightToLeft
+        var id: Self { self }
+        var label: String {
+            switch self {
+            case .system: return "System"
+            case .leftToRight: return "Left to right"
+            case .rightToLeft: return "Right to left"
+            }
+        }
+        var direction: LayoutDirection? {
+            switch self {
+            case .system: return nil
+            case .leftToRight: return .leftToRight
+            case .rightToLeft: return .rightToLeft
+            }
+        }
+    }
+
+    var layoutDirectionMode: LayoutDirectionMode = .system
+    /// Swaps the environment locale for Arabic so numbers, dates, currency
+    /// and plurals format the way an RTL user would see them. It does not
+    /// translate strings; for double-length pseudo-strings, run the app with
+    /// Xcode's "Double-Length Pseudolanguage" (Edit Scheme > Run > Options).
+    var pseudoLanguage: Bool = false
+    static let pseudoLocale = Locale(identifier: "ar")
 
     var preferredColorScheme: ColorScheme? {
         switch themeMode {
@@ -58,8 +88,8 @@ final class KitoAppSettingsViewModel {
         )
     }
 
-    private var scaledTypography: KitoTypography {
-        KitoTypography(
+    private var scaledTypography: KitoThemeTypography {
+        KitoThemeTypography(
             displayLarge: .system(size: 34 * fontScale, weight: .bold),
             displayMedium: .system(size: 28 * fontScale, weight: .semibold),
             titleLarge: .system(size: 22 * fontScale, weight: .semibold),
@@ -89,6 +119,8 @@ final class KitoAppSettingsViewModel {
         primaryColor = KitoColors.neon.primary
         fontScale = 1.0
         cornerRadiusScale = 1.0
+        layoutDirectionMode = .system
+        pseudoLanguage = false
     }
 }
 
@@ -98,6 +130,8 @@ final class KitoAppSettingsViewModel {
 /// resolution has to happen.
 struct KitoThemedRoot<Content: View>: View {
     @Environment(\.colorScheme) private var systemColorScheme
+    @Environment(\.layoutDirection) private var systemLayoutDirection
+    @Environment(\.locale) private var systemLocale
     let settings: KitoAppSettingsViewModel
     @ViewBuilder let content: () -> Content
 
@@ -113,5 +147,7 @@ struct KitoThemedRoot<Content: View>: View {
         content()
             .kitoTheme(settings.theme(resolvedScheme: resolved))
             .preferredColorScheme(settings.preferredColorScheme)
+            .environment(\.layoutDirection, settings.layoutDirectionMode.direction ?? systemLayoutDirection)
+            .environment(\.locale, settings.pseudoLanguage ? KitoAppSettingsViewModel.pseudoLocale : systemLocale)
     }
 }

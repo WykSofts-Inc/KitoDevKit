@@ -222,8 +222,8 @@ extension FoodShowcase {
 
         var body: some View {
             Button(action: action) {
-                KitoSearchField(text: .constant(""), prompt: "Search restaurants or dishes", style: .prominent,
-                                showsCancelButton: false)
+                KitoSearchBar(text: .constant(""), prompt: "Search restaurants or dishes", style: .prominent,
+                              showsCancelButton: false)
                     .allowsHitTesting(false)
             }
             .buttonStyle(FoodPressStyle())
