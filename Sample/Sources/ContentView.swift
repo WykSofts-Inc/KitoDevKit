@@ -77,7 +77,7 @@ struct ContentView: View {
             KitoCatalogEntry("Charts", "\(ChartsGallery.count) samples · line, area, sparklines, bar, pie", systemImage: "chart.xyaxis.line") { ChartsGallery() },
             KitoCatalogEntry("3D Charts", "\(Chart3DSampleCatalog.all.count) samples · bars, pies, donuts, live data", systemImage: "cube.fill") { Chart3DGallery() },
             KitoCatalogEntry.new("Calendar", "\(CalendarGallery.count) samples · month, ranges, slots, timeline", systemImage: "calendar") { CalendarGallery() },
-            KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
+            KitoCatalogEntry("Formatting", "\(FormattingDemo.count) samples · money, dates, phones, counting text", systemImage: "textformat.123") { FormattingDemo() },
         ]),
         KitoCatalogSection(title: "Navigation", symbol: "sidebar.left", tint: Color.purple, entries: [
             KitoCatalogEntry.new("Side Menus & Tab Bars", "\(NavigationGallery.count) samples · drawers, transitions, tab bars, top tabs", systemImage: "sidebar.left") { NavigationGallery() },
@@ -91,6 +91,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Communication", symbol: "bubble.left.and.bubble.right.fill", tint: Color.blue, entries: [
             KitoCatalogEntry.new("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
+            KitoCatalogEntry.new("Notifications", "\(NotificationsGallery.count) samples · inbox, banners, actions, quiet hours", systemImage: "bell.badge.fill") { NotificationsGallery() },
         ]),
         KitoCatalogSection(title: "Account", symbol: "person.crop.circle.badge.checkmark", tint: Color.indigo, entries: [
             KitoCatalogEntry.new("Auth", "\(AuthGallery.count) samples · Apple, passkeys, codes, app lock", systemImage: "person.badge.key.fill") { AuthGallery() },
@@ -99,24 +100,24 @@ struct ContentView: View {
             KitoCatalogEntry.new("Maps", "\(MapsGallery.count) samples · Apple, Google, MapLibre, pins, routes", systemImage: "map.fill") { MapsGallery() },
         ]),
         KitoCatalogSection(title: "Device", symbol: "iphone", tint: Color.mint, entries: [
-            KitoCatalogEntry("Permissions", "One async API, themed rationale screen", systemImage: "hand.raised") { PermissionsDemo() },
-            KitoCatalogEntry("Biometrics", "Face ID / Touch ID authentication", systemImage: "faceid") { BiometricsDemo() },
-            KitoCatalogEntry("Keychain", "Secure token storage round-trip", systemImage: "key.fill") { KeychainDemo() },
-            KitoCatalogEntry("Connectivity", "Live online/offline monitoring", systemImage: "wifi") { ConnectivityDemo() },
+            KitoCatalogEntry("Permissions", "\(PermissionsDemo.count) samples · primers, dashboard, recovery", systemImage: "hand.raised") { PermissionsDemo() },
+            KitoCatalogEntry("Biometrics", "\(BiometricsDemo.count) samples · lock screens, protected actions", systemImage: "faceid") { BiometricsDemo() },
+            KitoCatalogEntry("Keychain", "\(KeychainDemo.count) samples · vault, reveal on Face ID", systemImage: "key.fill") { KeychainDemo() },
+            KitoCatalogEntry("Connectivity", "\(ConnectivityDemo.count) samples · banners, quality, retry when online", systemImage: "wifi") { ConnectivityDemo() },
         ]),
         KitoCatalogSection(title: "System", symbol: "gearshape.2.fill", tint: Color.yellow, entries: [
-            KitoCatalogEntry("Control Center", "Glass modules, toggles, drag sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
+            KitoCatalogEntry("Control Center", "\(ControlCenterDemo.count) samples · glass modules, toggles, sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
             KitoCatalogEntry("Dynamic Island", "\(IslandGallery.count) samples · music, timers, calls, rides, moments", systemImage: "capsule.portrait") { IslandGallery() },
             KitoCatalogEntry.new("Widgets & Intents", "\(WidgetsGallery.count) samples · Home Screen, Lock Screen, Siri", systemImage: "square.grid.2x2.fill") { WidgetsGallery() },
         ]),
         KitoCatalogSection(title: "Networking", symbol: "network", tint: Color.gray, entries: [
-            KitoCatalogEntry("Image Loader", "Cache-backed image loading, live from a URL", systemImage: "photo.badge.arrow.down") { ImageLoaderDemo() },
+            KitoCatalogEntry("Image Loader", "\(ImageLoaderDemo.count) samples · blur-up, avatars, zoom, masonry", systemImage: "photo.badge.arrow.down") { ImageLoaderDemo() },
         ]),
         KitoCatalogSection(title: "Commerce", symbol: "bag.fill", tint: Color.red, entries: [
-            KitoCatalogEntry("Cart", "Choreographed add-to-cart, fly-to-badge", systemImage: "cart.fill") { CartDemo() },
+            KitoCatalogEntry("Cart", "\(CartDemo.count) samples · steppers, promo codes, fly to cart", systemImage: "cart.fill") { CartDemo() },
             KitoCatalogEntry("Wallet & Cards", "\(WalletGallery.count) samples · pocket, stack, carousel, add a card", systemImage: "wallet.pass.fill") { WalletGallery() },
             KitoCatalogEntry.new("Paywall", "\(PaywallGallery.count) samples · StoreKit 2, plans, trials, Pro gate", systemImage: "crown.fill") { PaywallGallery() },
-            KitoCatalogEntry("Order Tracking", "Self-refreshing status + Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
+            KitoCatalogEntry("Order Tracking", "\(OrderTrackingDemo.count) samples · timelines, courier, Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
         ]),
     ]
 
