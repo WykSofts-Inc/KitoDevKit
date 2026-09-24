@@ -220,6 +220,60 @@ private struct SetTextAndShapeSample: View {
     }
 }
 
+private struct SetDirectionSample: View {
+    @Environment(KitoAppSettingsViewModel.self) private var settings
+    @Environment(\.kitoTheme) private var theme
+    @Environment(\.locale) private var locale
+
+    var body: some View {
+        @Bindable var settings = settings
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Layout direction").font(.subheadline.weight(.semibold))
+                Picker("Layout direction", selection: $settings.layoutDirectionMode) {
+                    ForEach(KitoAppSettingsViewModel.LayoutDirectionMode.allCases) { mode in
+                        Text(mode.label).tag(mode)
+                    }
+                }
+                .pickerStyle(.segmented)
+                HStack(spacing: 10) {
+                    Image(systemName: "chevron.backward")
+                    Text("Back").font(.subheadline.weight(.medium))
+                    Spacer()
+                    Text("Next").font(.subheadline.weight(.medium))
+                    Image(systemName: "chevron.forward")
+                }
+                .foregroundStyle(theme.colors.primary)
+                .padding(12)
+                .background(Color(.systemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+            .padding(16)
+            .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+
+            VStack(alignment: .leading, spacing: 12) {
+                Toggle("Pseudo-language (longer text)", isOn: $settings.pseudoLanguage.animation(.spring))
+                    .font(.subheadline.weight(.semibold))
+                    .tint(theme.colors.primary)
+                HStack {
+                    Text(1_234_567.89, format: .number)
+                    Spacer()
+                    Text(Date.now, format: .dateTime.day().month(.wide).year())
+                }
+                .font(.subheadline.monospacedDigit())
+                .foregroundStyle(.secondary)
+                .contentTransition(.numericText())
+                Text("Switches the locale to Arabic (\(locale.identifier)) so numbers, dates and currency format for an RTL reader. For double-length strings, run with Xcode's Double-Length Pseudolanguage (Edit Scheme > Run > Options > App Language).")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            .padding(16)
+            .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+
+            Label("Applies to every kit in the app, including sheets.", systemImage: "arrow.left.arrow.right")
+                .font(.caption).foregroundStyle(.secondary)
+        }
+    }
+}
+
 private struct SetAboutSample: View {
     @Environment(\.kitoTheme) private var theme
 
@@ -721,6 +775,15 @@ enum SettingsSamples {
         Slider(value: $settings.cornerRadiusScale, in: 0...2, step: 0.1)
         Text("Habari, Wycliff").font(theme.typography.titleLarge)
         """) { SetTextAndShapeSample() },
+        KitSample("Layout direction and language", "Flip the whole app to right-to-left, or format everything for an Arabic locale.", code: """
+        Picker("Layout direction", selection: $settings.layoutDirectionMode) { … }
+        Toggle("Pseudo-language (longer text)", isOn: $settings.pseudoLanguage)
+
+        // At the app root:
+        content
+            .environment(\\.layoutDirection, settings.layoutDirectionMode.direction ?? systemLayoutDirection)
+            .environment(\\.locale, settings.pseudoLanguage ? Locale(identifier: "ar") : systemLocale)
+        """) { SetDirectionSample() },
         KitSample("About this app", "Version, architecture and who made it.", code: "Text(Kito.version)") { SetAboutSample() },
     ])
 
