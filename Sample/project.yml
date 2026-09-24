@@ -54,6 +54,7 @@ packages:
   KitoFeed: { path: ../../KitoFeed }
   KitoSettings: { path: ../../KitoSettings }
   KitoSignature: { path: ../../KitoSignature }
+  KitoFileViewer: { path: ../../KitoFileViewer }
 targets:
   KitoSample:
     type: application
@@ -160,6 +161,7 @@ targets:
       - package: KitoFeed
       - package: KitoSettings
       - package: KitoSignature
+      - package: KitoFileViewer
       - target: OrderTrackingWidgetExtension
         embed: true
 

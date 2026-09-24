@@ -91,6 +91,7 @@ struct ContentView: View {
             KitoCatalogEntry.new("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
             KitoCatalogEntry.new("Media Player", "\(MediaPlayerGallery.count) samples · video, Reels, music, podcasts", systemImage: "play.rectangle.fill") { MediaPlayerGallery() },
             KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
+            KitoCatalogEntry.new("Files & Documents", "\(FileViewerGallery.count) samples · PDF viewer, file browser, transfers", systemImage: "doc.richtext.fill") { FileViewerGallery() },
         ]),
         KitoCatalogSection(title: "Communication", symbol: "bubble.left.and.bubble.right.fill", tint: Color.blue, entries: [
             KitoCatalogEntry.new("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
