@@ -28,6 +28,7 @@
 		1D7DF38808C0887E419AE37A /* KitoHaptics in Frameworks */ = {isa = PBXBuildFile; productRef = AA7149395B31B575CA058594 /* KitoHaptics */; };
 		1F027744F500BCAE18FB99B6 /* KeychainDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */; };
 		2429E78042F83B74F3107D0D /* KitoMediaPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = B22E6DC7346154764C39FF96 /* KitoMediaPlayer */; };
+		24F91F1F72F894553D0C0BAF /* ProductSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C71FFDEFA17A31A8DF347 /* ProductSamples.swift */; };
 		2A859BE930642A117BD09FD8 /* ChatSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E9EC2A13B9992EB721D38 /* ChatSamples.swift */; };
 		2F5800402D53B28085A5B1AC /* SettingsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03003C1C49579F2A248E42EB /* SettingsSamples.swift */; };
 		2FF30DB57066EC72F97893A2 /* KitoToasts in Frameworks */ = {isa = PBXBuildFile; productRef = F3254603992DFDCA975C81AF /* KitoToasts */; };
@@ -53,6 +54,7 @@
 		5B43F06E3E1023D1501EEBA3 /* HomeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9534C85D7204CAB8AE584C1 /* HomeComponents.swift */; };
 		5F7A0BCA815565D435C0170E /* MapsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6D7B75394DDE501A29EB8 /* MapsSamples.swift */; };
 		61E286919CE4F15E4BA4CD21 /* ImageLoaderSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9A2E9D82BCEF02C47CE86 /* ImageLoaderSamples.swift */; };
+		63E7C897F1AB7ABF6BA64F82 /* KitoProduct in Frameworks */ = {isa = PBXBuildFile; productRef = 30DA86D2C60884AE845BCA91 /* KitoProduct */; };
 		6B50795F081B038D1D550215 /* KitoSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 9D199CF1B7698E91E1031353 /* KitoSearch */; };
 		6C00490BEC35597ED571782A /* KitoPaywall in Frameworks */ = {isa = PBXBuildFile; productRef = 1698105685A07B3D26A25920 /* KitoPaywall */; };
 		6C0F9528FDFE5EBA9A86387F /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
@@ -77,6 +79,7 @@
 		915FABECD492A3A29EBBEF0A /* AuthSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4826CCAB01FCF74E2FF33FFF /* AuthSamples.swift */; };
 		948582E1738A6B9312FE1BAD /* KitoWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590F286F4DBAF8C358F353C /* KitoWidgetsBundle.swift */; };
 		95599468A98CAE537B5CA05F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A96010E3E751D70603BB92 /* ContentView.swift */; };
+		95E39985F5F1DC090BE61657 /* TourSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C6B4056448B605172A01D /* TourSamples.swift */; };
 		9D7DC85BCEAD633F679A5977 /* KitoReviews in Frameworks */ = {isa = PBXBuildFile; productRef = 19362B803D8DA2596512983C /* KitoReviews */; };
 		9D8698832ADEEB396B594169 /* BiometricsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1219DD1751051A3E0F178 /* BiometricsDemo.swift */; };
 		9F9D840DE1E049117E7A4B96 /* MediaSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980B6B778F8DF22A864D42D /* MediaSamples.swift */; };
@@ -100,6 +103,7 @@
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF57152B1D85D01A5AAD4EBE /* ControlCenterSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E992AB557545E2224C14DB /* ControlCenterSamples.swift */; };
 		CF904801689B842BCCBCE993 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = ED99FB61D47CCCDB686E13E8 /* PrivacyInfo.xcprivacy */; };
+		CFCFF14DEBE1DC9C90F62F3C /* KitoTour in Frameworks */ = {isa = PBXBuildFile; productRef = 98AA9663A7E8660BCFCFF8AD /* KitoTour */; };
 		D5858D36A587A9BC91C92E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE5748E04E908D07B4A1A93 /* Assets.xcassets */; };
 		D8261C7CEA94C24E71BF059C /* IslandStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58341CE205EDAD33DF94848 /* IslandStage.swift */; };
 		DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD684B6BD38C5F0270925B /* IslandSamples.swift */; };
@@ -115,7 +119,9 @@
 		EC56A575767FC6548E2F9650 /* FieldFormDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35925B2E0FF6311947BAB1C2 /* FieldFormDemos.swift */; };
 		ED5014CC218F293E8B519AC8 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA9D97C4FFC34E33FA4AA /* Sample.swift */; };
 		EE6337BD8D57A4A96C1699F8 /* FormattingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F8AB77B5FCD78216EA8224 /* FormattingSamples.swift */; };
+		F20611C56DAB68B5DC543BAD /* KitoCheckout in Frameworks */ = {isa = PBXBuildFile; productRef = 42FD9C1CEABD1591344CD3F3 /* KitoCheckout */; };
 		F24C7CE42C4C2DD19EFE8EF0 /* KitoNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = 3E46FD980D48BED5EEA0D195 /* KitoNotifications */; };
+		F30030791EFF95B794BEBCE3 /* CheckoutSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AA5EBF8820064B478FCD3 /* CheckoutSamples.swift */; };
 		F371E674D35DE87891034036 /* KitoPermissions in Frameworks */ = {isa = PBXBuildFile; productRef = A3AA60AA0ACCC591DFD6888E /* KitoPermissions */; };
 		F4880EBCF31FE91C2ECDDB59 /* OnboardingIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4136029860D675CADEF00CC7 /* OnboardingIllustrations.swift */; };
 		F5E222D62773E57A45C19F85 /* FieldsGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0940FB3F3997D1391855E33 /* FieldsGallery.swift */; };
@@ -191,6 +197,7 @@
 		592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryComponents.swift; sourceTree = "<group>"; };
 		5A83239E37EAFDAE72C9C2D7 /* KitoMapsLibre */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoMapsLibre; path = ../../KitoMapsLibre; sourceTree = SOURCE_ROOT; };
 		5ADBAF4DFBB88A65529C18DB /* KitoCalendar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCalendar; path = ../../KitoCalendar; sourceTree = SOURCE_ROOT; };
+		64E287A40E27F1BEE0551CA4 /* KitoProduct */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoProduct; path = ../../KitoProduct; sourceTree = SOURCE_ROOT; };
 		65117CB1C47AD63C838A4DA9 /* ReviewsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsSamples.swift; sourceTree = "<group>"; };
 		65B6D7B75394DDE501A29EB8 /* MapsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsSamples.swift; sourceTree = "<group>"; };
 		67D5EB1CB42E5BC1743A396D /* PermissionsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsDemo.swift; sourceTree = "<group>"; };
@@ -224,20 +231,24 @@
 		9B3F6AB4834FC716F1059E7B /* SampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCatalog.swift; sourceTree = "<group>"; };
 		9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DInteractiveSamples.swift; sourceTree = "<group>"; };
 		9F125F8EC4A04753E4715373 /* NotificationsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSamples.swift; sourceTree = "<group>"; };
+		A07C6B4056448B605172A01D /* TourSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourSamples.swift; sourceTree = "<group>"; };
 		A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetBundle.swift; sourceTree = "<group>"; };
 		A53FB297159A3C5BDF6F5B92 /* KitoModals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoModals; path = ../../KitoModals; sourceTree = SOURCE_ROOT; };
 		A5ECDEE9B995A038EE07ECB9 /* KitoPaywall */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPaywall; path = ../../KitoPaywall; sourceTree = SOURCE_ROOT; };
 		A6048AADB4CD3F789BCA9E9A /* PermissionsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsSamples.swift; sourceTree = "<group>"; };
 		AA40E3ADAA6EF3284FFD3401 /* KitoValidation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoValidation; path = ../../KitoValidation; sourceTree = SOURCE_ROOT; };
 		AD09270E3F5E44A8A4518D9A /* WidgetsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsSamples.swift; sourceTree = "<group>"; };
+		AF77958EB80AB5DE54B4ADA5 /* KitoCheckout */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCheckout; path = ../../KitoCheckout; sourceTree = SOURCE_ROOT; };
 		B3DD12AC3D411BC36C379D0C /* KitoCarousel */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCarousel; path = ../../KitoCarousel; sourceTree = SOURCE_ROOT; };
 		B58341CE205EDAD33DF94848 /* IslandStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandStage.swift; sourceTree = "<group>"; };
 		B5F6582770447F2EEF73BB78 /* KitoReviews */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoReviews; path = ../../KitoReviews; sourceTree = SOURCE_ROOT; };
 		B7EE8D8B3ADE97C359089522 /* LineChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartSamples.swift; sourceTree = "<group>"; };
+		B8106DEA1475F19637EE6879 /* KitoTour */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoTour; path = ../../KitoTour; sourceTree = SOURCE_ROOT; };
 		B89D45DFDD3718DCE88CD05C /* BarPieChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarPieChartSamples.swift; sourceTree = "<group>"; };
 		BAD7192D6EA4D2A71AC78F5E /* WalletScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletScreens.swift; sourceTree = "<group>"; };
 		BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFieldSamples.swift; sourceTree = "<group>"; };
 		C09047156BF52F2541DD0E90 /* FieldSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSampleCatalog.swift; sourceTree = "<group>"; };
+		C35C71FFDEFA17A31A8DF347 /* ProductSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSamples.swift; sourceTree = "<group>"; };
 		C39AC08B6A6776FF3EA2B6E0 /* KitoCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCore; path = ../../KitoCore; sourceTree = SOURCE_ROOT; };
 		C6F8AB77B5FCD78216EA8224 /* FormattingSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingSamples.swift; sourceTree = "<group>"; };
 		C975CC57AD8BC8C61B99F4B2 /* KitoScanner */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoScanner; path = ../../KitoScanner; sourceTree = SOURCE_ROOT; };
@@ -257,6 +268,7 @@
 		DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSamples.swift; sourceTree = "<group>"; };
 		DC3CD43ECA7EFDB55C8B4A39 /* MediaPlayerSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerSamples.swift; sourceTree = "<group>"; };
 		DCB7CC51FEEDBDB41592F88E /* KitoImageLoader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoImageLoader; path = ../../KitoImageLoader; sourceTree = SOURCE_ROOT; };
+		DE7AA5EBF8820064B478FCD3 /* CheckoutSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSamples.swift; sourceTree = "<group>"; };
 		DF62C496CC4047EF352DCDFD /* SearchSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSamples.swift; sourceTree = "<group>"; };
 		E2237CA9F1B27F802B2EB248 /* CarouselSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSamples.swift; sourceTree = "<group>"; };
 		E4B0465C9C25D3103F27365C /* NavigationSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSamples.swift; sourceTree = "<group>"; };
@@ -313,6 +325,9 @@
 				6B50795F081B038D1D550215 /* KitoSearch in Frameworks */,
 				39AF990857AE4AB7E88DF3BE /* KitoAIChat in Frameworks */,
 				83114FEE35042A55D3C122CD /* KitoScanner in Frameworks */,
+				CFCFF14DEBE1DC9C90F62F3C /* KitoTour in Frameworks */,
+				63E7C897F1AB7ABF6BA64F82 /* KitoProduct in Frameworks */,
+				F20611C56DAB68B5DC543BAD /* KitoCheckout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +462,14 @@
 				C19929B1AB36DA7E00C4EE2B /* WidgetExtension */,
 				2FFD9ABFFA006B0DEFABAEE5 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		53ABD31D8E1F328DC0F6469E /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				C35C71FFDEFA17A31A8DF347 /* ProductSamples.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		5590D3A83BF8F0FDBE391BB8 /* Modals */ = {
@@ -605,6 +628,7 @@
 				72782E68CAB1295AC1B5A778 /* Charts */,
 				83DB04DC7D23EADC7DDF6F27 /* Charts3D */,
 				306C4C9BC48576A3890679DA /* Chat */,
+				A0BFB4DEE96FFFAD36F06051 /* Checkout */,
 				70D484FA5D40D46F515B959D /* Connectivity */,
 				F7027272B92D7B48FC4E6F49 /* ControlCenter */,
 				8D1E592221D731EC3B8F9FE6 /* EmptyStates */,
@@ -626,11 +650,13 @@
 				83AB21EBE7B501295C23B12B /* Paywall */,
 				EA41469C30B50DE4A069C1D5 /* Permissions */,
 				D1F96BEEAB0095FE05F56CC0 /* Photo */,
+				53ABD31D8E1F328DC0F6469E /* Product */,
 				D86722D0E58F253B20569177 /* Reviews */,
 				BD03DD989563ADD20C065617 /* Scanner */,
 				E97FD270908BF6075495C6AE /* Search */,
 				9593EC7CBF1E6413A0BC14FC /* Settings */,
 				876D0C98A9097E74FC66AED8 /* Toasts */,
+				CA5F9CEE2DDF3B74397254F8 /* Tour */,
 				AD35D32057EF70690CC5E120 /* Validation */,
 				AE57000BEF926D9A0703FF63 /* Wallet */,
 				B2A29331EF45C0C73856013D /* Widgets */,
@@ -678,6 +704,14 @@
 				4A652929E3EC54D7C2A0CFCD /* AIChatSamples.swift */,
 			);
 			path = AIChat;
+			sourceTree = "<group>";
+		};
+		A0BFB4DEE96FFFAD36F06051 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				DE7AA5EBF8820064B478FCD3 /* CheckoutSamples.swift */,
+			);
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 		A4B04A6297972FB95613DED1 /* Home */ = {
@@ -752,6 +786,7 @@
 				8165B2C284A818D240F97FC9 /* KitoCart */,
 				D7D4FBBDF60CEA099474845F /* KitoCharts */,
 				8794775831AFDEB584708C1D /* KitoChat */,
+				AF77958EB80AB5DE54B4ADA5 /* KitoCheckout */,
 				159F2AB4DA3077DA7EF2010F /* KitoConnectivity */,
 				C39AC08B6A6776FF3EA2B6E0 /* KitoCore */,
 				74831BC61F938344E282B5B4 /* KitoEmptyStates */,
@@ -773,15 +808,25 @@
 				75EE79A96C66B98E4956A501 /* KitoOrderTracking */,
 				A5ECDEE9B995A038EE07ECB9 /* KitoPaywall */,
 				0ADC1EDD89FCF6D61EAEB810 /* KitoPermissions */,
+				64E287A40E27F1BEE0551CA4 /* KitoProduct */,
 				B5F6582770447F2EEF73BB78 /* KitoReviews */,
 				C975CC57AD8BC8C61B99F4B2 /* KitoScanner */,
 				17E82E5F6FCF44EB8AE1B2BB /* KitoSearch */,
 				736CF316E13C41E5246FA96F /* KitoToasts */,
+				B8106DEA1475F19637EE6879 /* KitoTour */,
 				AA40E3ADAA6EF3284FFD3401 /* KitoValidation */,
 				7982B0BD0690C05C2DBC7666 /* KitoWalletCards */,
 				483A5B254F9DB2D0C4381433 /* KitoWidgets */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		CA5F9CEE2DDF3B74397254F8 /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				A07C6B4056448B605172A01D /* TourSamples.swift */,
+			);
+			path = Tour;
 			sourceTree = "<group>";
 		};
 		D1F96BEEAB0095FE05F56CC0 /* Photo */ = {
@@ -891,6 +936,9 @@
 				9D199CF1B7698E91E1031353 /* KitoSearch */,
 				E75340BEA4619D2F421580D4 /* KitoAIChat */,
 				FD3E31CA9A50E123A511C7A0 /* KitoScanner */,
+				98AA9663A7E8660BCFCFF8AD /* KitoTour */,
+				30DA86D2C60884AE845BCA91 /* KitoProduct */,
+				42FD9C1CEABD1591344CD3F3 /* KitoCheckout */,
 			);
 			productName = KitoSample;
 			productReference = 9929D9B074DCB44DBA2649C7 /* KitoSample.app */;
@@ -957,6 +1005,7 @@
 				F7859FB560B3420F1A94C714 /* XCLocalSwiftPackageReference "../../KitoCart" */,
 				88D39367E51AD828E09D8B3C /* XCLocalSwiftPackageReference "../../KitoCharts" */,
 				6B8A0C28C6649CB966EDC1D8 /* XCLocalSwiftPackageReference "../../KitoChat" */,
+				FF48E12EF8B0F322AFA1E298 /* XCLocalSwiftPackageReference "../../KitoCheckout" */,
 				1C0855122357A1F443F13BDE /* XCLocalSwiftPackageReference "../../KitoConnectivity" */,
 				8904C1D92954FB3E43A7A457 /* XCLocalSwiftPackageReference "../../KitoCore" */,
 				3F39FBBCA789D12BE9E2FB90 /* XCLocalSwiftPackageReference "../../KitoEmptyStates" */,
@@ -978,10 +1027,12 @@
 				F451120E9651FB1EDA49623B /* XCLocalSwiftPackageReference "../../KitoOrderTracking" */,
 				D1671AA553F0CB99799A2CD1 /* XCLocalSwiftPackageReference "../../KitoPaywall" */,
 				CEE8393E008B4D452F80A797 /* XCLocalSwiftPackageReference "../../KitoPermissions" */,
+				3C67ECBF2958F6F1F0116F6C /* XCLocalSwiftPackageReference "../../KitoProduct" */,
 				D466271D1AD09B159C0C43F5 /* XCLocalSwiftPackageReference "../../KitoReviews" */,
 				86ABABF4B0A55A76FC1C3A92 /* XCLocalSwiftPackageReference "../../KitoScanner" */,
 				9C634F2B6CC2B7A6CA742B2C /* XCLocalSwiftPackageReference "../../KitoSearch" */,
 				9BBA67B371C7057CC6CA14DD /* XCLocalSwiftPackageReference "../../KitoToasts" */,
+				49C2D9A5EE9EAD8C07F2A0BC /* XCLocalSwiftPackageReference "../../KitoTour" */,
 				26ADDBE79203F5A3BD83E4E7 /* XCLocalSwiftPackageReference "../../KitoValidation" */,
 				9553987C9615BA993E951C57 /* XCLocalSwiftPackageReference "../../KitoWalletCards" */,
 				ACD6616A27B7281540A4331A /* XCLocalSwiftPackageReference "../../KitoWidgets" */,
@@ -1037,6 +1088,7 @@
 				AF6A3F69F6B1530175B06845 /* Chart3DSampleCatalog.swift in Sources */,
 				F8279F02C02071D873A359D8 /* ChartsData.swift in Sources */,
 				2A859BE930642A117BD09FD8 /* ChatSamples.swift in Sources */,
+				F30030791EFF95B794BEBCE3 /* CheckoutSamples.swift in Sources */,
 				035009C20966E37EC153D1DB /* ConnectivityDemo.swift in Sources */,
 				A429134E3C77E76E33667BCC /* ConnectivitySamples.swift in Sources */,
 				95599468A98CAE537B5CA05F /* ContentView.swift in Sources */,
@@ -1079,6 +1131,7 @@
 				419AB91C4AEF552D6800A53E /* PermissionsDemo.swift in Sources */,
 				4FE68487311D7D15313247EE /* PermissionsSamples.swift in Sources */,
 				DDA67493EA19D2233E04D9D2 /* PhotoSamples.swift in Sources */,
+				24F91F1F72F894553D0C0BAF /* ProductSamples.swift in Sources */,
 				8DC9D6C167A5A3B3EEC1EB99 /* ReviewsSamples.swift in Sources */,
 				ED5014CC218F293E8B519AC8 /* Sample.swift in Sources */,
 				C8EF037C7B0091CE3940975A /* SampleCatalog+Generated.swift in Sources */,
@@ -1087,6 +1140,7 @@
 				48BE2CB29FCEF304E9056612 /* SearchSamples.swift in Sources */,
 				2F5800402D53B28085A5B1AC /* SettingsSamples.swift in Sources */,
 				FF5827685E82912F2C71239D /* ToastsSamples.swift in Sources */,
+				95E39985F5F1DC090BE61657 /* TourSamples.swift in Sources */,
 				525311763267DC50BBE2126C /* ValidationFieldSamples.swift in Sources */,
 				0FB76E55672C058A45C67A5C /* ValidationRuleSamples.swift in Sources */,
 				DF5B3B3C8B5C03A7E049969B /* WalletSamples.swift in Sources */,
@@ -1401,6 +1455,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../KitoNavigation;
 		};
+		3C67ECBF2958F6F1F0116F6C /* XCLocalSwiftPackageReference "../../KitoProduct" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../KitoProduct;
+		};
 		3F39FBBCA789D12BE9E2FB90 /* XCLocalSwiftPackageReference "../../KitoEmptyStates" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../KitoEmptyStates;
@@ -1412,6 +1470,10 @@
 		4412E6C7211B8955F6720ABC /* XCLocalSwiftPackageReference "../../KitoModals" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../KitoModals;
+		};
+		49C2D9A5EE9EAD8C07F2A0BC /* XCLocalSwiftPackageReference "../../KitoTour" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../KitoTour;
 		};
 		6B8A0C28C6649CB966EDC1D8 /* XCLocalSwiftPackageReference "../../KitoChat" */ = {
 			isa = XCLocalSwiftPackageReference;
@@ -1501,6 +1563,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../KitoCart;
 		};
+		FF48E12EF8B0F322AFA1E298 /* XCLocalSwiftPackageReference "../../KitoCheckout" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../KitoCheckout;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1580,6 +1646,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoChat;
 		};
+		30DA86D2C60884AE845BCA91 /* KitoProduct */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoProduct;
+		};
 		3473984A86FABBE5AF6C266F /* KitoOrderTracking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoOrderTracking;
@@ -1599,6 +1669,10 @@
 		428489FD737EF6BD93645B97 /* KitoMapsLibre */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoMapsLibre;
+		};
+		42FD9C1CEABD1591344CD3F3 /* KitoCheckout */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoCheckout;
 		};
 		449F35B8A909E8B96B74601A /* KitoMaps */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1648,6 +1722,10 @@
 		91301461F3BEB9E2755E4A3C /* KitoMediaPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KitoMediaPicker;
+		};
+		98AA9663A7E8660BCFCFF8AD /* KitoTour */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KitoTour;
 		};
 		9CEBE56223FA5A0C87ED416E /* KitoMapsGoogle */ = {
 			isa = XCSwiftPackageProductDependency;

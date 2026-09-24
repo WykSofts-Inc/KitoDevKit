@@ -48,6 +48,9 @@ packages:
   KitoSearch: { path: ../../KitoSearch }
   KitoAIChat: { path: ../../KitoAIChat }
   KitoScanner: { path: ../../KitoScanner }
+  KitoTour: { path: ../../KitoTour }
+  KitoProduct: { path: ../../KitoProduct }
+  KitoCheckout: { path: ../../KitoCheckout }
 targets:
   KitoSample:
     type: application
@@ -148,6 +151,9 @@ targets:
       - package: KitoSearch
       - package: KitoAIChat
       - package: KitoScanner
+      - package: KitoTour
+      - package: KitoProduct
+      - package: KitoCheckout
       - target: OrderTrackingWidgetExtension
         embed: true
 

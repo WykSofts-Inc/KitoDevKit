@@ -83,6 +83,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "Navigation", symbol: "sidebar.left", tint: Color.purple, entries: [
             KitoCatalogEntry.new("Side Menus & Tab Bars", "\(NavigationGallery.count) samples · drawers, transitions, tab bars, top tabs", systemImage: "sidebar.left") { NavigationGallery() },
             KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
+            KitoCatalogEntry.new("Tours & Tips", "\(TourGallery.count) samples · spotlight, coach marks, tooltips, What's New", systemImage: "hand.point.up.left.fill") { TourGallery() },
         ]),
         KitoCatalogSection(title: "Forms", symbol: "rectangle.and.pencil.and.ellipsis", tint: Color.pink, entries: [
             KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
@@ -118,6 +119,8 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Commerce", symbol: "bag.fill", tint: Color.red, entries: [
             KitoCatalogEntry("Cart", "\(CartDemo.count) samples · steppers, promo codes, fly to cart", systemImage: "cart.fill") { CartDemo() },
+            KitoCatalogEntry.new("Product", "\(ProductGallery.count) samples · gallery, swatches, sizes, product page", systemImage: "tag.fill") { ProductGallery() },
+            KitoCatalogEntry.new("Checkout", "\(CheckoutGallery.count) samples · delivery, payment, Apple Pay, success", systemImage: "creditcard.and.123") { CheckoutGallery() },
             KitoCatalogEntry("Wallet & Cards", "\(WalletGallery.count) samples · pocket, stack, carousel, add a card", systemImage: "wallet.pass.fill") { WalletGallery() },
             KitoCatalogEntry.new("Paywall", "\(PaywallGallery.count) samples · StoreKit 2, plans, trials, Pro gate", systemImage: "crown.fill") { PaywallGallery() },
             KitoCatalogEntry("Order Tracking", "\(OrderTrackingDemo.count) samples · timelines, courier, Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
