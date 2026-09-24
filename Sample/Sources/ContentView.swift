@@ -67,11 +67,11 @@ struct ContentView: View {
             KitoCatalogEntry.new("Reviews & Ratings", "\(ReviewsGallery.count) samples · stars, histograms, composer, NPS", systemImage: "star.bubble.fill") { ReviewsGallery() },
         ]),
         KitoCatalogSection(title: "Feedback", symbol: "bell.badge.fill", tint: Color.orange, entries: [
-            KitoCatalogEntry("Loaders", "Spinner, dots, pulse, progress ring, skeleton", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
-            KitoCatalogEntry("Toasts", "Queued, swipeable, spring physics", systemImage: "bubble.left.fill") { ToastsDemo() },
+            KitoCatalogEntry("Loaders", "\(LoadersDemo.count) samples · spinners, skeletons, overlays, refresh", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
+            KitoCatalogEntry("Toasts", "\(ToastsDemo.count) samples · stacks, island, promise, undo", systemImage: "bubble.left.fill") { ToastsDemo() },
             KitoCatalogEntry("Modals", "\(ModalsGallery.count) samples · sheets, alerts, paywall, hero cards", systemImage: "rectangle.portrait.bottomthird.inset.filled") { ModalsGallery() },
-            KitoCatalogEntry("Empty States", "No data, no results, offline, error", systemImage: "tray") { EmptyStatesDemo() },
-            KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
+            KitoCatalogEntry("Empty States", "\(EmptyStatesDemo.count) samples · animated illustrations, layouts", systemImage: "tray") { EmptyStatesDemo() },
+            KitoCatalogEntry("Haptics", "\(HapticsDemo.count) samples · patterns, visualizer, triggers", systemImage: "waveform") { HapticsDemo() },
         ]),
         KitoCatalogSection(title: "Data & Charts", symbol: "chart.bar.xaxis", tint: Color.green, entries: [
             KitoCatalogEntry("Charts", "\(ChartsGallery.count) samples · line, area, sparklines, bar, pie", systemImage: "chart.xyaxis.line") { ChartsGallery() },
