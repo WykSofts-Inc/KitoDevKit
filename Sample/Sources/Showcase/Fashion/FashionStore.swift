@@ -87,7 +87,7 @@ final class FashionStore {
     var appearance: FashionAppearance = .system
     var wishlist: Set<String> = ["amani-tote", "shela-slip", "diani-cateye"]
     var orders: [FashionOrder] = [FashionStore.pastOrder]
-    private(set) var tabs: KitoTabBarViewModel
+    let tabs: KitoTabBarViewModel
     /// Set when "Search" is opened with a category or a query already chosen.
     var pendingSearch: String?
 
@@ -95,7 +95,8 @@ final class FashionStore {
         checkout = FashionCheckoutSetup.model(cart: cart)
         prive = KitoStore.preview(plans: FashionCheckoutSetup.privePlans, mostPopular: "prive.yearly")
         tabs = KitoTabBarViewModel(items: FashionStore.tabItems(bag: 0))
-        rebuildTabs()
+        tabs.onReselect = { [weak self] _ in self?.router.popToRoot() }
+        refreshBagBadge()
     }
 
     // MARK: Tabs
@@ -110,12 +111,9 @@ final class FashionStore {
         ]
     }
 
-    /// `KitoTabBarViewModel.items` can't change, so a new bag count means a new view model that keeps the selection.
-    func rebuildTabs() {
-        let selected = tabs.selectedID
-        tabs = KitoTabBarViewModel(items: Self.tabItems(bag: cart.totalQuantity), selectedID: selected) { [weak self] _ in
-            self?.router.popToRoot()
-        }
+    /// Keeps the Bag tab's badge in step with the bag.
+    func refreshBagBadge() {
+        tabs.setBadge(cart.totalQuantity, for: FashionTab.bag.rawValue)
     }
 
     var selectedTab: FashionTab { FashionTab(rawValue: tabs.selectedID) ?? .home }
@@ -135,7 +133,7 @@ final class FashionStore {
     func add(_ product: KitoProduct, _ variant: KitoProductVariant, announce: Bool = true) {
         let item = product.cartItem(for: variant)
         cart.add(item)
-        rebuildTabs()
+        refreshBagBadge()
         guard announce else { return }
         toasts.show(KitoToast(
             title: "Added to your bag",
@@ -189,7 +187,7 @@ final class FashionStore {
     /// After the confirmation: empty the bag and go to the order.
     func finishCheckout(track: Bool) {
         cart.clear()
-        rebuildTabs()
+        refreshBagBadge()
         checkout.reset()
         if track, let latest = orders.first {
             show(.account)

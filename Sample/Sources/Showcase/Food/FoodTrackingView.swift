@@ -70,7 +70,6 @@ extension FoodShowcase {
             .background(theme.colors.background.ignoresSafeArea())
             .overlay { island }
             .kitoNotificationBanner($store.banner, style: .card)
-            .kitoToastHost(store.toasts)
             .kitoAlert($alert)
             .sheet(isPresented: $showsChat) {
                 FoodRiderChat(order: order)

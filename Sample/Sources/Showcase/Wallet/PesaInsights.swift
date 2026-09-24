@@ -101,19 +101,15 @@ extension WalletShowcase {
         private var donut: some View {
             VStack(alignment: .leading, spacing: 16) {
                 PesaSectionHeader(title: "Where it went")
-                ZStack {
-                    PieChartView(viewModel: pie, showLegend: false)
-                        .frame(height: 220)
-                    if pie.selectedSliceID == nil {
-                        VStack(spacing: 2) {
-                            Text("Spent").font(.caption).foregroundStyle(.secondary)
-                            Text(PesaMoney.compact(total))
-                                .font(.title2.weight(.bold))
-                                .monospacedDigit()
-                        }
-                        .allowsHitTesting(false)
+                PieChartView(viewModel: pie, showLegend: false) {
+                    VStack(spacing: 2) {
+                        Text("Spent").font(.caption).foregroundStyle(.secondary)
+                        Text(PesaMoney.compact(total))
+                            .font(.title2.weight(.bold))
+                            .monospacedDigit()
                     }
                 }
+                .frame(height: 220)
                 .frame(maxWidth: .infinity)
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel("Spending by category, \(PesaMoney.string(total, cents: .never)) in total")
