@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -30,41 +30,41 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>GMSApiKey</key>
 	<string></string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>KitoWidgetsAppGroup</key>
 	<string>group.com.wyksoftsinc.kitosample</string>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Media Library request.</string>
+	<string>Try the media library permission sample.</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Bluetooth request.</string>
+	<string>Try the Bluetooth permission sample.</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Calendar request.</string>
+	<string>Try the calendar permission sample. Nothing is uploaded or stored.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Take photos to try the camera, photo editor and media picker samples.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Contacts request.</string>
+	<string>Try the contacts permission sample. Nothing is uploaded or stored.</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>KitoSample demos KitoBiometrics.</string>
+	<string>Use Face ID to try the app-lock, secure notes and sign-in samples.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Location Always request.</string>
+	<string>Try the background location permission sample. Your location never leaves your device.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Location request.</string>
+	<string>Show where you are on the map samples and try the location permission sample.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Microphone request.</string>
+	<string>Record voice notes in the chat sample and try the microphone permission sample.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Save photos you edit in the samples to your library.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Photo Library request.</string>
+	<string>Choose photos to try the media picker, photo editor and review samples.</string>
 	<key>NSRemindersFullAccessUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Reminders request.</string>
+	<string>Try the reminders permission sample. Nothing is uploaded or stored.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' Speech Recognition request.</string>
+	<string>Try the speech recognition permission sample.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>KitoSample demos KitoPermissions' App Tracking request.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -76,5 +76,9 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>

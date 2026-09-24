@@ -18,6 +18,7 @@
 		0CD69B9618D08AF67D6DA673 /* LineChartShowcases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9FED3BDA53BFCFE6BEECA /* LineChartShowcases.swift */; };
 		0FB76E55672C058A45C67A5C /* ValidationRuleSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B068BBF8F065DB3E871FA3 /* ValidationRuleSamples.swift */; };
 		112FA813A95DAF871F6C1652 /* CarouselSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2237CA9F1B27F802B2EB248 /* CarouselSamples.swift */; };
+		148A7C3DD8B7E9D9F32D912C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13205D18AB615FA9EF5D2338 /* PrivacyInfo.xcprivacy */; };
 		15855E50E0D2FFFF15FB181C /* KitoMapsGoogle in Frameworks */ = {isa = PBXBuildFile; productRef = 9CEBE56223FA5A0C87ED416E /* KitoMapsGoogle */; };
 		1867B92150AC04D23C9CAE4E /* ButtonsGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33034D2A0B2E1E4765790D59 /* ButtonsGallery.swift */; };
 		192BF41F161536F73F228B3F /* KitoModals in Frameworks */ = {isa = PBXBuildFile; productRef = 35A3AF68ECD5438D5A7D1EE4 /* KitoModals */; };
@@ -92,6 +93,8 @@
 		C9CE7EEDF6F8AB5E15A8F9A5 /* KitoWidgets in Frameworks */ = {isa = PBXBuildFile; productRef = 6FF0174DAC3D68BEAC7ED1BB /* KitoWidgets */; };
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF57152B1D85D01A5AAD4EBE /* ControlCenterSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E992AB557545E2224C14DB /* ControlCenterSamples.swift */; };
+		CF904801689B842BCCBCE993 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = ED99FB61D47CCCDB686E13E8 /* PrivacyInfo.xcprivacy */; };
+		D5858D36A587A9BC91C92E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE5748E04E908D07B4A1A93 /* Assets.xcassets */; };
 		D8261C7CEA94C24E71BF059C /* IslandStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58341CE205EDAD33DF94848 /* IslandStage.swift */; };
 		DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD684B6BD38C5F0270925B /* IslandSamples.swift */; };
 		DD65095C122B04AEDD1F8610 /* OrderTrackingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043152EEA0750E7779C93452 /* OrderTrackingSamples.swift */; };
@@ -151,6 +154,7 @@
 		0ADC1EDD89FCF6D61EAEB810 /* KitoPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPermissions; path = ../../KitoPermissions; sourceTree = SOURCE_ROOT; };
 		0B1BB3BF85532F27D935D6F2 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
 		107AB3DED0EE40AA60516C38 /* ConnectivitySamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivitySamples.swift; sourceTree = "<group>"; };
+		13205D18AB615FA9EF5D2338 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		159F2AB4DA3077DA7EF2010F /* KitoConnectivity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoConnectivity; path = ../../KitoConnectivity; sourceTree = SOURCE_ROOT; };
 		1BFD684B6BD38C5F0270925B /* IslandSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandSamples.swift; sourceTree = "<group>"; };
 		24A96010E3E751D70603BB92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		68E40B66B99800FE9214E002 /* FieldSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSample.swift; sourceTree = "<group>"; };
 		691BB699AF85B349DDBE7238 /* KitoNavigation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoNavigation; path = ../../KitoNavigation; sourceTree = SOURCE_ROOT; };
 		6CBBD14D9AC828E0E4438A89 /* ModalSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSamples.swift; sourceTree = "<group>"; };
+		6DE5748E04E908D07B4A1A93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FB4E9B1A3AEA9E845B67C02 /* KitoOnboarding */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoOnboarding; path = ../../KitoOnboarding; sourceTree = SOURCE_ROOT; };
 		70F1219DD1751051A3E0F178 /* BiometricsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsDemo.swift; sourceTree = "<group>"; };
 		736CF316E13C41E5246FA96F /* KitoToasts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoToasts; path = ../../KitoToasts; sourceTree = SOURCE_ROOT; };
@@ -245,6 +250,7 @@
 		E4B0465C9C25D3103F27365C /* NavigationSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSamples.swift; sourceTree = "<group>"; };
 		E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DSampleCatalog.swift; sourceTree = "<group>"; };
 		EA6FC64783C12852F21179F0 /* CartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSamples.swift; sourceTree = "<group>"; };
+		ED99FB61D47CCCDB686E13E8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F0A9FED3BDA53BFCFE6BEECA /* LineChartShowcases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartShowcases.swift; sourceTree = "<group>"; };
 		F18B755207B8D524DCB84246 /* BiometricsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsSamples.swift; sourceTree = "<group>"; };
 		FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityDemo.swift; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				C7B0084160F03BA557D1C7B7 /* Packages */,
+				68E59CB061A0149FD74006D9 /* Resources */,
 				8944869BB0C17554C79118EE /* Sources */,
 				C19929B1AB36DA7E00C4EE2B /* WidgetExtension */,
 				2FFD9ABFFA006B0DEFABAEE5 /* Products */,
@@ -477,6 +484,15 @@
 				D0940FB3F3997D1391855E33 /* FieldsGallery.swift */,
 			);
 			path = Fields;
+			sourceTree = "<group>";
+		};
+		68E59CB061A0149FD74006D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DE5748E04E908D07B4A1A93 /* Assets.xcassets */,
+				13205D18AB615FA9EF5D2338 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6CBB1B55AC5846DCEB433679 /* Buttons */ = {
@@ -633,6 +649,7 @@
 			children = (
 				5590F286F4DBAF8C358F353C /* KitoWidgetsBundle.swift */,
 				A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */,
+				ED99FB61D47CCCDB686E13E8 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -778,6 +795,7 @@
 			buildConfigurationList = 72DDFCF1FCF7259F3951D29D /* Build configuration list for PBXNativeTarget "KitoSample" */;
 			buildPhases = (
 				C130AD84DE0AA60714208C00 /* Sources */,
+				2E796B5AACBA345DAEDF0BAB /* Resources */,
 				2210265498E7F66BA57F846A /* Frameworks */,
 				01A1235A41003A3574280651 /* Embed Foundation Extensions */,
 			);
@@ -835,6 +853,7 @@
 			buildConfigurationList = 35E1AD5A1F750B5D47C0CD8E /* Build configuration list for PBXNativeTarget "OrderTrackingWidgetExtension" */;
 			buildPhases = (
 				F25201DB27A8DF9BBF0A9A16 /* Sources */,
+				B672514E6910D217AE5840D8 /* Resources */,
 				E09361B135042E2D0DDEC34A /* Frameworks */,
 			);
 			buildRules = (
@@ -926,6 +945,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E796B5AACBA345DAEDF0BAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5858D36A587A9BC91C92E6E /* Assets.xcassets in Resources */,
+				148A7C3DD8B7E9D9F32D912C /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B672514E6910D217AE5840D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF904801689B842BCCBCE993 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C130AD84DE0AA60714208C00 /* Sources */ = {
@@ -1146,6 +1185,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension/OrderTrackingWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = WidgetExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1153,6 +1193,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyksoftsinc.kitosample.OrderTrackingWidget;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1165,15 +1206,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KitoSample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyksoftsinc.kitosample;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1185,15 +1229,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KitoSample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyksoftsinc.kitosample;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1206,6 +1253,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension/OrderTrackingWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = WidgetExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1213,6 +1261,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyksoftsinc.kitosample.OrderTrackingWidget;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
