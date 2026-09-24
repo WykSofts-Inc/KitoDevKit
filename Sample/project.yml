@@ -51,27 +51,31 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: Sources
+      - path: Resources
     info:
       path: Info.plist
       properties:
         CFBundleDisplayName: KitoDevKit
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
         NSCameraUsageDescription: "Take photos to try the camera, photo editor and media picker samples."
         NSPhotoLibraryAddUsageDescription: "Save photos you edit in the samples to your library."
-        NSFaceIDUsageDescription: "KitoSample demos KitoBiometrics."
-        NSPhotoLibraryUsageDescription: "KitoSample demos KitoPermissions' Photo Library request."
-        NSMicrophoneUsageDescription: "KitoSample demos KitoPermissions' Microphone request."
-        NSLocationWhenInUseUsageDescription: "KitoSample demos KitoPermissions' Location request."
-        NSLocationAlwaysAndWhenInUseUsageDescription: "KitoSample demos KitoPermissions' Location Always request."
-        NSContactsUsageDescription: "KitoSample demos KitoPermissions' Contacts request."
-        NSCalendarsFullAccessUsageDescription: "KitoSample demos KitoPermissions' Calendar request."
-        NSRemindersFullAccessUsageDescription: "KitoSample demos KitoPermissions' Reminders request."
-        NSSpeechRecognitionUsageDescription: "KitoSample demos KitoPermissions' Speech Recognition request."
-        NSAppleMusicUsageDescription: "KitoSample demos KitoPermissions' Media Library request."
-        NSBluetoothAlwaysUsageDescription: "KitoSample demos KitoPermissions' Bluetooth request."
-        NSUserTrackingUsageDescription: "KitoSample demos KitoPermissions' App Tracking request."
+        NSFaceIDUsageDescription: "Use Face ID to try the app-lock, secure notes and sign-in samples."
+        NSPhotoLibraryUsageDescription: "Choose photos to try the media picker, photo editor and review samples."
+        NSMicrophoneUsageDescription: "Record voice notes in the chat sample and try the microphone permission sample."
+        NSLocationWhenInUseUsageDescription: "Show where you are on the map samples and try the location permission sample."
+        NSLocationAlwaysAndWhenInUseUsageDescription: "Try the background location permission sample. Your location never leaves your device."
+        NSContactsUsageDescription: "Try the contacts permission sample. Nothing is uploaded or stored."
+        NSCalendarsFullAccessUsageDescription: "Try the calendar permission sample. Nothing is uploaded or stored."
+        NSRemindersFullAccessUsageDescription: "Try the reminders permission sample. Nothing is uploaded or stored."
+        NSSpeechRecognitionUsageDescription: "Try the speech recognition permission sample."
+        NSAppleMusicUsageDescription: "Try the media library permission sample."
+        NSBluetoothAlwaysUsageDescription: "Try the Bluetooth permission sample."
         # Required for the app to be able to start a Live Activity at all —
         # without this key, Activity.request() throws, silently, every time.
         NSSupportsLiveActivities: true
@@ -92,6 +96,10 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
         CODE_SIGN_STYLE: Automatic
@@ -145,6 +153,8 @@ targets:
       path: WidgetExtension/Info.plist
       properties:
         CFBundleDisplayName: OrderTrackingWidget
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
         KitoWidgetsAppGroup: group.com.wyksoftsinc.kitosample
@@ -156,6 +166,8 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.wyksoftsinc.kitosample.OrderTrackingWidget
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
         CODE_SIGN_STYLE: Automatic
