@@ -9,154 +9,301 @@
 import SwiftUI
 import KitoCore
 
-struct KitoCatalogEntry: Identifiable {
+struct KitoCatalogEntry: Identifiable, Hashable {
     let id = UUID()
     let title: String
     let subtitle: String
     let systemImage: String
+    let isNew: Bool
     let destination: AnyView
 
-    init<Content: View>(_ title: String, _ subtitle: String, systemImage: String, @ViewBuilder destination: () -> Content) {
+    init<Content: View>(_ title: String, _ subtitle: String, systemImage: String, isNew: Bool = false, @ViewBuilder destination: () -> Content) {
         self.title = title
         self.subtitle = subtitle
         self.systemImage = systemImage
+        self.isNew = isNew
         self.destination = AnyView(destination())
     }
+
+    /// A kit added in the latest round, badged "New" on the home screen.
+    static func new<Content: View>(_ title: String, _ subtitle: String, systemImage: String, @ViewBuilder destination: () -> Content) -> KitoCatalogEntry {
+        KitoCatalogEntry(title, subtitle, systemImage: systemImage, isNew: true, destination: destination)
+    }
+
+    /// "24 samples" from "24 samples · sheets, alerts", or nil when the subtitle has no count.
+    var countText: String? {
+        guard let first = subtitle.components(separatedBy: " · ").first, first.first?.isNumber == true else { return nil }
+        return first
+    }
+
+    /// What the kit covers, without the count.
+    var blurb: String { subtitle.components(separatedBy: " · ").last ?? subtitle }
+
+    static func == (lhs: KitoCatalogEntry, rhs: KitoCatalogEntry) -> Bool { lhs.id == rhs.id }
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
 struct KitoCatalogSection: Identifiable {
-    let id = UUID()
     let title: String
+    let symbol: String
+    let tint: Color
     let entries: [KitoCatalogEntry]
+    var id: String { title }
 }
 
 struct ContentView: View {
     @Environment(\.kitoTheme) private var theme
-    @State private var appeared = false
     @State private var query = ""
+    @State private var category: String?
+    @State private var surprise: KitoCatalogEntry?
+    @State private var featured: String?
+    @AppStorage("home.recentKits") private var recentRaw = ""
 
-    private let sections: [KitoCatalogSection] = [
-        KitoCatalogSection(title: "Components", entries: [
+    static let sections: [KitoCatalogSection] = [
+        KitoCatalogSection(title: "Components", symbol: "square.on.square", tint: Color.cyan, entries: [
             KitoCatalogEntry("Buttons", "\(SampleCatalog.all.count) samples · variants, phases, add-to-cart", systemImage: "hand.tap.fill") { ButtonsGallery() },
             KitoCatalogEntry("Fields", "\(FieldSampleCatalog.all.count) samples · text, phone, OTP, currency", systemImage: "character.cursor.ibeam") { FieldsGallery() },
-            KitoCatalogEntry("Carousels & Stories", "\(CarouselGallery.count) samples · snap, cover flow, swipe deck, stories", systemImage: "rectangle.stack.fill") { CarouselGallery() },
-            KitoCatalogEntry("Reviews & Ratings", "\(ReviewsGallery.count) samples · stars, histograms, composer, NPS", systemImage: "star.bubble.fill") { ReviewsGallery() },
+            KitoCatalogEntry.new("Carousels & Stories", "\(CarouselGallery.count) samples · snap, cover flow, swipe deck, stories", systemImage: "rectangle.stack.fill") { CarouselGallery() },
+            KitoCatalogEntry.new("Reviews & Ratings", "\(ReviewsGallery.count) samples · stars, histograms, composer, NPS", systemImage: "star.bubble.fill") { ReviewsGallery() },
         ]),
-        KitoCatalogSection(title: "Feedback", entries: [
-            KitoCatalogEntry("Loaders", "Spinner, dots, pulse, progress ring, skeleton", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
-            KitoCatalogEntry("Toasts", "Queued, swipeable, spring physics", systemImage: "bubble.left.fill") { ToastsDemo() },
+        KitoCatalogSection(title: "Feedback", symbol: "bell.badge.fill", tint: Color.orange, entries: [
+            KitoCatalogEntry("Loaders", "\(LoadersDemo.count) samples · spinners, skeletons, overlays, refresh", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
+            KitoCatalogEntry("Toasts", "\(ToastsDemo.count) samples · stacks, island, promise, undo", systemImage: "bubble.left.fill") { ToastsDemo() },
             KitoCatalogEntry("Modals", "\(ModalsGallery.count) samples · sheets, alerts, paywall, hero cards", systemImage: "rectangle.portrait.bottomthird.inset.filled") { ModalsGallery() },
-            KitoCatalogEntry("Empty States", "No data, no results, offline, error", systemImage: "tray") { EmptyStatesDemo() },
-            KitoCatalogEntry("Haptics", "Semantic feedback for every interaction", systemImage: "waveform") { HapticsDemo() },
+            KitoCatalogEntry("Empty States", "\(EmptyStatesDemo.count) samples · animated illustrations, layouts", systemImage: "tray") { EmptyStatesDemo() },
+            KitoCatalogEntry("Haptics", "\(HapticsDemo.count) samples · patterns, visualizer, triggers", systemImage: "waveform") { HapticsDemo() },
         ]),
-        KitoCatalogSection(title: "Data & Charts", entries: [
+        KitoCatalogSection(title: "Data & Charts", symbol: "chart.bar.xaxis", tint: Color.green, entries: [
             KitoCatalogEntry("Charts", "\(ChartsGallery.count) samples · line, area, sparklines, bar, pie", systemImage: "chart.xyaxis.line") { ChartsGallery() },
             KitoCatalogEntry("3D Charts", "\(Chart3DSampleCatalog.all.count) samples · bars, pies, donuts, live data", systemImage: "cube.fill") { Chart3DGallery() },
-            KitoCatalogEntry("Calendar", "\(CalendarGallery.count) samples · month, ranges, slots, timeline", systemImage: "calendar") { CalendarGallery() },
+            KitoCatalogEntry.new("Calendar", "\(CalendarGallery.count) samples · month, ranges, slots, timeline", systemImage: "calendar") { CalendarGallery() },
             KitoCatalogEntry("Formatting", "Currency, compact numbers, dates", systemImage: "textformat.123") { FormattingDemo() },
         ]),
-        KitoCatalogSection(title: "Navigation", entries: [
-            KitoCatalogEntry("Side Menus & Tab Bars", "\(NavigationGallery.count) samples · drawers, transitions, tab bars, top tabs", systemImage: "sidebar.left") { NavigationGallery() },
+        KitoCatalogSection(title: "Navigation", symbol: "sidebar.left", tint: Color.purple, entries: [
+            KitoCatalogEntry.new("Side Menus & Tab Bars", "\(NavigationGallery.count) samples · drawers, transitions, tab bars, top tabs", systemImage: "sidebar.left") { NavigationGallery() },
             KitoCatalogEntry("Onboarding", "\(OnboardingGallery.count) samples · layouts, photos, gradients, transitions", systemImage: "sparkles") { OnboardingGallery() },
         ]),
-        KitoCatalogSection(title: "Forms", entries: [
+        KitoCatalogSection(title: "Forms", symbol: "rectangle.and.pencil.and.ellipsis", tint: Color.pink, entries: [
             KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
-            KitoCatalogEntry("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
-            KitoCatalogEntry("Media Player", "\(MediaPlayerGallery.count) samples · video, Reels, music, podcasts", systemImage: "play.rectangle.fill") { MediaPlayerGallery() },
+            KitoCatalogEntry.new("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
+            KitoCatalogEntry.new("Media Player", "\(MediaPlayerGallery.count) samples · video, Reels, music, podcasts", systemImage: "play.rectangle.fill") { MediaPlayerGallery() },
             KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
         ]),
-        KitoCatalogSection(title: "Communication", entries: [
-            KitoCatalogEntry("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
+        KitoCatalogSection(title: "Communication", symbol: "bubble.left.and.bubble.right.fill", tint: Color.blue, entries: [
+            KitoCatalogEntry.new("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
         ]),
-        KitoCatalogSection(title: "Account", entries: [
-            KitoCatalogEntry("Auth", "\(AuthGallery.count) samples · Apple, passkeys, codes, app lock", systemImage: "person.badge.key.fill") { AuthGallery() },
+        KitoCatalogSection(title: "Account", symbol: "person.crop.circle.badge.checkmark", tint: Color.indigo, entries: [
+            KitoCatalogEntry.new("Auth", "\(AuthGallery.count) samples · Apple, passkeys, codes, app lock", systemImage: "person.badge.key.fill") { AuthGallery() },
         ]),
-        KitoCatalogSection(title: "Location", entries: [
-            KitoCatalogEntry("Maps", "\(MapsGallery.count) samples · Apple, Google, MapLibre, pins, routes", systemImage: "map.fill") { MapsGallery() },
+        KitoCatalogSection(title: "Location", symbol: "map.fill", tint: Color.teal, entries: [
+            KitoCatalogEntry.new("Maps", "\(MapsGallery.count) samples · Apple, Google, MapLibre, pins, routes", systemImage: "map.fill") { MapsGallery() },
         ]),
-        KitoCatalogSection(title: "Device", entries: [
+        KitoCatalogSection(title: "Device", symbol: "iphone", tint: Color.mint, entries: [
             KitoCatalogEntry("Permissions", "One async API, themed rationale screen", systemImage: "hand.raised") { PermissionsDemo() },
             KitoCatalogEntry("Biometrics", "Face ID / Touch ID authentication", systemImage: "faceid") { BiometricsDemo() },
             KitoCatalogEntry("Keychain", "Secure token storage round-trip", systemImage: "key.fill") { KeychainDemo() },
             KitoCatalogEntry("Connectivity", "Live online/offline monitoring", systemImage: "wifi") { ConnectivityDemo() },
         ]),
-        KitoCatalogSection(title: "System", entries: [
+        KitoCatalogSection(title: "System", symbol: "gearshape.2.fill", tint: Color.yellow, entries: [
             KitoCatalogEntry("Control Center", "Glass modules, toggles, drag sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
             KitoCatalogEntry("Dynamic Island", "\(IslandGallery.count) samples · music, timers, calls, rides, moments", systemImage: "capsule.portrait") { IslandGallery() },
-            KitoCatalogEntry("Widgets & Intents", "\(WidgetsGallery.count) samples · Home Screen, Lock Screen, Siri", systemImage: "square.grid.2x2.fill") { WidgetsGallery() },
+            KitoCatalogEntry.new("Widgets & Intents", "\(WidgetsGallery.count) samples · Home Screen, Lock Screen, Siri", systemImage: "square.grid.2x2.fill") { WidgetsGallery() },
         ]),
-        KitoCatalogSection(title: "Networking", entries: [
+        KitoCatalogSection(title: "Networking", symbol: "network", tint: Color.gray, entries: [
             KitoCatalogEntry("Image Loader", "Cache-backed image loading, live from a URL", systemImage: "photo.badge.arrow.down") { ImageLoaderDemo() },
         ]),
-        KitoCatalogSection(title: "Commerce", entries: [
+        KitoCatalogSection(title: "Commerce", symbol: "bag.fill", tint: Color.red, entries: [
             KitoCatalogEntry("Cart", "Choreographed add-to-cart, fly-to-badge", systemImage: "cart.fill") { CartDemo() },
             KitoCatalogEntry("Wallet & Cards", "\(WalletGallery.count) samples · pocket, stack, carousel, add a card", systemImage: "wallet.pass.fill") { WalletGallery() },
-            KitoCatalogEntry("Paywall", "\(PaywallGallery.count) samples · StoreKit 2, plans, trials, Pro gate", systemImage: "crown.fill") { PaywallGallery() },
+            KitoCatalogEntry.new("Paywall", "\(PaywallGallery.count) samples · StoreKit 2, plans, trials, Pro gate", systemImage: "crown.fill") { PaywallGallery() },
             KitoCatalogEntry("Order Tracking", "Self-refreshing status + Live Activity", systemImage: "shippingbox.fill") { OrderTrackingDemo() },
         ]),
     ]
 
-    private var flatEntries: [(section: KitoCatalogSection, entry: KitoCatalogEntry, globalIndex: Int)] {
-        var index = 0
-        return sections.flatMap { section in
-            section.entries.map { entry in
-                defer { index += 1 }
-                return (section, entry, index)
-            }
-        }
+    private var sections: [KitoCatalogSection] { Self.sections }
+    private var allEntries: [KitoCatalogEntry] { sections.flatMap(\.entries) }
+    private static let featuredTitles = ["Wallet & Cards", "Maps", "Dynamic Island", "Chat", "Charts", "Paywall"]
+
+    private func section(of entry: KitoCatalogEntry) -> KitoCatalogSection? {
+        sections.first { $0.entries.contains(entry) }
+    }
+
+    private func entry(titled title: String) -> KitoCatalogEntry? {
+        allEntries.first { $0.title == title }
+    }
+
+    private var recents: [KitoCatalogEntry] {
+        recentRaw.split(separator: "|").compactMap { entry(titled: String($0)) }
+    }
+
+    private func remember(_ entry: KitoCatalogEntry) {
+        var titles = recentRaw.split(separator: "|").map(String.init).filter { $0 != entry.title }
+        titles.insert(entry.title, at: 0)
+        recentRaw = titles.prefix(6).joined(separator: "|")
     }
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(alignment: .leading, spacing: 28) {
-                    if !query.trimmingCharacters(in: .whitespaces).isEmpty {
-                        searchResults
-                    } else {
-                    header
-
-                    ForEach(sections) { section in
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(section.title.uppercased())
-                                .font(.caption.weight(.bold))
-                                .kerning(0.8)
-                                .foregroundStyle(theme.colors.primary)
-                                .padding(.horizontal, 4)
-
-                            VStack(spacing: 10) {
-                                ForEach(section.entries) { entry in
-                                    row(entry, globalIndex: flatEntries.first { $0.entry.id == entry.id }?.globalIndex ?? 0)
-                                }
-                            }
-                        }
-                    }
-                    }
+                if !query.trimmingCharacters(in: .whitespaces).isEmpty {
+                    LazyVStack(alignment: .leading, spacing: 28) { searchResults }
+                        .padding(16)
+                } else {
+                    home
                 }
-                .padding(16)
-                .padding(.bottom, 24)
             }
+            .scrollIndicators(.hidden)
             .background(backdrop)
             .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search \(GlobalSampleIndex.all.count) samples and every kit")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink(destination: SettingsDemo()) {
-                        Image(systemName: "gearshape.fill")
-                            .foregroundStyle(theme.colors.primary)
+            .navigationDestination(item: $surprise) { $0.destination }
+        }
+    }
+
+    // MARK: Home
+
+    private var home: some View {
+        VStack(alignment: .leading, spacing: 30) {
+            HomeHeader(kitCount: allEntries.count, sampleCount: GlobalSampleIndex.all.count) {
+                if let pick = allEntries.randomElement() {
+                    remember(pick)
+                    surprise = pick
+                }
+            }
+            .padding(.horizontal, 16)
+
+            featuredCarousel
+
+            newStrip
+
+            if !recents.isEmpty { recentStrip }
+
+            VStack(alignment: .leading, spacing: 14) {
+                HomeSectionHeader(title: "Browse", symbol: "square.grid.2x2.fill", trailing: "\(allEntries.count) kits")
+                    .padding(.horizontal, 16)
+                HomeCategoryChips(categories: sections, selection: $category)
+                grid.padding(.horizontal, 16)
+            }
+
+            footer
+        }
+        .padding(.top, 8)
+        .padding(.bottom, 32)
+    }
+
+    private var featuredCarousel: some View {
+        let items = Self.featuredTitles.compactMap(entry(titled:))
+        return VStack(alignment: .leading, spacing: 12) {
+            HomeSectionHeader(title: "Featured", symbol: "star.fill").padding(.horizontal, 16)
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 14) {
+                    ForEach(items) { item in
+                        link(item) { HomeFeatureCard(entry: item, category: section(of: item)?.title ?? "") }
+                            .containerRelativeFrame(.horizontal) { width, _ in width - 48 }
+                            .scrollTransition { content, phase in
+                                content.scaleEffect(phase.isIdentity ? 1 : 0.92).opacity(phase.isIdentity ? 1 : 0.75)
+                            }
+                            .id(item.title)
+                    }
+                }
+                .scrollTargetLayout()
+            }
+            .contentMargins(.horizontal, 16, for: .scrollContent)
+            .scrollTargetBehavior(.viewAligned)
+            .scrollPosition(id: $featured)
+            .scrollClipDisabled()
+            HStack(spacing: 6) {
+                ForEach(items) { item in
+                    Capsule()
+                        .fill((featured ?? items.first?.title) == item.title ? theme.colors.primary : theme.colors.onBackground.opacity(0.2))
+                        .frame(width: (featured ?? items.first?.title) == item.title ? 20 : 6, height: 6)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .animation(.spring(response: 0.35, dampingFraction: 0.8), value: featured)
+            .accessibilityHidden(true)
+        }
+    }
+
+    private var newStrip: some View {
+        let items = allEntries.filter(\.isNew)
+        return VStack(alignment: .leading, spacing: 12) {
+            HomeSectionHeader(title: "New", symbol: "sparkles", trailing: "\(items.count) kits").padding(.horizontal, 16)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(items) { item in
+                        link(item) { HomeNewCard(entry: item, tint: section(of: item)?.tint ?? theme.colors.primary) }
+                    }
+                }
+                .padding(.horizontal, 16)
+            }
+            .scrollClipDisabled()
+        }
+    }
+
+    private var recentStrip: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HomeSectionHeader(title: "Jump back in", symbol: "clock.arrow.circlepath").padding(.horizontal, 16)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(recents) { item in
+                        link(item) { HomeNewCard(entry: item, tint: section(of: item)?.tint ?? theme.colors.primary) }
+                    }
+                }
+                .padding(.horizontal, 16)
+            }
+            .scrollClipDisabled()
+        }
+    }
+
+    @ViewBuilder
+    private var grid: some View {
+        let columns = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
+        let shown = category.map { title in sections.filter { $0.title == title } } ?? sections
+        VStack(alignment: .leading, spacing: 22) {
+            ForEach(shown) { section in
+                VStack(alignment: .leading, spacing: 10) {
+                    if category == nil {
+                        Label(section.title.uppercased(), systemImage: section.symbol)
+                            .font(.caption.weight(.bold))
+                            .kerning(0.8)
+                            .foregroundStyle(section.tint)
+                    }
+                    LazyVGrid(columns: columns, spacing: 12) {
+                        ForEach(section.entries) { item in
+                            link(item) { HomeKitTile(entry: item, tint: section.tint) }
+                                .transition(.scale(scale: 0.9).combined(with: .opacity))
+                        }
                     }
                 }
             }
-            .onAppear {
-                withAnimation(.easeOut(duration: 0.5)) { appeared = true }
-            }
         }
+        .animation(.spring(response: 0.4, dampingFraction: 0.85), value: category)
+    }
+
+    private var footer: some View {
+        VStack(spacing: 6) {
+            Image(systemName: "swift").font(.title2).foregroundStyle(theme.colors.primary)
+            Text("Made in Nairobi with SwiftUI").font(.footnote.weight(.semibold)).foregroundStyle(theme.colors.onBackground.opacity(0.7))
+            Text("wyksoftsinc.com · v\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")")
+                .font(.caption).foregroundStyle(theme.colors.onBackground.opacity(0.45))
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 8)
+    }
+
+    private func link<Label: View>(_ entry: KitoCatalogEntry, @ViewBuilder label: () -> Label) -> some View {
+        NavigationLink(destination: entry.destination) { label() }
+            .buttonStyle(HomePressStyle())
+            .simultaneousGesture(TapGesture().onEnded { remember(entry) })
     }
 
     // MARK: Search
 
     private var matchingKits: [KitoCatalogEntry] {
         let q = query.trimmingCharacters(in: .whitespaces)
-        return sections.flatMap(\.entries).filter {
+        return allEntries.filter {
             $0.title.localizedCaseInsensitiveContains(q) || $0.subtitle.localizedCaseInsensitiveContains(q)
         }
     }
@@ -178,8 +325,10 @@ struct ContentView: View {
         if !kits.isEmpty {
             VStack(alignment: .leading, spacing: 10) {
                 sectionTitle("Kits")
-                VStack(spacing: 10) {
-                    ForEach(kits) { entry in row(entry, globalIndex: 0) }
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                    ForEach(kits) { item in
+                        link(item) { HomeKitTile(entry: item, tint: section(of: item)?.tint ?? theme.colors.primary) }
+                    }
                 }
             }
         }
@@ -222,63 +371,6 @@ struct ContentView: View {
                 .offset(x: 160, y: 120)
         }
         .ignoresSafeArea()
-    }
-
-    // MARK: Header
-
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("KitoDevKit")
-                .font(.system(size: 34, weight: .bold, design: .rounded))
-                .foregroundStyle(theme.colors.onBackground)
-                .kitoGlow(theme.colors.primary, radius: 14, intensity: 0.35)
-            Text("Every kit in this ecosystem, live and interactive.")
-                .font(theme.typography.body)
-                .foregroundStyle(theme.colors.onBackground.opacity(0.6))
-        }
-        .padding(.top, 8)
-        .opacity(appeared ? 1 : 0)
-        .offset(y: appeared ? 0 : -8)
-    }
-
-    // MARK: Rows
-
-    private func row(_ entry: KitoCatalogEntry, globalIndex: Int) -> some View {
-        NavigationLink(destination: entry.destination) {
-            HStack(spacing: 14) {
-                ZStack {
-                    Circle()
-                        .fill(theme.colors.primary.opacity(0.16))
-                        .frame(width: 44, height: 44)
-                    Image(systemName: entry.systemImage)
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundStyle(theme.colors.primary)
-                }
-                .kitoGlow(theme.colors.primary, radius: 12, intensity: 0.35)
-
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(entry.title)
-                        .font(theme.typography.bodyEmphasized)
-                        .foregroundStyle(theme.colors.onBackground)
-                    Text(entry.subtitle)
-                        .font(theme.typography.caption)
-                        .foregroundStyle(theme.colors.onBackground.opacity(0.55))
-                        .lineLimit(1)
-                }
-
-                Spacer()
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(theme.colors.onBackground.opacity(0.3))
-            }
-            .padding(14)
-            .kitoGlassCard(cornerRadius: theme.radii.lg)
-        }
-        .buttonStyle(.plain)
-        .opacity(appeared ? 1 : 0)
-        .offset(y: appeared ? 0 : 14)
-        .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(Double(globalIndex) * 0.02), value: appeared)
     }
 }
 
