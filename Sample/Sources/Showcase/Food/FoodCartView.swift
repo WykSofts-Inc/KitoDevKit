@@ -34,7 +34,10 @@ extension FoodShowcase {
                              rules: KitoCartPricingRules(deliveryFee: fee, freeDeliveryThreshold: Self.freeDeliveryThreshold, serviceFeeRate: 0.02),
                              checkoutTitle: "Go to checkout",
                              onCheckout: { _ in startCheckout() },
-                             onBrowse: { dismiss() }) { item in
+                             onBrowse: { dismiss() },
+                             emptyTitle: "Your basket is empty",
+                             emptyMessage: "Browse the menu and add something you love.",
+                             emptyActionTitle: "Keep browsing") { item in
                     FoodCartThumbnail(item: item)
                 }
                 .navigationTitle(store.cartRestaurant?.name ?? "Your basket")

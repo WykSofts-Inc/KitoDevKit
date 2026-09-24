@@ -183,11 +183,10 @@ extension FoodShowcase {
                         .symbolEffect(.bounce, value: order.stage)
                         .accessibilityLabel("Delivered")
                 } else {
-                    // Re-read the demo clock every second: before pickup nothing else redraws this view.
-                    TimelineView(.periodic(from: .now, by: 1)) { _ in
-                        KitoETACountdown(eta: order.demoETA, start: order.demoStart, style: .ring, tint: FoodPalette.pepper)
-                    }
-                    .frame(width: 88, height: 88)
+                    // The demo clock moves the arrival time, so the countdown re-reads it on every tick.
+                    KitoETACountdown(style: .ring, tint: FoodPalette.pepper,
+                                     eta: { _ in order.demoETA }, start: { _ in order.demoStart })
+                        .frame(width: 88, height: 88)
                 }
             }
         }

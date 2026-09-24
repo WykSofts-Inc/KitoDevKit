@@ -418,7 +418,7 @@ private struct OrdSignSample: View {
                     .buttonStyle(GalleryPrimaryButtonStyle())
             } else {
                 Text("Recipient signature").font(.headline).frame(maxWidth: .infinity, alignment: .leading)
-                KitoSignaturePad(strokes: $strokes).frame(height: 190)
+                KitoDeliverySignaturePad(strokes: $strokes).frame(height: 190)
                 HStack {
                     Button("Clear") { strokes = [] }.buttonStyle(.bordered).tint(.primary).disabled(strokes.isEmpty)
                     Spacer()
@@ -591,7 +591,7 @@ enum OrderTrackingSamples {
         KitSample("Sign for it", "Sign with a finger, confirm, and see it on the proof.", code: """
         @State private var strokes: [[CGPoint]] = []
 
-        KitoSignaturePad(strokes: $strokes).frame(height: 190)
+        KitoDeliverySignaturePad(strokes: $strokes).frame(height: 190)
         KitoDeliveryProofView(proof: KitoDeliveryProof(recipientName: name, deliveredAt: .now, signature: strokes))
         """) { OrdSignSample() },
         KitSample("Delivered and cancelled", "Finished orders get their own clear row, whatever the layout.", code: "KitoOrderStageTimelineView(currentStage: .cancelled)") { OrdTerminalSample() },
