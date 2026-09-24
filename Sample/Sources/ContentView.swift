@@ -57,6 +57,7 @@ struct ContentView: View {
     @State private var category: String?
     @State private var surprise: KitoCatalogEntry?
     @State private var featured: String?
+    @State private var showcase: HomeShowcaseApp?
     @AppStorage("home.recentKits") private var recentRaw = ""
 
     static let sections: [KitoCatalogSection] = [
@@ -169,6 +170,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search \(GlobalSampleIndex.all.count) samples and every kit")
             .navigationDestination(item: $surprise) { $0.destination }
+            .fullScreenCover(item: $showcase) { $0.makeView() }
         }
     }
 
@@ -185,6 +187,8 @@ struct ContentView: View {
             .padding(.horizontal, 16)
 
             featuredCarousel
+
+            showcaseStrip
 
             newStrip
 
@@ -234,6 +238,22 @@ struct ContentView: View {
             .frame(maxWidth: .infinity)
             .animation(.spring(response: 0.35, dampingFraction: 0.8), value: featured)
             .accessibilityHidden(true)
+        }
+    }
+
+    private var showcaseStrip: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HomeSectionHeader(title: "Try a real app", symbol: "iphone.gen3", trailing: "Built only from Kito").padding(.horizontal, 16)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 14) {
+                    ForEach(HomeShowcaseApp.all) { app in
+                        Button { showcase = app } label: { HomeShowcaseCard(app: app) }
+                            .buttonStyle(HomePressStyle())
+                    }
+                }
+                .padding(.horizontal, 16)
+            }
+            .scrollClipDisabled()
         }
     }
 

@@ -326,3 +326,64 @@ extension String {
     /// "sheets, alerts" → "Sheets, alerts".
     var capitalizedFirst: String { prefix(1).uppercased() + dropFirst() }
 }
+
+// MARK: - Showcase apps
+
+/// A complete demo app built only from Kito packages, opened full screen from the home screen.
+struct HomeShowcaseApp: Identifiable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let systemImage: String
+    let colors: [Color]
+    let kits: [String]
+    let makeView: () -> AnyView
+
+    static let all: [HomeShowcaseApp] = [
+        HomeShowcaseApp(id: "maison", title: FashionShowcase.title, subtitle: FashionShowcase.subtitle, systemImage: FashionShowcase.systemImage,
+                        colors: [Color(red: 0.12, green: 0.1, blue: 0.09), Color(red: 0.55, green: 0.42, blue: 0.3)],
+                        kits: ["Product", "Checkout", "Search", "Carousel", "Reviews", "Paywall"]) { AnyView(FashionShowcaseApp()) },
+    ]
+}
+
+struct HomeShowcaseCard: View {
+    let app: HomeShowcaseApp
+
+    var body: some View {
+        ZStack(alignment: .bottomLeading) {
+            LinearGradient(colors: app.colors, startPoint: .topLeading, endPoint: .bottomTrailing)
+            Image(systemName: app.systemImage)
+                .font(.system(size: 110, weight: .bold))
+                .foregroundStyle(.white.opacity(0.14))
+                .rotationEffect(.degrees(-12))
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .padding(.top, 20).padding(.trailing, 18)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 8) {
+                Label("DEMO APP", systemImage: "iphone.gen3")
+                    .font(.caption2.weight(.heavy)).kerning(1).opacity(0.75)
+                Text(app.title).font(.system(size: 30, weight: .bold, design: .serif))
+                Text(app.subtitle).font(.subheadline).opacity(0.85)
+                Text("Built with " + app.kits.prefix(4).joined(separator: ", ") + " and more")
+                    .font(.caption).opacity(0.7).lineLimit(1)
+                HStack(spacing: 6) {
+                    Text("Open app")
+                    Image(systemName: "arrow.up.right")
+                }
+                .font(.subheadline.weight(.bold))
+                .padding(.horizontal, 14).padding(.vertical, 8)
+                .background(Capsule().fill(.white))
+                .foregroundStyle(app.colors[0])
+                .padding(.top, 4)
+            }
+            .foregroundStyle(.white)
+            .padding(20)
+        }
+        .frame(width: 280, height: 250)
+        .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 28, style: .continuous).strokeBorder(.white.opacity(0.14), lineWidth: 1))
+        .shadow(color: app.colors[0].opacity(0.4), radius: 18, y: 10)
+        .accessibilityElement(children: .combine)
+        .accessibilityHint("Opens the \(app.title) demo app full screen")
+    }
+}
