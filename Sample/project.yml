@@ -44,6 +44,7 @@ packages:
   KitoCarousel: { path: ../../KitoCarousel }
   KitoReviews: { path: ../../KitoReviews }
   KitoWidgets: { path: ../../KitoWidgets }
+  KitoNotifications: { path: ../../KitoNotifications }
 targets:
   KitoSample:
     type: application
@@ -132,6 +133,7 @@ targets:
       - package: KitoCarousel
       - package: KitoReviews
       - package: KitoWidgets
+      - package: KitoNotifications
       - target: OrderTrackingWidgetExtension
         embed: true
 

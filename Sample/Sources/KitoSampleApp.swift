@@ -14,6 +14,7 @@ import KitoToasts
 struct KitoSampleApp: App {
     @State private var toasts = KitoToastCenter()
     @State private var settings = KitoAppSettingsViewModel()
+    init() { NotificationsSampleSetup.install() }
 
     var body: some Scene {
         WindowGroup {
