@@ -272,9 +272,9 @@ extension WalletShowcase {
 
         var body: some View {
             NavigationStack {
-                KitoNotificationInbox($store.inbox, title: "Notifications", onOpen: { item in
+                KitoNotificationInbox($store.inbox, title: "Notifications") { item in
                     if let index = store.inbox.firstIndex(where: { $0.id == item.id }) { store.inbox[index].isRead = true }
-                })
+                }
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) { Button("Done") { dismiss() } }
                     }
