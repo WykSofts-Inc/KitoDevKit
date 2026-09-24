@@ -247,7 +247,7 @@ private struct CodeFieldStates: View {
 
     var body: some View {
         VStack(spacing: 18) {
-            KitoCodeField(code: $code, length: 6, state: state, autoFocus: false) { value in
+            KitoAuthCodeField(code: $code, length: 6, state: state, autoFocus: false) { value in
                 state = value == "123456" ? .success : .error
             }
             Picker("State", selection: $state) {
@@ -274,7 +274,7 @@ private struct PINCodeField: View {
 
     var body: some View {
         VStack(spacing: 14) {
-            KitoCodeField(code: $code, length: 4, state: state, isSecure: true, autoFocus: false) { value in
+            KitoAuthCodeField(code: $code, length: 4, state: state, isSecure: true, autoFocus: false) { value in
                 state = value == MockAuth.pin ? .success : .error
             }
             .frame(maxWidth: 260)
@@ -554,12 +554,12 @@ enum AuthSamples {
             }
         },
         KitSample("Code field", "Just the boxes: editing, error and success states.", code: """
-        KitoCodeField(code: $code, length: 6, state: state) { code in
+        KitoAuthCodeField(code: $code, length: 6, state: state) { code in
             state = code == expected ? .success : .error
         }
         """) { CodeFieldStates() },
         KitSample("Secure PIN field", "Dots instead of digits for a 4-digit PIN.", code: """
-        KitoCodeField(code: $pin, length: 4, state: state, isSecure: true) { pin in check(pin) }
+        KitoAuthCodeField(code: $pin, length: 4, state: state, isSecure: true) { pin in check(pin) }
         """) { PINCodeField() },
         KitSample("Magic link", "An envelope that opens, Open Mail, and a resend countdown.", code: """
         KitoMagicLinkScreen(email: "wycliff@example.com") {

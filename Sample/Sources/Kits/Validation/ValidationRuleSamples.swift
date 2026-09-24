@@ -14,7 +14,7 @@ import KitoValidation
 /// A field and a live checklist of its rules: each ticks as it passes, and the field's border
 /// shows the first failure's colour.
 struct RuleTester: View {
-    let rules: [KitoValidator]
+    let rules: [KitoValidationRule]
     let placeholder: String
     var keyboard: UIKeyboardType = .default
     var capitalization: TextInputAutocapitalization = .never
@@ -23,7 +23,7 @@ struct RuleTester: View {
     @State private var text: String
     @FocusState private var focused: Bool
 
-    init(_ rules: [KitoValidator], placeholder: String, initial: String = "", keyboard: UIKeyboardType = .default,
+    init(_ rules: [KitoValidationRule], placeholder: String, initial: String = "", keyboard: UIKeyboardType = .default,
          capitalization: TextInputAutocapitalization = .never, secure: Bool = false) {
         self.rules = rules
         self.placeholder = placeholder
@@ -111,7 +111,7 @@ struct PasswordStrengthSample: View {
     var showsTips = true
     @State private var password = ""
 
-    private var strength: KitoPasswordStrength { .evaluate(password) }
+    private var strength: KitoPasswordScore { .evaluate(password) }
     private var color: Color {
         switch strength {
         case .veryWeak: return .red
@@ -142,7 +142,7 @@ struct PasswordStrengthSample: View {
                 Text("\(password.count) characters").font(.caption.monospacedDigit()).foregroundStyle(.secondary)
             }
             if showsTips, !password.isEmpty {
-                let tips = KitoPasswordStrength.suggestions(for: password)
+                let tips = KitoPasswordScore.suggestions(for: password)
                 if tips.isEmpty {
                     Label("Great password", systemImage: "hand.thumbsup.fill").font(.subheadline).foregroundStyle(.green)
                 } else {
@@ -165,7 +165,7 @@ struct PasswordStrengthSample: View {
 struct RulePlayground: View {
     private struct Option: Identifiable {
         let id: String
-        let rule: KitoValidator
+        let rule: KitoValidationRule
     }
 
     private let options: [Option] = [
@@ -184,7 +184,7 @@ struct RulePlayground: View {
     @State private var enabled: Set<String> = ["Required", "Min 8", "Number"]
     @State private var text = "kito2026"
 
-    private var activeRules: [KitoValidator] { options.filter { enabled.contains($0.id) }.map(\.rule) }
+    private var activeRules: [KitoValidationRule] { options.filter { enabled.contains($0.id) }.map(\.rule) }
     private var results: [KitoRuleResult] { kitoEvaluate(text, rules: activeRules) }
 
     var body: some View {
@@ -243,7 +243,7 @@ private func ruleCode(_ rules: String) -> String {
     """
     import KitoValidation
 
-    let rules: [KitoValidator] = \(rules)
+    let rules: [KitoValidationRule] = \(rules)
 
     kitoValidate(text, rules: rules)   // first failure, or nil
     kitoEvaluate(text, rules: rules)   // every rule, passed or not
@@ -295,16 +295,16 @@ enum ValidationRuleSamples {
 
     static let passwords = KitSection("Passwords", symbol: "lock", [
         KitSample("Strength meter", "Five segments that fill and change colour.", code: """
-        let strength = KitoPasswordStrength.evaluate(password)   // .veryWeak … .veryStrong
+        let strength = KitoPasswordScore.evaluate(password)   // .veryWeak … .veryStrong
         strength.label                                          // "Strong"
         strength.fraction                                       // 0.8
         """) { PasswordStrengthSample(showsTips: false) },
         KitSample("Meter with tips", "Suggestions for what would make it stronger.", code: """
-        KitoPasswordStrength.suggestions(for: password)
+        KitoPasswordScore.suggestions(for: password)
         // ["Add a number", "Add a symbol like ! or #"]
         """) { PasswordStrengthSample() },
-        KitSample("Requirement checklist", "Each requirement ticks off as you type.", code: ruleCode("KitoValidator.strongPassword(minLength: 8)")) {
-            RuleTester(KitoValidator.strongPassword(), placeholder: "Password", secure: true)
+        KitSample("Requirement checklist", "Each requirement ticks off as you type.", code: ruleCode("KitoValidationRule.strongPassword(minLength: 8)")) {
+            RuleTester(KitoValidationRule.strongPassword(), placeholder: "Password", secure: true)
         },
     ])
 

@@ -131,7 +131,7 @@ struct SignUpValidationSample: View {
         var form = KitoFormValidator()
         form.add("Name", value: { name }, rules: [.required(message: "Enter your name")])
         form.add("Email", value: { email }, rules: [.required(message: "Enter your email"), .email()])
-        form.add("Password", value: { password }, rules: KitoValidator.strongPassword())
+        form.add("Password", value: { password }, rules: KitoValidationRule.strongPassword())
         form.add("Confirm password", value: { confirm }, rules: [.required(message: "Confirm your password"), .matches(password, message: "Passwords don't match")])
         form.add("Terms", value: { agreed ? "yes" : "" }, rules: [.required(message: "Accept the terms")])
         return form
@@ -289,7 +289,7 @@ enum ValidationFieldSamples {
         KitSample("Sign-up", "Progress, a disabled-until-valid button and an error summary.", code: """
         var form = KitoFormValidator()
         form.add("Email", value: { email }, rules: [.required(), .email()])
-        form.add("Password", value: { password }, rules: KitoValidator.strongPassword())
+        form.add("Password", value: { password }, rules: KitoValidationRule.strongPassword())
 
         form.validCount          // 1
         form.isValid             // false

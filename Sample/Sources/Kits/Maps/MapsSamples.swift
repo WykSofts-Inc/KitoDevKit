@@ -500,7 +500,7 @@ private struct CityHopper: View {
 // MARK: - Routes & tracking
 
 private struct Directions: View {
-    @State private var route: KitoRoute?
+    @State private var route: KitoMapRoute?
     @State private var source = "Finding the fastest route…"
     private let from = spot("westlands-stage", -1.2676, 36.8108, "Westlands", "Start", .teardrop, tint: .green, symbol: "figure.wave")
     private let to = spot("kicc-end", -1.2884, 36.8233, "KICC", "Destination", .teardrop, tint: .red, symbol: "flag.checkered")
@@ -536,7 +536,7 @@ private struct Directions: View {
                     withAnimation(.snappy) { route = found; source = "Apple Maps · \(found.name)" }
                 } catch {
                     withAnimation(.snappy) {
-                        route = KitoRoute(coordinates: Places.cbdRoute, expectedTravelTime: 11 * 60, name: "Waiyaki Way")
+                        route = KitoMapRoute(coordinates: Places.cbdRoute, expectedTravelTime: 11 * 60, name: "Waiyaki Way")
                         source = "Sample route · directions unavailable offline"
                     }
                 }

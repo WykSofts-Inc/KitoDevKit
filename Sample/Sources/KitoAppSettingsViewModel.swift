@@ -33,9 +33,9 @@ final class KitoAppSettingsViewModel {
     /// (the customization principle applies to the default theme too).
     var themeMode: ThemeMode = .neon
     var primaryColor: Color = KitoColors.neon.primary
-    /// Multiplies every base font size. KitoTypography stores opaque `Font`
+    /// Multiplies every base font size. KitoThemeTypography stores opaque `Font`
     /// values (not raw point sizes), so scaling means rebuilding it from the
-    /// same base sizes KitoTypography.default uses, not adjusting in place.
+    /// same base sizes KitoThemeTypography.default uses, not adjusting in place.
     var fontScale: Double = 1.0
     var cornerRadiusScale: Double = 1.0
 
@@ -58,8 +58,8 @@ final class KitoAppSettingsViewModel {
         )
     }
 
-    private var scaledTypography: KitoTypography {
-        KitoTypography(
+    private var scaledTypography: KitoThemeTypography {
+        KitoThemeTypography(
             displayLarge: .system(size: 34 * fontScale, weight: .bold),
             displayMedium: .system(size: 28 * fontScale, weight: .semibold),
             titleLarge: .system(size: 22 * fontScale, weight: .semibold),

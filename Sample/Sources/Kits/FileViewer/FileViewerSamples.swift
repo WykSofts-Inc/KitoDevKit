@@ -272,7 +272,7 @@ private struct FileViewerImageSample: View {
     var body: some View {
         Group {
             if let url = FileViewerData.photo {
-                KitoImageViewer(url: url)
+                KitoFileImageViewer(url: url)
             } else {
                 FileViewerMissing()
             }
@@ -389,15 +389,15 @@ private struct FileViewerRingSample: View {
     var body: some View {
         VStack(spacing: 24) {
             HStack(spacing: 28) {
-                KitoProgressRing(fraction: indeterminate ? nil : fraction, tint: .blue, lineWidth: 6) {
+                KitoTransferProgressRing(fraction: indeterminate ? nil : fraction, tint: .blue, lineWidth: 6) {
                     Text(indeterminate ? "…" : "\(Int(fraction * 100))%")
                         .font(.headline.monospacedDigit())
                         .contentTransition(.numericText())
                 }
                 .frame(width: 96, height: 96)
-                KitoProgressRing(fraction: indeterminate ? nil : fraction, tint: .green, lineWidth: 4)
+                KitoTransferProgressRing(fraction: indeterminate ? nil : fraction, tint: .green, lineWidth: 4)
                     .frame(width: 56, height: 56)
-                KitoProgressRing(fraction: indeterminate ? nil : fraction, tint: .orange, lineWidth: 3)
+                KitoTransferProgressRing(fraction: indeterminate ? nil : fraction, tint: .orange, lineWidth: 3)
                     .frame(width: 32, height: 32)
             }
             Slider(value: $fraction, in: 0...1)
@@ -572,7 +572,7 @@ enum FileViewerSamples {
         KitoPreviewMode.mode(for: file)   // .pdf, .image, .text, .quickLook, .unavailable
         """) { ModalStage { FileViewerAnyFileScreen() } },
         KitSample("Image viewer", "Pinch to zoom, drag, double-tap to zoom in and out.", code: """
-        KitoImageViewer(url: photoURL, maximumZoom: 5)
+        KitoFileImageViewer(url: photoURL, maximumZoom: 5)
         """) { FileViewerImageSample() },
         KitSample("Code and text", "Line numbers, monospaced, light syntax colours, wrap and text size.", code: """
         KitoTextViewer(url: swiftFileURL)
@@ -602,10 +602,10 @@ enum FileViewerSamples {
         transfers.clearFinished()
         """) { ModalStage { FileViewerTransferScreen() } },
         KitSample("Progress ring", "Gradient stroke with a rounded cap; spins while the size is unknown.", code: """
-        KitoProgressRing(fraction: 0.42, tint: .blue, lineWidth: 6) {
+        KitoTransferProgressRing(fraction: 0.42, tint: .blue, lineWidth: 6) {
             Text("42%").font(.headline)
         }
-        KitoProgressRing(fraction: nil)      // indeterminate
+        KitoTransferProgressRing(fraction: nil)  // indeterminate
         """) { FileViewerRingSample() },
     ])
 

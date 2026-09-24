@@ -240,7 +240,7 @@ private struct SearchCapsuleFieldSample: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            KitoSearchField(text: $text, prompt: "Search restaurants", onSubmit: { submitted = $0 })
+            KitoSearchBar(text: $text, prompt: "Search restaurants", onSubmit: { submitted = $0 })
             Text(submitted.map { "Searched for “\($0)”" } ?? "Tap the field: it lifts, a ring grows and Cancel slides in.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
@@ -262,7 +262,7 @@ private struct SearchGlassFieldSample: View {
                 Text("Diani Beach")
                     .font(.title.bold())
                     .foregroundStyle(.white)
-                KitoSearchField(text: $text, prompt: "Villas, boat trips, food", style: .glass, tint: .white)
+                KitoSearchBar(text: $text, prompt: "Villas, boat trips, food", style: .glass, tint: .white)
             }
             .padding(20)
         }
@@ -277,7 +277,7 @@ private struct SearchUnderlinedFieldSample: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Find a colleague").font(.title2.bold())
-            KitoSearchField(text: $text, prompt: "Name, role or team", style: .underlined, showsCancelButton: false)
+            KitoSearchBar(text: $text, prompt: "Name, role or team", style: .underlined, showsCancelButton: false)
             Text("The line fills with colour from the centre when the field has focus.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
@@ -295,7 +295,7 @@ private struct SearchHeroFieldSample: View {
                 Text("Karibu, Wanjiru").font(.title.bold())
                 Text("What are you craving tonight?").foregroundStyle(.secondary)
             }
-            KitoSearchField(text: $text, prompt: "Nyama choma, sushi, pilau…", style: .prominent) {
+            KitoSearchBar(text: $text, prompt: "Nyama choma, sushi, pilau…", style: .prominent) {
                 KitoVoiceSearchButton(isListening: listening) { listening.toggle() }
             }
             HStack(spacing: 8) {
@@ -327,7 +327,7 @@ private struct SearchTokenFieldSample: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            KitoSearchField(text: $text, prompt: "Search Nairobi", tokens: $tokens)
+            KitoSearchBar(text: $text, prompt: "Search Nairobi", tokens: $tokens)
             Text("Add a token").font(.footnote.weight(.semibold)).foregroundStyle(.secondary)
             HStack(spacing: 8) {
                 ForEach(available) { token in
@@ -357,7 +357,7 @@ private struct SearchScopeFieldSample: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            KitoSearchField(text: $text, prompt: "Search the team", scopes: SearchData.teamScopes, scope: $scope)
+            KitoSearchBar(text: $text, prompt: "Search the team", scopes: SearchData.teamScopes, scope: $scope)
             ForEach(matches.prefix(4)) { person in
                 KitoSearchResultRow(title: person.name, subtitle: person.role, detail: person.team, systemImage: "person.fill", query: text)
             }
@@ -373,7 +373,7 @@ private struct SearchVoiceFieldSample: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            KitoSearchField(text: $text, prompt: "Ask for anything") {
+            KitoSearchBar(text: $text, prompt: "Ask for anything") {
                 KitoVoiceSearchButton(isListening: listening) { listening.toggle() }
             }
             Text(listening ? "Listening…" : "Tap the microphone. This demo “hears” a phrase after a moment.")
@@ -681,7 +681,7 @@ private struct SearchFuzzySample: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            KitoSearchField(text: $query, prompt: "Type with a typo", showsCancelButton: false)
+            KitoSearchBar(text: $query, prompt: "Type with a typo", showsCancelButton: false)
             HStack(spacing: 8) {
                 ForEach(["nyamma", "swahli", "grd bistro", "jomo airprt"], id: \.self) { preset in
                     Button(preset) { query = preset }
@@ -731,7 +731,7 @@ private struct SearchRecentsSample: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            KitoSearchField(text: $text, prompt: "Search, then press Return", showsCancelButton: false, onSubmit: add)
+            KitoSearchBar(text: $text, prompt: "Search, then press Return", showsCancelButton: false, onSubmit: add)
             HStack {
                 Text("Recent · newest first, max 5").font(.footnote.weight(.semibold)).foregroundStyle(.secondary)
                 Spacer()
@@ -811,37 +811,37 @@ enum SearchSamples {
         KitSample("Capsule", "The everyday field: focus ring, clear and Cancel.", code: """
         @State private var query = ""
 
-        KitoSearchField(text: $query, prompt: "Search restaurants",
-                        onSubmit: { submitted in search(submitted) })
+        KitoSearchBar(text: $query, prompt: "Search restaurants",
+                      onSubmit: { submitted in search(submitted) })
         """) { SearchCapsuleFieldSample() },
         KitSample("Glass", "Frosted material over colour or photos.", code: """
-        KitoSearchField(text: $query, prompt: "Villas, boat trips, food",
-                        style: .glass, tint: .white)
+        KitoSearchBar(text: $query, prompt: "Villas, boat trips, food",
+                      style: .glass, tint: .white)
         """) { SearchGlassFieldSample() },
         KitSample("Underlined", "Just a line that fills with colour on focus.", code: """
-        KitoSearchField(text: $query, prompt: "Name, role or team",
-                        style: .underlined, showsCancelButton: false)
+        KitoSearchBar(text: $query, prompt: "Name, role or team",
+                      style: .underlined, showsCancelButton: false)
         """) { SearchUnderlinedFieldSample() },
         KitSample("Prominent hero", "A tall raised field for a home screen.", code: """
-        KitoSearchField(text: $query, prompt: "Nyama choma, sushi, pilau…", style: .prominent) {
+        KitoSearchBar(text: $query, prompt: "Nyama choma, sushi, pilau…", style: .prominent) {
             KitoVoiceSearchButton(isListening: listening) { listening.toggle() }
         }
         """) { SearchHeroFieldSample() },
         KitSample("Tokens in the field", "Chips such as “in: Restaurants” that narrow the search.", code: """
         @State private var tokens = [KitoSearchToken(value: "Restaurants", systemImage: "fork.knife")]
 
-        KitoSearchField(text: $query, prompt: "Search Nairobi", tokens: $tokens)
+        KitoSearchBar(text: $query, prompt: "Search Nairobi", tokens: $tokens)
         tokens.append(KitoSearchToken(label: "near", value: "Westlands", systemImage: "mappin"))
         """) { SearchTokenFieldSample() },
         KitSample("Scopes", "A sliding segment row under the field.", code: """
-        KitoSearchField(text: $query, prompt: "Search the team",
-                        scopes: [KitoSearchScope("all", title: "All"),
-                                 KitoSearchScope("engineering", title: "Engineering"),
-                                 KitoSearchScope("design", title: "Design")],
-                        scope: $scope)
+        KitoSearchBar(text: $query, prompt: "Search the team",
+                      scopes: [KitoSearchScope("all", title: "All"),
+                               KitoSearchScope("engineering", title: "Engineering"),
+                               KitoSearchScope("design", title: "Design")],
+                      scope: $scope)
         """) { SearchScopeFieldSample() },
         KitSample("Voice search", "A microphone in the accessory slot that turns into a waveform.", code: """
-        KitoSearchField(text: $query, prompt: "Ask for anything") {
+        KitoSearchBar(text: $query, prompt: "Ask for anything") {
             KitoVoiceSearchButton(isListening: dictation.isListening) {
                 dictation.toggle()   // your Speech framework code
             }
