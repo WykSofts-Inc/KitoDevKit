@@ -78,7 +78,7 @@ private struct FashionRootView: View {
         } destination: { route in
             FashionDestination(route: route)
         }
-        .onChange(of: store.cart.totalQuantity) { _, _ in store.rebuildTabs() }
+        .onChange(of: store.cart.totalQuantity) { _, _ in store.refreshBagBadge() }
     }
 }
 

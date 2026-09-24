@@ -37,6 +37,9 @@ extension WalletShowcase {
         }
     }
 
+    /// Thrown from a slide-to-confirm action when Face ID doesn't pass.
+    struct PesaNotConfirmed: Error {}
+
     /// The Face ID glyph on a frosted card while the gate checks.
     struct PesaBiometricOverlay: View {
         @ObservedObject var gate: PesaBiometricGate
@@ -75,7 +78,6 @@ extension WalletShowcase {
 
         @Environment(KitoToastCenter.self) private var toasts
         @StateObject private var gate = PesaBiometricGate()
-        @State private var attempt = 0
 
         private var card: PesaCard { store.card(draft.cardID) ?? store.mainCard }
 
@@ -121,9 +123,8 @@ extension WalletShowcase {
             }
             .background(Color(.systemGroupedBackground).ignoresSafeArea())
             .safeAreaInset(edge: .bottom) {
-                KitoSlideToConfirm("Slide to send", systemImage: "arrow.right", tint: .primary) { await confirm() }
+                KitoSlideToConfirm("Slide to send", systemImage: "arrow.right", tint: .primary) { try await confirm() }
                     .frame(height: 64)
-                    .id(attempt)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 12)
             }
@@ -133,14 +134,14 @@ extension WalletShowcase {
             .navigationBarBackButtonHidden(gate.isShowing)
         }
 
-        private func confirm() async {
+        /// Throws when Face ID fails, so the slider shows a cross and slides back for another go.
+        private func confirm() async throws {
             guard let contact = draft.contact else { return }
             if store.confirmsWithBiometrics {
                 let passed = await gate.confirm(reason: "Send \(PesaMoney.string(draft.amount)) to \(contact.firstName)")
                 guard passed else {
-                    attempt += 1
                     toasts.show("Not sent. Try again when you’re ready.", style: .warning)
-                    return
+                    throw PesaNotConfirmed()
                 }
             } else {
                 try? await Task.sleep(for: .milliseconds(700))

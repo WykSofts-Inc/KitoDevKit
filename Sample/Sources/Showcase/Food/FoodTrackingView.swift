@@ -70,7 +70,6 @@ extension FoodShowcase {
             .background(theme.colors.background.ignoresSafeArea())
             .overlay { island }
             .kitoNotificationBanner($store.banner, style: .card)
-            .kitoToastHost(store.toasts)
             .kitoAlert($alert)
             .sheet(isPresented: $showsChat) {
                 FoodRiderChat(order: order)
@@ -183,11 +182,10 @@ extension FoodShowcase {
                         .symbolEffect(.bounce, value: order.stage)
                         .accessibilityLabel("Delivered")
                 } else {
-                    // Re-read the demo clock every second: before pickup nothing else redraws this view.
-                    TimelineView(.periodic(from: .now, by: 1)) { _ in
-                        KitoETACountdown(eta: order.demoETA, start: order.demoStart, style: .ring, tint: FoodPalette.pepper)
-                    }
-                    .frame(width: 88, height: 88)
+                    // The demo clock moves the arrival time, so the countdown re-reads it on every tick.
+                    KitoETACountdown(style: .ring, tint: FoodPalette.pepper,
+                                     eta: { _ in order.demoETA }, start: { _ in order.demoStart })
+                        .frame(width: 88, height: 88)
                 }
             }
         }
@@ -333,8 +331,9 @@ extension FoodShowcase {
                                                      message: "This is a demo, so no call is placed.", actions: [.cancel(), KitoAlertAction("OK")])
                                })
                 KitoChatView(messages: $order.messages, currentUser: FoodStore.me, style: .modern, typingUsers: typing,
-                             placeholder: "Message \(order.firstName)", tint: FoodPalette.pepper,
-                             onSend: { message in store.send(message, in: order) })
+                             placeholder: "Message \(order.firstName)", tint: FoodPalette.pepper) { message in
+                    store.send(message, in: order)
+                }
             }
             .background(theme.colors.background.ignoresSafeArea())
             .kitoAlert($alert)

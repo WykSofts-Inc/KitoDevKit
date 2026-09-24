@@ -63,7 +63,8 @@ extension FoodShowcase {
                        value: store.hasPickedLocation)
             .overlay { liveIsland }
             .kitoNotificationBanner($store.banner, style: .island) { _ in store.track() }
-            .kitoToastHost(store.toasts)
+            // In its own window, so toasts also show over the basket sheet and the tracking cover.
+            .kitoToastHost(store.toasts, placement: .window)
             .kitoCartFlightHost(store.flight)
             .sheet(isPresented: $store.showsCart, onDismiss: basketClosed) {
                 FoodCartScreen()

@@ -247,7 +247,6 @@ extension WalletShowcase {
         @StateObject private var gate = PesaBiometricGate()
         @State private var amount: Double?
         @State private var cardID: String = PesaSeed.everydayID
-        @State private var attempt = 0
         @State private var alert: KitoAlert?
         @State private var receipt: PesaReceipt?
 
@@ -298,9 +297,8 @@ extension WalletShowcase {
             .scrollDismissesKeyboard(.interactively)
             .background(Color(.systemGroupedBackground).ignoresSafeArea())
             .safeAreaInset(edge: .bottom) {
-                KitoSlideToConfirm("Slide to pay", systemImage: "arrow.right", tint: .primary) { await pay() }
+                KitoSlideToConfirm("Slide to pay", systemImage: "arrow.right", tint: .primary) { try await pay() }
                     .frame(height: 64)
-                    .id(attempt)
                     .disabled(!canPay)
                     .opacity(canPay ? 1 : 0.4)
                     .padding(.horizontal, 16)
@@ -316,12 +314,12 @@ extension WalletShowcase {
             }
         }
 
-        private func pay() async {
+        /// Throws when Face ID fails, so the slider shows a cross and slides back for another go.
+        private func pay() async throws {
             if store.confirmsWithBiometrics {
                 guard await gate.confirm(reason: "Pay \(PesaMoney.string(value)) to \(title)") else {
-                    attempt += 1
                     toasts.show("Payment cancelled", style: .warning)
-                    return
+                    throw PesaNotConfirmed()
                 }
             } else {
                 try? await Task.sleep(for: .milliseconds(700))

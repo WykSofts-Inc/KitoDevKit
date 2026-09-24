@@ -82,9 +82,9 @@ extension FoodShowcase {
 
         var body: some View {
             @Bindable var store = store
-            KitoNotificationInbox($store.inbox, title: "Notifications", onOpen: { item in
+            KitoNotificationInbox($store.inbox, title: "Notifications") { item in
                 if item.kind == .order, store.activeOrder != nil { store.track() }
-            })
+            }
             .navigationBarTitleDisplayMode(.inline)
         }
     }

@@ -43,7 +43,6 @@ extension FoodShowcase {
         @State private var sheets = KitoSheetPresenter<FoodDishRoute>()
         @State private var confirmation: KitoConfirmation?
         @State private var section: String
-        @State private var tabsPinned = false
         @State private var followsScroll = true
 
         private static let reviewsTitle = "Reviews"
@@ -63,21 +62,14 @@ extension FoodShowcase {
                 ScrollViewReader { proxy in
                     KitoParallaxHeader(title: restaurant.name, subtitle: "\(restaurant.cuisine.rawValue) · \(restaurant.area)", height: 300) {
                         FoodArtView(art: restaurant.art, symbolScale: 0.3)
+                    } pinnedHeader: {
+                        tabs(proxy: proxy)
                     } content: {
                         VStack(alignment: .leading, spacing: 0) {
                             FoodRestaurantInfo(restaurant: restaurant)
                                 .padding(.horizontal, 16)
                                 .padding(.top, 18)
                                 .padding(.bottom, 8)
-                            tabs(proxy: proxy)
-                                .background {
-                                    GeometryReader { geometry in
-                                        Color.clear.onChange(of: geometry.frame(in: .global).minY, initial: true) { _, minY in
-                                            let pinned = minY < pinLine
-                                            if pinned != tabsPinned { tabsPinned = pinned }
-                                        }
-                                    }
-                                }
                             ForEach(restaurant.menu) { menuSection in
                                 FoodMenuSectionView(section: menuSection, restaurant: restaurant,
                                                     anchorHeight: topInset + 44 + 56, open: openSheet, quickAdd: quickAdd)
@@ -87,15 +79,6 @@ extension FoodShowcase {
                         .padding(.bottom, 40)
                         .onPreferenceChange(FoodSectionOffsetKey.self) { offsets in
                             follow(offsets, line: pinLine + 60)
-                        }
-                    }
-                    .overlay(alignment: .top) {
-                        if tabsPinned {
-                            tabs(proxy: proxy)
-                                .background(.regularMaterial)
-                                .overlay(alignment: .bottom) { Rectangle().fill(theme.colors.border).frame(height: 0.5) }
-                                .padding(.top, 44)
-                                .transition(.opacity)
                         }
                     }
                 }
@@ -114,14 +97,12 @@ extension FoodShowcase {
             }
             .kitoConfirmation($confirmation)
             .kitoAddedToCartToast(item: $store.justAdded, style: .pill) { store.showsCart = true }
-            .animation(reduceMotion ? nil : .easeInOut(duration: 0.18), value: tabsPinned)
         }
 
         // MARK: Pieces
 
         private func tabs(proxy: ScrollViewProxy) -> some View {
             KitoTopTabs(titles, selection: Binding(get: { section }, set: { jump(to: $0, proxy: proxy) }), style: .underline)
-                .background(theme.colors.background.opacity(tabsPinned ? 0 : 1))
         }
 
         private var topButtons: some View {
