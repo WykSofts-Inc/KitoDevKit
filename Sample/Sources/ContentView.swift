@@ -87,6 +87,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Forms", symbol: "rectangle.and.pencil.and.ellipsis", tint: Color.pink, entries: [
             KitoCatalogEntry("Validation", "\(ValidationGallery.count) samples · rules, passwords, async, forms", systemImage: "checkmark.shield") { ValidationGallery() },
+            KitoCatalogEntry.new("Signature & Drawing", "\(SignatureGallery.count) samples · sign, type, draw, annotate", systemImage: "signature") { SignatureGallery() },
             KitoCatalogEntry.new("Photo Editor", "\(PhotoGallery.count) samples · camera, filters, crop, publish", systemImage: "camera.filters") { PhotoGallery() },
             KitoCatalogEntry.new("Media Player", "\(MediaPlayerGallery.count) samples · video, Reels, music, podcasts", systemImage: "play.rectangle.fill") { MediaPlayerGallery() },
             KitoCatalogEntry("Media Picker", "\(MediaGallery.count) samples · avatars, uploads, grids, sources", systemImage: "photo.on.rectangle.angled") { MediaGallery() },
@@ -94,6 +95,7 @@ struct ContentView: View {
         KitoCatalogSection(title: "Communication", symbol: "bubble.left.and.bubble.right.fill", tint: Color.blue, entries: [
             KitoCatalogEntry.new("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
             KitoCatalogEntry.new("AI Chat", "\(AIChatGallery.count) samples · streaming, markdown, code, voice", systemImage: "sparkles.rectangle.stack.fill") { AIChatGallery() },
+            KitoCatalogEntry.new("Feed & Comments", "\(FeedGallery.count) samples · posts, threads, polls, composer", systemImage: "text.bubble.fill") { FeedGallery() },
             KitoCatalogEntry.new("Notifications", "\(NotificationsGallery.count) samples · inbox, banners, actions, quiet hours", systemImage: "bell.badge.fill") { NotificationsGallery() },
         ]),
         KitoCatalogSection(title: "Account", symbol: "person.crop.circle.badge.checkmark", tint: Color.indigo, entries: [
@@ -111,6 +113,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "System", symbol: "gearshape.2.fill", tint: Color.yellow, entries: [
             KitoCatalogEntry("Control Center", "\(ControlCenterDemo.count) samples · glass modules, toggles, sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
+            KitoCatalogEntry.new("Settings Screens", "\(SettingsKitGallery.count) samples · lists, appearance, quiet hours, about", systemImage: "gearshape.2.fill") { SettingsKitGallery() },
             KitoCatalogEntry("Dynamic Island", "\(IslandGallery.count) samples · music, timers, calls, rides, moments", systemImage: "capsule.portrait") { IslandGallery() },
             KitoCatalogEntry.new("Widgets & Intents", "\(WidgetsGallery.count) samples · Home Screen, Lock Screen, Siri", systemImage: "square.grid.2x2.fill") { WidgetsGallery() },
         ]),

@@ -51,6 +51,9 @@ packages:
   KitoTour: { path: ../../KitoTour }
   KitoProduct: { path: ../../KitoProduct }
   KitoCheckout: { path: ../../KitoCheckout }
+  KitoFeed: { path: ../../KitoFeed }
+  KitoSettings: { path: ../../KitoSettings }
+  KitoSignature: { path: ../../KitoSignature }
 targets:
   KitoSample:
     type: application
@@ -154,6 +157,9 @@ targets:
       - package: KitoTour
       - package: KitoProduct
       - package: KitoCheckout
+      - package: KitoFeed
+      - package: KitoSettings
+      - package: KitoSignature
       - target: OrderTrackingWidgetExtension
         embed: true
 
