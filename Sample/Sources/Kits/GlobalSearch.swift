@@ -64,6 +64,7 @@ enum GlobalSampleIndex {
         hits += kit("Feed & Comments", symbol: "text.bubble.fill", footnote: "Requires `import KitoFeed`.", FeedSamples.sections)
         hits += kit("Settings Screens", symbol: "gearshape.2.fill", footnote: "Requires `import KitoSettings`.", SettingsKitSamples.sections)
         hits += kit("Signature & Drawing", symbol: "signature", footnote: "Requires `import KitoSignature`.", SignatureSamples.sections)
+        hits += kit("Files & Documents", symbol: "doc.richtext.fill", footnote: "Requires `import KitoFileViewer`.", FileViewerSamples.sections)
         hits += kit("Carousels & Stories", symbol: "rectangle.stack.fill", footnote: "Requires `import KitoCarousel`.", CarouselSamples.sections)
         hits += kit("Reviews & Ratings", symbol: "star.bubble.fill", footnote: "Requires `import KitoReviews`.", ReviewsSamples.sections)
         hits += kit("Calendar", symbol: "calendar", footnote: "Requires `import KitoCalendar`.", CalendarSamples.sections)
