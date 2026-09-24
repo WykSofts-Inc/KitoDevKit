@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009A3C5FE532FB0094B299FF /* FashionShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660FF11E354648E77E1A20E /* FashionShowcaseApp.swift */; };
 		02D3BE382E20144AC942EA5C /* KitGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569EE5759D3941C0B37197DF /* KitGallery.swift */; };
 		03017F7D11F42BD0E9A98C24 /* FieldSampleCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09047156BF52F2541DD0E90 /* FieldSampleCatalog.swift */; };
 		035009C20966E37EC153D1DB /* ConnectivityDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF0AFD7C0EA81085CE1E7A /* ConnectivityDemo.swift */; };
@@ -28,8 +29,10 @@
 		1D7DF38808C0887E419AE37A /* KitoHaptics in Frameworks */ = {isa = PBXBuildFile; productRef = AA7149395B31B575CA058594 /* KitoHaptics */; };
 		1F027744F500BCAE18FB99B6 /* KeychainDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD5070DD2F88DE75FE6F42 /* KeychainDemo.swift */; };
 		2429E78042F83B74F3107D0D /* KitoMediaPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = B22E6DC7346154764C39FF96 /* KitoMediaPlayer */; };
+		247181F11637E7A4C5889320 /* FashionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBE955883BFDC07AB7B3A29 /* FashionTracking.swift */; };
 		24F91F1F72F894553D0C0BAF /* ProductSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C71FFDEFA17A31A8DF347 /* ProductSamples.swift */; };
 		2A859BE930642A117BD09FD8 /* ChatSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E9EC2A13B9992EB721D38 /* ChatSamples.swift */; };
+		2D5CA66D85B457D3C14FB70B /* FashionAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC87900BA4572C895C3DF714 /* FashionAccount.swift */; };
 		2F5800402D53B28085A5B1AC /* SettingsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03003C1C49579F2A248E42EB /* SettingsSamples.swift */; };
 		2FF30DB57066EC72F97893A2 /* KitoToasts in Frameworks */ = {isa = PBXBuildFile; productRef = F3254603992DFDCA975C81AF /* KitoToasts */; };
 		35D8A026A6220195DB7245CC /* BiometricsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B755207B8D524DCB84246 /* BiometricsSamples.swift */; };
@@ -37,6 +40,8 @@
 		39AF990857AE4AB7E88DF3BE /* KitoAIChat in Frameworks */ = {isa = PBXBuildFile; productRef = E75340BEA4619D2F421580D4 /* KitoAIChat */; };
 		3D03E65256C0B068327F6D53 /* KitoCharts in Frameworks */ = {isa = PBXBuildFile; productRef = B32C8C6FCFEEDDC6D90761D0 /* KitoCharts */; };
 		3E7E4B974AF979475792FC0B /* KitoAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 44F6CD9B79D06FC10D0DD48B /* KitoAuth */; };
+		3FB015DBB5D7E21E3D688ECE /* FashionLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F52EA03CA47E8807E91AABA /* FashionLaunch.swift */; };
+		40DF00404BE49711193279FE /* FashionSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB8FCD4D65D48C481B5E301 /* FashionSearch.swift */; };
 		419AB91C4AEF552D6800A53E /* PermissionsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5EB1CB42E5BC1743A396D /* PermissionsDemo.swift */; };
 		420019260A67E5D9F2F125D7 /* LineChartSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE8D8B3ADE97C359089522 /* LineChartSamples.swift */; };
 		4391B92FEA6230DB1C1FFB6C /* CalendarSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77E454C73432496794EFD2 /* CalendarSamples.swift */; };
@@ -45,13 +50,17 @@
 		48BE2CB29FCEF304E9056612 /* SearchSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF62C496CC4047EF352DCDFD /* SearchSamples.swift */; };
 		4AF1A41D4839D7A64812B70E /* WalletScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7192D6EA4D2A71AC78F5E /* WalletScreens.swift */; };
 		4B50EDB6E6E5DBA717C3E7D1 /* KitoCarousel in Frameworks */ = {isa = PBXBuildFile; productRef = 589A89FACFB704C81A70A438 /* KitoCarousel */; };
+		4D8BB59C1AEAAB5D4082BB69 /* FashionProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAA8B97F0E02EEA3858570A /* FashionProducts.swift */; };
+		4F1EED520636821535EE5CCD /* FashionHomeParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21872463529F5BA74CAA6D /* FashionHomeParts.swift */; };
 		4FE68487311D7D15313247EE /* PermissionsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6048AADB4CD3F789BCA9E9A /* PermissionsSamples.swift */; };
+		521F1F1763562F916447A02A /* FashionBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AA3E8FC7352236885884F /* FashionBag.swift */; };
 		525311763267DC50BBE2126C /* ValidationFieldSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */; };
 		528BF460EACC0252E32505AF /* KeychainSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7AA4C88011D45D80D8C02 /* KeychainSamples.swift */; };
 		52D1C28FC56DF91273D32873 /* KitoValidation in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7FFF789DC791F610B2703C /* KitoValidation */; };
 		558845145EBD98DE9146DB39 /* KitoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF2D1062E48C2B142D85599 /* KitoCore */; };
 		57A6269657AE4E38F8C43B25 /* ModalStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD9695B93295E295C14032 /* ModalStage.swift */; };
 		5B43F06E3E1023D1501EEBA3 /* HomeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9534C85D7204CAB8AE584C1 /* HomeComponents.swift */; };
+		5C1810C0419DDE4A50C14ABF /* FashionWishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863991605849506F98881B36 /* FashionWishlist.swift */; };
 		5F7A0BCA815565D435C0170E /* MapsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6D7B75394DDE501A29EB8 /* MapsSamples.swift */; };
 		61E286919CE4F15E4BA4CD21 /* ImageLoaderSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9A2E9D82BCEF02C47CE86 /* ImageLoaderSamples.swift */; };
 		63E7C897F1AB7ABF6BA64F82 /* KitoProduct in Frameworks */ = {isa = PBXBuildFile; productRef = 30DA86D2C60884AE845BCA91 /* KitoProduct */; };
@@ -60,6 +69,7 @@
 		6C0F9528FDFE5EBA9A86387F /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
 		6CAF74ABC09CB7CB2C8C7732 /* ScannerSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5A8EA4E0D45419C565B6B /* ScannerSamples.swift */; };
 		72FEEB1715EE7CE7854D5279 /* BarPieChartSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89D45DFDD3718DCE88CD05C /* BarPieChartSamples.swift */; };
+		736A748C2F929BAD2418F748 /* FashionTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156BDD5329A096E3FC77DB5 /* FashionTheme.swift */; };
 		74DB720436D05A5D5065EE7A /* GalleryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */; };
 		768316657F35E0C09788E4E5 /* AIChatSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A652929E3EC54D7C2A0CFCD /* AIChatSamples.swift */; };
 		77692DD8FE5CB397F6F287F9 /* KitoLoaders in Frameworks */ = {isa = PBXBuildFile; productRef = CA244E2CBB7678240B35EB05 /* KitoLoaders */; };
@@ -76,10 +86,12 @@
 		8C8BEEC400CFD25B4BD43374 /* MediaPlayerSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3CD43ECA7EFDB55C8B4A39 /* MediaPlayerSamples.swift */; };
 		8DC9D6C167A5A3B3EEC1EB99 /* ReviewsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65117CB1C47AD63C838A4DA9 /* ReviewsSamples.swift */; };
 		8E26063F36A7CBAB2A4165ED /* KitoOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = C226E69F5FAADDC2D7C95CAF /* KitoOnboarding */; };
+		8EF30C90E3EED0928AACFA1D /* FashionCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D7F315C68F1382A537F699 /* FashionCatalogue.swift */; };
 		915FABECD492A3A29EBBEF0A /* AuthSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4826CCAB01FCF74E2FF33FFF /* AuthSamples.swift */; };
 		948582E1738A6B9312FE1BAD /* KitoWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590F286F4DBAF8C358F353C /* KitoWidgetsBundle.swift */; };
 		95599468A98CAE537B5CA05F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A96010E3E751D70603BB92 /* ContentView.swift */; };
 		95E39985F5F1DC090BE61657 /* TourSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C6B4056448B605172A01D /* TourSamples.swift */; };
+		99CC706171E61D4BDCFD3CD2 /* FashionReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A228932C00524C42303C5904 /* FashionReviews.swift */; };
 		9D7DC85BCEAD633F679A5977 /* KitoReviews in Frameworks */ = {isa = PBXBuildFile; productRef = 19362B803D8DA2596512983C /* KitoReviews */; };
 		9D8698832ADEEB396B594169 /* BiometricsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1219DD1751051A3E0F178 /* BiometricsDemo.swift */; };
 		9F9D840DE1E049117E7A4B96 /* MediaSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980B6B778F8DF22A864D42D /* MediaSamples.swift */; };
@@ -88,6 +100,7 @@
 		A429134E3C77E76E33667BCC /* ConnectivitySamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107AB3DED0EE40AA60516C38 /* ConnectivitySamples.swift */; };
 		A546EE342B2532834153D1BA /* Chart3DGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */; };
 		A8F76D56122F2C6F6A12B5F0 /* KitoOrderTracking in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE1B3D9B05A9D1A40A5FF0 /* KitoOrderTracking */; };
+		ADB06166050111F16C24BD3C /* FashionOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CA6D411D74B1B68767E6D7 /* FashionOrders.swift */; };
 		AF6A3F69F6B1530175B06845 /* Chart3DSampleCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE2140978669A30B6999E5 /* Chart3DSampleCatalog.swift */; };
 		B0993CCDCA8AFE0430AF8505 /* KitoChat in Frameworks */ = {isa = PBXBuildFile; productRef = 27228F4B38174895E931FC48 /* KitoChat */; };
 		B1EC2600EE77CD3F7BDC747C /* OnboardingSampleHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C532E29961B1F6060935305 /* OnboardingSampleHost.swift */; };
@@ -96,9 +109,11 @@
 		BE90CAB96B2287F94FD1C220 /* KitoBiometrics in Frameworks */ = {isa = PBXBuildFile; productRef = 61A702673D0A7FA281333173 /* KitoBiometrics */; };
 		BF8C5D6A4E8EC30CDF9F912D /* Chart3DInteractiveSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */; };
 		C09CFCF6BBF8A922F4A38FFB /* HapticsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C446412571A02CF094CF6 /* HapticsSamples.swift */; };
+		C0DB2E0477A9D55B163DAC27 /* FashionBrowse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FEEF22D6E1C45991774859 /* FashionBrowse.swift */; };
 		C1993BA0BA67925BF26857FA /* KitoOrderTracking in Frameworks */ = {isa = PBXBuildFile; productRef = 3473984A86FABBE5AF6C266F /* KitoOrderTracking */; };
 		C8AF7ADEF2426199C111FB8E /* KitoAppSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C7DD6E6234E0878479817 /* KitoAppSettingsViewModel.swift */; };
 		C8EF037C7B0091CE3940975A /* SampleCatalog+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837BA288474F8019F2893AA /* SampleCatalog+Generated.swift */; };
+		C940553873182CDC93D5204E /* FashionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421CA19E4F06A5C54B100F5 /* FashionProduct.swift */; };
 		C9CE7EEDF6F8AB5E15A8F9A5 /* KitoWidgets in Frameworks */ = {isa = PBXBuildFile; productRef = 6FF0174DAC3D68BEAC7ED1BB /* KitoWidgets */; };
 		CB5BE4D1D609EC60415BE085 /* OrderTrackingWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF57152B1D85D01A5AAD4EBE /* ControlCenterSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E992AB557545E2224C14DB /* ControlCenterSamples.swift */; };
@@ -107,17 +122,20 @@
 		D5858D36A587A9BC91C92E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE5748E04E908D07B4A1A93 /* Assets.xcassets */; };
 		D8261C7CEA94C24E71BF059C /* IslandStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58341CE205EDAD33DF94848 /* IslandStage.swift */; };
 		DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD684B6BD38C5F0270925B /* IslandSamples.swift */; };
+		DD3545F8D5C97ECDBEE00888 /* FashionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FF72BCC68AAA92ABD18809 /* FashionStore.swift */; };
 		DD65095C122B04AEDD1F8610 /* OrderTrackingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043152EEA0750E7779C93452 /* OrderTrackingSamples.swift */; };
 		DDA67493EA19D2233E04D9D2 /* PhotoSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F16ACD9325E6A3D60A7DA /* PhotoSamples.swift */; };
 		DF5B3B3C8B5C03A7E049969B /* WalletSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */; };
 		E02AFEBDBF2F115145C217B2 /* KitoAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5583078BB200B716A240A /* KitoAppShortcuts.swift */; };
 		E15F6EF499380F22F86915B3 /* EmptyStatesSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532130915162CFEC324F73D /* EmptyStatesSamples.swift */; };
 		E2142CDD67BB827509FA5FC9 /* WidgetsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09270E3F5E44A8A4518D9A /* WidgetsSamples.swift */; };
+		E3539B76CBC014A8B13D068F /* FashionCheckoutSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B85934DBDFA53F18AB896 /* FashionCheckoutSetup.swift */; };
 		E6158B6694FC5DB697AE42B1 /* NavigationSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0465C9C25D3103F27365C /* NavigationSamples.swift */; };
 		E64F40F3B5B64E235A8C9841 /* KitoCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = DD4F5698E66D918A8D264D06 /* KitoCalendar */; };
 		EA3940AB2D62114C884F977C /* KitoConnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7D7C9AB476ED9ECCEBF341 /* KitoConnectivity */; };
 		EC56A575767FC6548E2F9650 /* FieldFormDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35925B2E0FF6311947BAB1C2 /* FieldFormDemos.swift */; };
 		ED5014CC218F293E8B519AC8 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA9D97C4FFC34E33FA4AA /* Sample.swift */; };
+		EE0CBF71B4069F41B99FB647 /* FashionHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11738C556996BCAF47DBBC76 /* FashionHome.swift */; };
 		EE6337BD8D57A4A96C1699F8 /* FormattingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F8AB77B5FCD78216EA8224 /* FormattingSamples.swift */; };
 		F20611C56DAB68B5DC543BAD /* KitoCheckout in Frameworks */ = {isa = PBXBuildFile; productRef = 42FD9C1CEABD1591344CD3F3 /* KitoCheckout */; };
 		F24C7CE42C4C2DD19EFE8EF0 /* KitoNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = 3E46FD980D48BED5EEA0D195 /* KitoNotifications */; };
@@ -166,11 +184,15 @@
 		0ADC1EDD89FCF6D61EAEB810 /* KitoPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPermissions; path = ../../KitoPermissions; sourceTree = SOURCE_ROOT; };
 		0B1BB3BF85532F27D935D6F2 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
 		107AB3DED0EE40AA60516C38 /* ConnectivitySamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivitySamples.swift; sourceTree = "<group>"; };
+		11738C556996BCAF47DBBC76 /* FashionHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionHome.swift; sourceTree = "<group>"; };
 		13205D18AB615FA9EF5D2338 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		159F2AB4DA3077DA7EF2010F /* KitoConnectivity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoConnectivity; path = ../../KitoConnectivity; sourceTree = SOURCE_ROOT; };
 		17E82E5F6FCF44EB8AE1B2BB /* KitoSearch */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoSearch; path = ../../KitoSearch; sourceTree = SOURCE_ROOT; };
 		1BFD684B6BD38C5F0270925B /* IslandSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandSamples.swift; sourceTree = "<group>"; };
+		1DBE955883BFDC07AB7B3A29 /* FashionTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionTracking.swift; sourceTree = "<group>"; };
+		241B85934DBDFA53F18AB896 /* FashionCheckoutSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCheckoutSetup.swift; sourceTree = "<group>"; };
 		24A96010E3E751D70603BB92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		24CA6D411D74B1B68767E6D7 /* FashionOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionOrders.swift; sourceTree = "<group>"; };
 		2837BA288474F8019F2893AA /* SampleCatalog+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleCatalog+Generated.swift"; sourceTree = "<group>"; };
 		2C532E29961B1F6060935305 /* OnboardingSampleHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSampleHost.swift; sourceTree = "<group>"; };
 		2C9E9EC2A13B9992EB721D38 /* ChatSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSamples.swift; sourceTree = "<group>"; };
@@ -187,7 +209,9 @@
 		483A5B254F9DB2D0C4381433 /* KitoWidgets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoWidgets; path = ../../KitoWidgets; sourceTree = SOURCE_ROOT; };
 		4A652929E3EC54D7C2A0CFCD /* AIChatSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatSamples.swift; sourceTree = "<group>"; };
 		4D3A9B0E5FC952E25CAF09A2 /* KitoKeychain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoKeychain; path = ../../KitoKeychain; sourceTree = SOURCE_ROOT; };
+		4F52EA03CA47E8807E91AABA /* FashionLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionLaunch.swift; sourceTree = "<group>"; };
 		4F8BC81F52EA9CE5F0B26104 /* KitoLoaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoLoaders; path = ../../KitoLoaders; sourceTree = SOURCE_ROOT; };
+		533AA3E8FC7352236885884F /* FashionBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionBag.swift; sourceTree = "<group>"; };
 		5388DF5376BAB0425237F49F /* GlobalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearch.swift; sourceTree = "<group>"; };
 		547DCB8A92C1E0D3EA3BB2C2 /* KitoAuth */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoAuth; path = ../../KitoAuth; sourceTree = SOURCE_ROOT; };
 		5532130915162CFEC324F73D /* EmptyStatesSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesSamples.swift; sourceTree = "<group>"; };
@@ -197,6 +221,8 @@
 		592B4D7E4FB10A39328AC31A /* GalleryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryComponents.swift; sourceTree = "<group>"; };
 		5A83239E37EAFDAE72C9C2D7 /* KitoMapsLibre */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoMapsLibre; path = ../../KitoMapsLibre; sourceTree = SOURCE_ROOT; };
 		5ADBAF4DFBB88A65529C18DB /* KitoCalendar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCalendar; path = ../../KitoCalendar; sourceTree = SOURCE_ROOT; };
+		60FEEF22D6E1C45991774859 /* FashionBrowse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionBrowse.swift; sourceTree = "<group>"; };
+		62FF72BCC68AAA92ABD18809 /* FashionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionStore.swift; sourceTree = "<group>"; };
 		64E287A40E27F1BEE0551CA4 /* KitoProduct */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoProduct; path = ../../KitoProduct; sourceTree = SOURCE_ROOT; };
 		65117CB1C47AD63C838A4DA9 /* ReviewsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsSamples.swift; sourceTree = "<group>"; };
 		65B6D7B75394DDE501A29EB8 /* MapsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsSamples.swift; sourceTree = "<group>"; };
@@ -204,6 +230,7 @@
 		68E40B66B99800FE9214E002 /* FieldSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSample.swift; sourceTree = "<group>"; };
 		691BB699AF85B349DDBE7238 /* KitoNavigation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoNavigation; path = ../../KitoNavigation; sourceTree = SOURCE_ROOT; };
 		6CBBD14D9AC828E0E4438A89 /* ModalSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSamples.swift; sourceTree = "<group>"; };
+		6DAA8B97F0E02EEA3858570A /* FashionProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionProducts.swift; sourceTree = "<group>"; };
 		6DE5748E04E908D07B4A1A93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E6728AC8AA3C27179A971B3 /* KitoAIChat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoAIChat; path = ../../KitoAIChat; sourceTree = SOURCE_ROOT; };
 		6FB4E9B1A3AEA9E845B67C02 /* KitoOnboarding */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoOnboarding; path = ../../KitoOnboarding; sourceTree = SOURCE_ROOT; };
@@ -215,9 +242,13 @@
 		7982B0BD0690C05C2DBC7666 /* KitoWalletCards */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoWalletCards; path = ../../KitoWalletCards; sourceTree = SOURCE_ROOT; };
 		79DD9695B93295E295C14032 /* ModalStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalStage.swift; sourceTree = "<group>"; };
 		7A8267E4364CC2801FF1BF51 /* IslandActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandActivities.swift; sourceTree = "<group>"; };
+		7BB8FCD4D65D48C481B5E301 /* FashionSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionSearch.swift; sourceTree = "<group>"; };
 		7E9309F6204597E003F44517 /* OnboardingSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSamples.swift; sourceTree = "<group>"; };
+		8156BDD5329A096E3FC77DB5 /* FashionTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionTheme.swift; sourceTree = "<group>"; };
 		8165B2C284A818D240F97FC9 /* KitoCart */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCart; path = ../../KitoCart; sourceTree = SOURCE_ROOT; };
 		817E98EC4CF8D1308E25617B /* KitoHaptics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoHaptics; path = ../../KitoHaptics; sourceTree = SOURCE_ROOT; };
+		8421CA19E4F06A5C54B100F5 /* FashionProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionProduct.swift; sourceTree = "<group>"; };
+		863991605849506F98881B36 /* FashionWishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionWishlist.swift; sourceTree = "<group>"; };
 		8794775831AFDEB584708C1D /* KitoChat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoChat; path = ../../KitoChat; sourceTree = SOURCE_ROOT; };
 		87AD19CC2D8BE8F1934DAEB1 /* Chart3DGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DGallery.swift; sourceTree = "<group>"; };
 		8AD5583078BB200B716A240A /* KitoAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitoAppShortcuts.swift; sourceTree = "<group>"; };
@@ -232,6 +263,7 @@
 		9B7998F866647FD7ACC8CF37 /* Chart3DInteractiveSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart3DInteractiveSamples.swift; sourceTree = "<group>"; };
 		9F125F8EC4A04753E4715373 /* NotificationsSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSamples.swift; sourceTree = "<group>"; };
 		A07C6B4056448B605172A01D /* TourSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourSamples.swift; sourceTree = "<group>"; };
+		A228932C00524C42303C5904 /* FashionReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionReviews.swift; sourceTree = "<group>"; };
 		A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingWidgetBundle.swift; sourceTree = "<group>"; };
 		A53FB297159A3C5BDF6F5B92 /* KitoModals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoModals; path = ../../KitoModals; sourceTree = SOURCE_ROOT; };
 		A5ECDEE9B995A038EE07ECB9 /* KitoPaywall */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoPaywall; path = ../../KitoPaywall; sourceTree = SOURCE_ROOT; };
@@ -247,9 +279,12 @@
 		B89D45DFDD3718DCE88CD05C /* BarPieChartSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarPieChartSamples.swift; sourceTree = "<group>"; };
 		BAD7192D6EA4D2A71AC78F5E /* WalletScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletScreens.swift; sourceTree = "<group>"; };
 		BBC15B61865B754A7FB726FB /* ValidationFieldSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFieldSamples.swift; sourceTree = "<group>"; };
+		BC87900BA4572C895C3DF714 /* FashionAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionAccount.swift; sourceTree = "<group>"; };
 		C09047156BF52F2541DD0E90 /* FieldSampleCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSampleCatalog.swift; sourceTree = "<group>"; };
+		C0D7F315C68F1382A537F699 /* FashionCatalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCatalogue.swift; sourceTree = "<group>"; };
 		C35C71FFDEFA17A31A8DF347 /* ProductSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSamples.swift; sourceTree = "<group>"; };
 		C39AC08B6A6776FF3EA2B6E0 /* KitoCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCore; path = ../../KitoCore; sourceTree = SOURCE_ROOT; };
+		C660FF11E354648E77E1A20E /* FashionShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionShowcaseApp.swift; sourceTree = "<group>"; };
 		C6F8AB77B5FCD78216EA8224 /* FormattingSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingSamples.swift; sourceTree = "<group>"; };
 		C975CC57AD8BC8C61B99F4B2 /* KitoScanner */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoScanner; path = ../../KitoScanner; sourceTree = SOURCE_ROOT; };
 		CAEED95284A7F775C6010552 /* OrderTrackingWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OrderTrackingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +299,7 @@
 		D853F507CC8B34320CE7950E /* KitoIslandBar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoIslandBar; path = ../../KitoIslandBar; sourceTree = SOURCE_ROOT; };
 		D9534C85D7204CAB8AE584C1 /* HomeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponents.swift; sourceTree = "<group>"; };
 		D980B6B778F8DF22A864D42D /* MediaSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSamples.swift; sourceTree = "<group>"; };
+		DB21872463529F5BA74CAA6D /* FashionHomeParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionHomeParts.swift; sourceTree = "<group>"; };
 		DB77E454C73432496794EFD2 /* CalendarSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSamples.swift; sourceTree = "<group>"; };
 		DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSamples.swift; sourceTree = "<group>"; };
 		DC3CD43ECA7EFDB55C8B4A39 /* MediaPlayerSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerSamples.swift; sourceTree = "<group>"; };
@@ -384,12 +420,45 @@
 			path = Maps;
 			sourceTree = "<group>";
 		};
+		19232A350C7318A68067561A /* Fashion */ = {
+			isa = PBXGroup;
+			children = (
+				BC87900BA4572C895C3DF714 /* FashionAccount.swift */,
+				533AA3E8FC7352236885884F /* FashionBag.swift */,
+				60FEEF22D6E1C45991774859 /* FashionBrowse.swift */,
+				C0D7F315C68F1382A537F699 /* FashionCatalogue.swift */,
+				241B85934DBDFA53F18AB896 /* FashionCheckoutSetup.swift */,
+				11738C556996BCAF47DBBC76 /* FashionHome.swift */,
+				DB21872463529F5BA74CAA6D /* FashionHomeParts.swift */,
+				4F52EA03CA47E8807E91AABA /* FashionLaunch.swift */,
+				24CA6D411D74B1B68767E6D7 /* FashionOrders.swift */,
+				8421CA19E4F06A5C54B100F5 /* FashionProduct.swift */,
+				6DAA8B97F0E02EEA3858570A /* FashionProducts.swift */,
+				A228932C00524C42303C5904 /* FashionReviews.swift */,
+				7BB8FCD4D65D48C481B5E301 /* FashionSearch.swift */,
+				C660FF11E354648E77E1A20E /* FashionShowcaseApp.swift */,
+				62FF72BCC68AAA92ABD18809 /* FashionStore.swift */,
+				8156BDD5329A096E3FC77DB5 /* FashionTheme.swift */,
+				1DBE955883BFDC07AB7B3A29 /* FashionTracking.swift */,
+				863991605849506F98881B36 /* FashionWishlist.swift */,
+			);
+			path = Fashion;
+			sourceTree = "<group>";
+		};
 		239004171286DFF612E5AD1B /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
 				9F125F8EC4A04753E4715373 /* NotificationsSamples.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		24A89B40BCF7CDFEF6342C88 /* Showcase */ = {
+			isa = PBXGroup;
+			children = (
+				19232A350C7318A68067561A /* Fashion */,
+			);
+			path = Showcase;
 			sourceTree = "<group>";
 		};
 		286F789DC268FE52DAAA62AD /* Biometrics */ = {
@@ -608,6 +677,7 @@
 				B02A67230D7C238E5DDF68DC /* Demos */,
 				A4B04A6297972FB95613DED1 /* Home */,
 				89DA62CF8604B44F72D722F4 /* Kits */,
+				24A89B40BCF7CDFEF6342C88 /* Showcase */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1094,6 +1164,24 @@
 				95599468A98CAE537B5CA05F /* ContentView.swift in Sources */,
 				CF57152B1D85D01A5AAD4EBE /* ControlCenterSamples.swift in Sources */,
 				E15F6EF499380F22F86915B3 /* EmptyStatesSamples.swift in Sources */,
+				2D5CA66D85B457D3C14FB70B /* FashionAccount.swift in Sources */,
+				521F1F1763562F916447A02A /* FashionBag.swift in Sources */,
+				C0DB2E0477A9D55B163DAC27 /* FashionBrowse.swift in Sources */,
+				8EF30C90E3EED0928AACFA1D /* FashionCatalogue.swift in Sources */,
+				E3539B76CBC014A8B13D068F /* FashionCheckoutSetup.swift in Sources */,
+				EE0CBF71B4069F41B99FB647 /* FashionHome.swift in Sources */,
+				4F1EED520636821535EE5CCD /* FashionHomeParts.swift in Sources */,
+				3FB015DBB5D7E21E3D688ECE /* FashionLaunch.swift in Sources */,
+				ADB06166050111F16C24BD3C /* FashionOrders.swift in Sources */,
+				C940553873182CDC93D5204E /* FashionProduct.swift in Sources */,
+				4D8BB59C1AEAAB5D4082BB69 /* FashionProducts.swift in Sources */,
+				99CC706171E61D4BDCFD3CD2 /* FashionReviews.swift in Sources */,
+				40DF00404BE49711193279FE /* FashionSearch.swift in Sources */,
+				009A3C5FE532FB0094B299FF /* FashionShowcaseApp.swift in Sources */,
+				DD3545F8D5C97ECDBEE00888 /* FashionStore.swift in Sources */,
+				736A748C2F929BAD2418F748 /* FashionTheme.swift in Sources */,
+				247181F11637E7A4C5889320 /* FashionTracking.swift in Sources */,
+				5C1810C0419DDE4A50C14ABF /* FashionWishlist.swift in Sources */,
 				EC56A575767FC6548E2F9650 /* FieldFormDemos.swift in Sources */,
 				FF0B8A8C96243D3572FA2B3C /* FieldSample.swift in Sources */,
 				03017F7D11F42BD0E9A98C24 /* FieldSampleCatalog.swift in Sources */,
