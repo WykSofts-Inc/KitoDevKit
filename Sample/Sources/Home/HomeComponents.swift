@@ -118,6 +118,7 @@ struct HomeFeatureArt {
         case "Dynamic Island": return HomeFeatureArt(colors: [Color(red: 0.1, green: 0.1, blue: 0.14), Color(red: 0.35, green: 0.12, blue: 0.4)], symbols: ["capsule.portrait.fill", "music.note", "timer"])
         case "Charts": return HomeFeatureArt(colors: [Color(red: 0.05, green: 0.4, blue: 0.3), Color(red: 0.1, green: 0.6, blue: 0.5)], symbols: ["chart.xyaxis.line", "chart.pie.fill", "chart.bar.fill"])
         case "Paywall": return HomeFeatureArt(colors: [Color(red: 0.55, green: 0.35, blue: 0.05), Color(red: 0.75, green: 0.2, blue: 0.3)], symbols: ["crown.fill", "star.fill", "sparkles"])
+        case "AI Chat": return HomeFeatureArt(colors: [Color(red: 0.2, green: 0.1, blue: 0.45), Color(red: 0.05, green: 0.45, blue: 0.55)], symbols: ["sparkles", "text.bubble.fill", "wand.and.stars"])
         case "Chat": return HomeFeatureArt(colors: [Color(red: 0.1, green: 0.35, blue: 0.75), Color(red: 0.3, green: 0.2, blue: 0.7)], symbols: ["bubble.left.and.bubble.right.fill", "heart.fill", "waveform"])
         default: return HomeFeatureArt(colors: [.indigo, .purple], symbols: ["sparkles", "star.fill", "circle.hexagongrid.fill"])
         }

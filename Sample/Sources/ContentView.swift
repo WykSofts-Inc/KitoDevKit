@@ -65,6 +65,7 @@ struct ContentView: View {
             KitoCatalogEntry("Fields", "\(FieldSampleCatalog.all.count) samples · text, phone, OTP, currency", systemImage: "character.cursor.ibeam") { FieldsGallery() },
             KitoCatalogEntry.new("Carousels & Stories", "\(CarouselGallery.count) samples · snap, cover flow, swipe deck, stories", systemImage: "rectangle.stack.fill") { CarouselGallery() },
             KitoCatalogEntry.new("Reviews & Ratings", "\(ReviewsGallery.count) samples · stars, histograms, composer, NPS", systemImage: "star.bubble.fill") { ReviewsGallery() },
+            KitoCatalogEntry.new("Search", "\(SearchGallery.count) samples · fields, suggestions, filters, recents", systemImage: "magnifyingglass") { SearchGallery() },
         ]),
         KitoCatalogSection(title: "Feedback", symbol: "bell.badge.fill", tint: Color.orange, entries: [
             KitoCatalogEntry("Loaders", "\(LoadersDemo.count) samples · spinners, skeletons, overlays, refresh", systemImage: "arrow.triangle.2.circlepath") { LoadersDemo() },
@@ -91,6 +92,7 @@ struct ContentView: View {
         ]),
         KitoCatalogSection(title: "Communication", symbol: "bubble.left.and.bubble.right.fill", tint: Color.blue, entries: [
             KitoCatalogEntry.new("Chat", "\(ChatGallery.count) samples · bubbles, voice notes, reactions, inbox", systemImage: "bubble.left.and.bubble.right.fill") { ChatGallery() },
+            KitoCatalogEntry.new("AI Chat", "\(AIChatGallery.count) samples · streaming, markdown, code, voice", systemImage: "sparkles.rectangle.stack.fill") { AIChatGallery() },
             KitoCatalogEntry.new("Notifications", "\(NotificationsGallery.count) samples · inbox, banners, actions, quiet hours", systemImage: "bell.badge.fill") { NotificationsGallery() },
         ]),
         KitoCatalogSection(title: "Account", symbol: "person.crop.circle.badge.checkmark", tint: Color.indigo, entries: [
@@ -104,6 +106,7 @@ struct ContentView: View {
             KitoCatalogEntry("Biometrics", "\(BiometricsDemo.count) samples · lock screens, protected actions", systemImage: "faceid") { BiometricsDemo() },
             KitoCatalogEntry("Keychain", "\(KeychainDemo.count) samples · vault, reveal on Face ID", systemImage: "key.fill") { KeychainDemo() },
             KitoCatalogEntry("Connectivity", "\(ConnectivityDemo.count) samples · banners, quality, retry when online", systemImage: "wifi") { ConnectivityDemo() },
+            KitoCatalogEntry.new("Scanner", "\(ScannerGallery.count) samples · QR, barcodes, documents, cards", systemImage: "qrcode.viewfinder") { ScannerGallery() },
         ]),
         KitoCatalogSection(title: "System", symbol: "gearshape.2.fill", tint: Color.yellow, entries: [
             KitoCatalogEntry("Control Center", "\(ControlCenterDemo.count) samples · glass modules, toggles, sliders", systemImage: "slider.horizontal.3") { ControlCenterDemo() },
@@ -123,7 +126,7 @@ struct ContentView: View {
 
     private var sections: [KitoCatalogSection] { Self.sections }
     private var allEntries: [KitoCatalogEntry] { sections.flatMap(\.entries) }
-    private static let featuredTitles = ["Wallet & Cards", "Maps", "Dynamic Island", "Chat", "Charts", "Paywall"]
+    private static let featuredTitles = ["AI Chat", "Wallet & Cards", "Maps", "Dynamic Island", "Chat", "Charts", "Paywall"]
 
     private func section(of entry: KitoCatalogEntry) -> KitoCatalogSection? {
         sections.first { $0.entries.contains(entry) }
