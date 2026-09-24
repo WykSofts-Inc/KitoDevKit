@@ -346,6 +346,9 @@ struct HomeShowcaseApp: Identifiable {
         HomeShowcaseApp(id: "chakula", title: FoodShowcase.title, subtitle: FoodShowcase.subtitle, systemImage: FoodShowcase.systemImage,
                         colors: [Color(red: 0.75, green: 0.25, blue: 0.08), Color(red: 0.95, green: 0.55, blue: 0.15)],
                         kits: ["Maps", "Order Tracking", "Checkout", "Chat", "Carousel", "Reviews"]) { AnyView(FoodShowcaseApp()) },
+        HomeShowcaseApp(id: "pesa", title: WalletShowcase.title, subtitle: WalletShowcase.subtitle, systemImage: WalletShowcase.systemImage,
+                        colors: [Color(red: 0.04, green: 0.3, blue: 0.3), Color(red: 0.2, green: 0.15, blue: 0.5)],
+                        kits: ["Wallet Cards", "Charts", "Scanner", "Auth", "File Viewer", "Settings"]) { AnyView(WalletShowcaseApp()) },
     ]
 }
 
