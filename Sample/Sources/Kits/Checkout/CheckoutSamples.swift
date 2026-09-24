@@ -134,6 +134,7 @@ private struct CheckoutGroceryFlow: View {
     var body: some View {
         KitoCheckoutFlow(model: model, onTrackOrder: { _ in model.reset() }, onContinueShopping: { model.reset() },
                          onPlaceOrder: CheckoutData.place)
+            .checkoutDismissButton(.hidden)   // the stage has its own close button
     }
 }
 
@@ -146,6 +147,7 @@ private struct CheckoutFoodFlow: View {
     var body: some View {
         KitoCheckoutFlow(model: model, title: "Your order", progressStyle: .segmented, tint: .orange,
                          onContinueShopping: { model.reset() }, onPlaceOrder: CheckoutData.place)
+            .checkoutDismissButton(.hidden)
     }
 }
 
@@ -158,6 +160,7 @@ private struct CheckoutPickupFlow: View {
     var body: some View {
         KitoCheckoutFlow(model: model, title: "Click & collect", progressStyle: .text, tint: .indigo,
                          onContinueShopping: { model.reset() }, onPlaceOrder: CheckoutData.place)
+            .checkoutDismissButton(.hidden)
     }
 }
 
@@ -169,6 +172,7 @@ private struct CheckoutApplePayFlow: View {
 
     var body: some View {
         KitoCheckoutFlow(model: model, title: "Pay", onContinueShopping: { model.reset() }, onPlaceOrder: CheckoutData.place)
+            .checkoutDismissButton(.hidden)
     }
 }
 
@@ -185,6 +189,7 @@ private struct CheckoutFailingFlow: View {
             if payments.attempts % 2 == 1 { throw CheckoutSampleTimeout() }
             return order.confirmed(number: KitoOrderNumber.random())
         }
+        .checkoutDismissButton(.hidden)
     }
 }
 

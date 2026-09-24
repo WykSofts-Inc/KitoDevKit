@@ -26,26 +26,17 @@ struct FashionBagScreen: View {
                     .padding(.horizontal, theme.spacing.lg)
                     .padding(.bottom, theme.spacing.sm)
             }
-            if store.cart.isEmpty {
-                // KitoCartView's own empty state talks about a menu, so the bag draws its own.
-                ScrollView {
-                    KitoEmptyCartView(title: "Your bag is empty",
-                                      message: "Pieces you add from any tab land here, ready for checkout.",
-                                      actionTitle: "Discover new in") { store.show(.home) }
-                        .padding(.top, theme.spacing.xxl)
-                        .frame(maxWidth: .infinity)
-                }
-                .kitoCartUndoBar(store.cart)
-            } else {
-                KitoCartView(cart: store.cart, rules: FashionCheckoutSetup.cartRules,
-                             promoValidator: FashionCheckoutSetup.promos, checkoutTitle: "Checkout",
-                             onCheckout: { pricing in
-                                 store.beginCheckout(promo: pricing.promo)
-                                 showsCheckout = true
-                             },
-                             onBrowse: { store.show(.home) }) { item in
-                    FashionCartThumbnail(item: item)
-                }
+            KitoCartView(cart: store.cart, rules: FashionCheckoutSetup.cartRules,
+                         promoValidator: FashionCheckoutSetup.promos, checkoutTitle: "Checkout",
+                         onCheckout: { pricing in
+                             store.beginCheckout(promo: pricing.promo)
+                             showsCheckout = true
+                         },
+                         onBrowse: { store.show(.home) },
+                         emptyTitle: "Your bag is empty",
+                         emptyMessage: "Pieces you add from any tab land here, ready for checkout.",
+                         emptyActionTitle: "Discover new in") { item in
+                FashionCartThumbnail(item: item)
             }
         }
         .background(theme.colors.background.ignoresSafeArea())
@@ -78,23 +69,9 @@ struct FashionCartThumbnail: View {
     @Environment(\.kitoTheme) private var theme
     let item: KitoCartItem
 
-    private var media: KitoProductMedia? {
-        guard let product = FashionCatalogue.item(forCartID: item.id)?.product else { return nil }
-        let parts = item.id.components(separatedBy: "~")
-        let colorID = parts.count > 1 ? parts[1] : nil
-        return product.media(for: colorID).first
-    }
-
     var body: some View {
-        Group {
-            if let media {
-                KitoProductMediaView(media)
-            } else {
-                theme.colors.surfaceMuted.overlay(Image(systemName: "bag").foregroundStyle(.secondary))
-            }
-        }
-        .clipShape(RoundedRectangle(cornerRadius: theme.radii.md, style: .continuous))
-        .accessibilityHidden(true)
+        KitoProductCartThumbnail(item)
+            .clipShape(RoundedRectangle(cornerRadius: theme.radii.md, style: .continuous))
     }
 }
 

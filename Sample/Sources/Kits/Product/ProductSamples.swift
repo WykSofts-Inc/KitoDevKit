@@ -247,8 +247,8 @@ private struct ProductBadgesSample: View {
         VStack(alignment: .leading, spacing: 16) {
             KitoProductBadges([.new, .bestseller, .lowStock, .eco])
             KitoProductBadges([.sale(percent: 25), .exclusive, KitoProductBadge("Online only")])
-            KitoRatingSummary(rating: 4.6, reviewCount: 214) {}
-            KitoRatingSummary(rating: 3.5, reviewCount: 1, starSize: 16)
+            KitoProductRatingLine(rating: 4.6, reviewCount: 214) {}
+            KitoProductRatingLine(rating: 3.5, reviewCount: 1, starSize: 16)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -477,7 +477,7 @@ enum ProductSamples {
         KitSample("Badges and rating", "New, Bestseller, Low stock, Eco, sale, and stars.", code: """
         KitoProductBadges([.new, .bestseller, .lowStock, .eco])
         KitoProductBadges([.sale(percent: 25), .exclusive, KitoProductBadge("Online only")])
-        KitoRatingSummary(rating: 4.6, reviewCount: 214) { showReviews = true }
+        KitoProductRatingLine(rating: 4.6, reviewCount: 214) { showReviews = true }
         """) { ProductBadgesSample() },
         KitSample("Accordion", "Details, Materials & care, Shipping & returns.", code: """
         KitoProductAccordion(product.sections, initiallyExpanded: "Details")

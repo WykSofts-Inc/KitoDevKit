@@ -10,9 +10,6 @@ import SwiftUI
 import KitoCore
 import KitoReviews
 
-// KitoProduct and KitoReviews both export a `KitoRatingSummary`, so this file imports only
-// KitoReviews and takes plain values from the product page.
-
 /// The reviews for one piece: summary with a tappable histogram, sortable list and a composer.
 struct FashionReviewsSheet: View {
     @Environment(\.kitoTheme) private var theme

@@ -30,6 +30,7 @@ struct FashionProductScreen: View {
         KitoProductDetailView(
             model: model,
             related: FashionCatalogue.completeTheLook(for: item),
+            wishlist: wishlist,
             sizeGuide: FashionCatalogue.sizeGuide(for: item.category),
             delivery: KitoDeliveryEstimator(minDays: 1, maxDays: 2, cutoffHour: 15, closedWeekdays: [1]),
             deliveryDetail: "Complimentary delivery over KES 25,000 · 30-day returns",
@@ -53,10 +54,6 @@ struct FashionProductScreen: View {
                 .accessibilityLabel("Reviews, \(String(format: "%.1f", item.product.rating ?? 0)) stars from \(reviewCount) reviews")
             }
         }
-        .onChange(of: model.isWishlisted) { _, saved in store.setSaved(item.id, saved) }
-        .onChange(of: store.wishlist) { _, saved in
-            if model.isWishlisted != saved.contains(item.id) { model.isWishlisted = saved.contains(item.id) }
-        }
         .sheet(isPresented: $showsReviews) {
             FashionReviewsSheet(productName: item.product.name, designerName: item.designer.name,
                                 rating: item.product.rating ?? 4.5, reviewCount: reviewCount, seed: item.id,
@@ -66,5 +63,15 @@ struct FashionProductScreen: View {
             }
             .presentationDragIndicator(.visible)
         }
+    }
+
+    /// Every heart on the page, "Complete the look" included, saves to the shared wishlist
+    /// through the store, so saving still shows the toast.
+    private var wishlist: Binding<Set<String>> {
+        Binding(get: { store.wishlist },
+                set: { saved in
+                    for id in saved.subtracting(store.wishlist) { store.setSaved(id, true) }
+                    for id in store.wishlist.subtracting(saved) { store.setSaved(id, false) }
+                })
     }
 }
