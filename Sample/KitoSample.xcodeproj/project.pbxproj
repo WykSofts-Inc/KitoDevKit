@@ -43,6 +43,7 @@
 		558845145EBD98DE9146DB39 /* KitoCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF2D1062E48C2B142D85599 /* KitoCore */; };
 		57A6269657AE4E38F8C43B25 /* ModalStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD9695B93295E295C14032 /* ModalStage.swift */; };
 		5922BAD594985C3E1C0FDB76 /* FormattingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C6FDC38EA4C14E1E26860 /* FormattingDemo.swift */; };
+		5B43F06E3E1023D1501EEBA3 /* HomeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9534C85D7204CAB8AE584C1 /* HomeComponents.swift */; };
 		5F7A0BCA815565D435C0170E /* MapsSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6D7B75394DDE501A29EB8 /* MapsSamples.swift */; };
 		6C00490BEC35597ED571782A /* KitoPaywall in Frameworks */ = {isa = PBXBuildFile; productRef = 1698105685A07B3D26A25920 /* KitoPaywall */; };
 		6C0F9528FDFE5EBA9A86387F /* KitoCart in Frameworks */ = {isa = PBXBuildFile; productRef = 378714DA44266EDE9BAA76A8 /* KitoCart */; };
@@ -223,6 +224,7 @@
 		D20EA9D97C4FFC34E33FA4AA /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		D7D4FBBDF60CEA099474845F /* KitoCharts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoCharts; path = ../../KitoCharts; sourceTree = SOURCE_ROOT; };
 		D853F507CC8B34320CE7950E /* KitoIslandBar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KitoIslandBar; path = ../../KitoIslandBar; sourceTree = SOURCE_ROOT; };
+		D9534C85D7204CAB8AE584C1 /* HomeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponents.swift; sourceTree = "<group>"; };
 		D980B6B778F8DF22A864D42D /* MediaSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSamples.swift; sourceTree = "<group>"; };
 		DB77E454C73432496794EFD2 /* CalendarSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSamples.swift; sourceTree = "<group>"; };
 		DBD8DB5336D873D6C1C6832B /* WalletSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSamples.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				8AD5583078BB200B716A240A /* KitoAppShortcuts.swift */,
 				96F7408B4AEB357DBECEF8F8 /* KitoSampleApp.swift */,
 				B02A67230D7C238E5DDF68DC /* Demos */,
+				A4B04A6297972FB95613DED1 /* Home */,
 				89DA62CF8604B44F72D722F4 /* Kits */,
 			);
 			path = Sources;
@@ -544,6 +547,14 @@
 				A3649BAB40063B9130CB6E9E /* OrderTrackingWidgetBundle.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		A4B04A6297972FB95613DED1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D9534C85D7204CAB8AE584C1 /* HomeComponents.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		AD35D32057EF70690CC5E120 /* Validation */ = {
@@ -837,6 +848,7 @@
 				74DB720436D05A5D5065EE7A /* GalleryComponents.swift in Sources */,
 				FBC7E079CDB8AC24FDBEE39C /* GlobalSearch.swift in Sources */,
 				C09CFCF6BBF8A922F4A38FFB /* HapticsSamples.swift in Sources */,
+				5B43F06E3E1023D1501EEBA3 /* HomeComponents.swift in Sources */,
 				EB29B4985597F972527C8B55 /* ImageLoaderDemo.swift in Sources */,
 				1A3CC5A6AA8A766B8774AC67 /* IslandActivities.swift in Sources */,
 				DA2BAA1C1391E2C65B5569B6 /* IslandSamples.swift in Sources */,
